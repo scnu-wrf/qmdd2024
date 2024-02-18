@@ -11,7 +11,7 @@
 ?>
 <html>
 <head>
-	<link href="./layui/css/layui.css" rel="stylesheet">
+	<link href="admin/views/Clubadmin/layui/css/layui.css" rel="stylesheet">
 </head>
 <body>
 
@@ -161,7 +161,7 @@
 	</div>
 </div>
 
-<script src="./layui/layui.js"></script> 
+<script src="admin/views/Clubadmin/layui/layui.js"></script> 
 <script>
 	var f_id="<?php echo $model->admin_level;?>";
 	//选择框事件

@@ -520,3 +520,62 @@ level=3 and parent_code=22760
 openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
 
 admin_gfaccount=13923705710
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+f_code like "Z%" and f_mtype in(1,2) order by f_code
+lang_type=0 and admin_gfaccount<>'0' 
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+ f_type=1 and club_id=2450 
+club_id=2450
+(club_id=2450 or  f_id in (198)) and not isnull(f_rcode)
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+lang_type=0 and admin_gfaccount<>'0' 
+lang_type=0 and admin_gfaccount<>'0' 
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+table_name='ClubListSqdw' and code_year='2024' and code_month='02'
+table_name='ClubListSqdw' and code_year='2024' and code_month='02'
+f_code like "B%" and f_mtype in(1,2) order by f_code
+audState='待审核'
+audState='待审核'
+audState='待审核'
+1
+audState='待审核'
+1
+audState='审核通过'
+audState='待审核'
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+admin_gfaccount=13923705710
+

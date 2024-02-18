@@ -472,3 +472,87 @@ Stack trace:
 REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
 HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
 ---
+2024/02/18 16:03:32 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
+#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
+#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
+#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
+#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
+#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
+#15 {main}
+REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
+HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
+---
+2024/02/18 16:34:14 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
+#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
+#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
+#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
+#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
+#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
+#15 {main}
+REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
+HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
+---
+2024/02/18 16:36:00 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
+#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
+#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
+#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
+#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
+#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
+#15 {main}
+REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
+HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
+---
+2024/02/18 16:48:33 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
+Stack trace:
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
+#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
+#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
+#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
+#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
+#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
+#15 {main}
+REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
+HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
+---
