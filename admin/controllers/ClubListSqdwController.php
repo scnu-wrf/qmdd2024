@@ -55,7 +55,9 @@ class ClubListSqdwController extends BaseController{//与模建立联系
             else $data['sign'] = 'update';
             $this->render('update', $data);
         } else {
-            if($index == 'index_pass'){ $model->audState = "审核通过";$model->createAdminUser();}
+            if($index == 'index_pass'){ 
+                $model->audState = "审核通过";
+            }
             else $model->audState = "待提交";
             $this->saveData($model,$_POST["$this->model"]);
         }
@@ -92,7 +94,10 @@ class ClubListSqdwController extends BaseController{//与模建立联系
             $this->render('update_check', $data);
         } else {
             if($_POST['submitType'] == 'notpass') $model->audState = '审核不通过';
-            if($_POST['submitType'] == 'pass') $model->audState = '审核通过';
+            if($_POST['submitType'] == 'pass') {
+                $model->audState = '审核通过';
+                $model->createAdminUser();
+            }
             $this->saveData($model,$_POST["$this->model"]);
         }
     }

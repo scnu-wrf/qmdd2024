@@ -1,31 +1,49 @@
-2024/02/18 13:40:33 [error] [exception.CDbException] SQLSTATE[HY000] [1049] Unknown database 'sports'
-2024/02/18 13:40:33 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\CDbConnection.php:405
+2024/02/18 20:54:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Truncated incorrect DOUBLE value: ''. The SQL statement executed was: INSERT INTO `qmdd_administrators` (`club_id`, `club_code`, `club_name`, `lang_type`, `admin_gfid`, `admin_gfaccount`, `admin_gfnick`, `password`, `ec_salt`, `pay_pass`, `pay_salt`, `phone`, `email`, `if_del`, `last_ip`, `is_on_line`, `admin_remark`, `sys_user`, `admin_level`, `admin_level_type`, `role_name`, `if_auto_access`, `max_access`, `if_auto_greet`, `to_greet`, `customer_service`, `partnership_type`, `partnership_name`, `last_login`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25, :yp26, :yp27, :yp28). Bound with :yp0=3073, :yp1='SQ202402012', :yp2='知更鸟小姐后援团', :yp3='', :yp4=0, :yp5='SQ202402012', :yp6='', :yp7='0d3f27b33053f7d481858207e8267136', :yp8='4058', :yp9='', :yp10='6782', :yp11='', :yp12='', :yp13=510, :yp14='0.0.0.0', :yp15=948, :yp16='', :yp17=2, :yp18='', :yp19='', :yp20='', :yp21=648, :yp22=0, :yp23=648, :yp24='', :yp25=0, :yp26=624, :yp27='项目公司', :yp28='2024-02-18 20:54:15'.
+2024/02/18 20:54:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[22007]: Invalid datetime format: 1292 Truncated incorrect DOUBLE value: ''' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\CDbCommand.php:358
 Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\CDbConnection.php(347): CDbConnection->open()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\CDbConnection.php(325): CDbConnection->setActive(true)
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CModule.php(394): CDbConnection->init()
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(459): CModule->getComponent('db')
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(639): CApplication->getDb()
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(2402): CActiveRecord->getDbConnection()
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(413): CActiveRecordMetaData->__construct(Object(QmddAdministrators))
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(79): CActiveRecord->__construct('create')
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(16): IndexController->login_form()
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionIndex()
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('')
-#15 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('')
-#16 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#17 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#18 {main}
-REQUEST_URI=/sport2024/
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(1084): CDbCommand->execute()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(812): CActiveRecord->insert(NULL)
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\ClubListSqdw.php(161): CActiveRecord->save()
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubListSqdwController.php(99): ClubListSqdw->createAdminUser()
+#4 [internal function]: ClubListSqdwController->actionUpdatecheck('3073')
+#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ClubListSqdwController), Array)
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ClubListSqdwController), Object(ReflectionMethod), Array)
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('Updatecheck')
+#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('clubListSqdw/Up...')
+#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
+#14 {main}
+REQUEST_URI=/sport2024/index.php?r=clubListSqdw/Updatecheck&id=3073
+HTTP_REFERER=http://127.0.0.1/sport2024/index.php?r=clubListSqdw/Updatecheck&id=3073
 ---
-2024/02/18 13:41:53 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
+2024/02/18 20:57:46 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Truncated incorrect DOUBLE value: ''. The SQL statement executed was: INSERT INTO `qmdd_administrators` (`club_id`, `club_code`, `club_name`, `lang_type`, `admin_gfid`, `admin_gfaccount`, `admin_gfnick`, `password`, `ec_salt`, `pay_pass`, `pay_salt`, `phone`, `email`, `if_del`, `last_ip`, `is_on_line`, `admin_remark`, `sys_user`, `admin_level`, `admin_level_type`, `role_name`, `if_auto_access`, `max_access`, `if_auto_greet`, `to_greet`, `customer_service`, `partnership_type`, `partnership_name`, `last_login`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25, :yp26, :yp27, :yp28). Bound with :yp0=3073, :yp1='SQ202402012', :yp2='知更鸟小姐后援团', :yp3='0', :yp4=0, :yp5='SQ202402012', :yp6='', :yp7='6d79db4947d8561ec72902f02e8b8323', :yp8='5928', :yp9='', :yp10='6782', :yp11='', :yp12='', :yp13=510, :yp14='0.0.0.0', :yp15=948, :yp16='', :yp17=2, :yp18='', :yp19='', :yp20='', :yp21=648, :yp22=0, :yp23=648, :yp24='', :yp25=0, :yp26=624, :yp27='项目公司', :yp28='2024-02-18 20:57:46'.
+2024/02/18 20:57:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[22007]: Invalid datetime format: 1292 Truncated incorrect DOUBLE value: ''' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\CDbCommand.php:358
 Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(121): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(133): IndexController->get_signin()
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(1084): CDbCommand->execute()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(812): CActiveRecord->insert(NULL)
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\ClubListSqdw.php(163): CActiveRecord->save()
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubListSqdwController.php(99): ClubListSqdw->createAdminUser()
+#4 [internal function]: ClubListSqdwController->actionUpdatecheck('3073')
+#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ClubListSqdwController), Array)
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ClubListSqdwController), Object(ReflectionMethod), Array)
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('Updatecheck')
+#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('clubListSqdw/Up...')
+#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
+#14 {main}
+REQUEST_URI=/sport2024/index.php?r=clubListSqdw/Updatecheck&id=3073
+HTTP_REFERER=http://127.0.0.1/sport2024/index.php?r=clubListSqdw/Updatecheck&id=3073
+---
+2024/02/18 21:03:31 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
+Stack trace:
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(122): Menu->get_role_menu()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(134): IndexController->get_signin()
 #2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
 #3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
 #4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
@@ -35,10 +53,10 @@ Stack trace:
 #8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
 #9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
 REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456
-2024/02/18 13:41:56 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
+2024/02/18 21:04:35 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
 Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(121): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(133): IndexController->get_signin()
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(122): Menu->get_role_menu()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(134): IndexController->get_signin()
 #2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
 #3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
 #4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
@@ -48,65 +66,10 @@ Stack trace:
 #8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
 #9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
 REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456
-2024/02/18 13:41:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index_data" 动作.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php:486
+2024/02/18 21:05:17 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
 Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(270): CController->missingAction('index_data')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('index_data')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('clubListSqdw/in...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#5 {main}
-REQUEST_URI=/sport2024/index.php?r=clubListSqdw/index_data&index=3
-HTTP_REFERER=http://127.0.0.1/sport2024/index.php?r=index/menu&type=B
----
-2024/02/18 13:41:59 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index_data" 动作.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php:486
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(270): CController->missingAction('index_data')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('index_data')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('clubListSqdw/in...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#5 {main}
-REQUEST_URI=/sport2024/index.php?r=clubListSqdw/index_data&index=1
-HTTP_REFERER=http://127.0.0.1/sport2024/index.php?r=index/menu&type=B
----
-2024/02/18 13:42:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index_data" 动作.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php:486
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(270): CController->missingAction('index_data')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('index_data')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('clubListSqdw/in...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#5 {main}
-REQUEST_URI=/sport2024/index.php?r=clubListSqdw/index_data&index=5
-HTTP_REFERER=http://127.0.0.1/sport2024/index.php?r=index/menu&type=B
----
-2024/02/18 13:42:00 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index_list" 动作.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php:486
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(270): CController->missingAction('index_list')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('index_list')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('clubListSqdw/in...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#5 {main}
-REQUEST_URI=/sport2024/index.php?r=clubListSqdw/index_list&state=372&edit_state=721
-HTTP_REFERER=http://127.0.0.1/sport2024/index.php?r=index/menu&type=B
----
-2024/02/18 13:42:06 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "index_data" 动作.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php:486
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(270): CController->missingAction('index_data')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('index_data')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('clubListSqdw/in...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#5 {main}
-REQUEST_URI=/sport2024/index.php?r=clubListSqdw/index_data&index=4
-HTTP_REFERER=http://127.0.0.1/sport2024/index.php?r=index/menu&type=B
----
-2024/02/18 15:13:52 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(121): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(133): IndexController->get_signin()
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(122): Menu->get_role_menu()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(134): IndexController->get_signin()
 #2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
 #3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
 #4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
@@ -115,451 +78,11 @@ Stack trace:
 #7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
 #8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
 #9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
-REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456
-2024/02/18 15:27:31 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
+REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=SQ202402012&PASSWORD=123456
+2024/02/18 21:10:07 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
 Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:27:31 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "wxLogin" 动作.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php:486
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(270): CController->missingAction('wxLogin')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('wxLogin')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('GfUser1/wxLogin')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#5 {main}
-REQUEST_URI=/sport2024/index.php?r=GfUser1/wxLogin&code=0f3Fra000HOsBR1MwD100CNW9U1Fra01&phone_code=
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:27:41 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:27:42 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "wxLogin" 动作.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php:486
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(270): CController->missingAction('wxLogin')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('wxLogin')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('GfUser1/wxLogin')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#5 {main}
-REQUEST_URI=/sport2024/index.php?r=GfUser1/wxLogin&code=0f3xKO100o17DR1YZd1002gWGs3xKO1-&phone_code=
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:30:11 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:30:12 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "wxLogin" 动作.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php:486
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(270): CController->missingAction('wxLogin')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('wxLogin')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('GfUser1/wxLogin')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#5 {main}
-REQUEST_URI=/sport2024/index.php?r=GfUser1/wxLogin&code=0c3PHI000RS0CR1xKo200u0NcR2PHI04&phone_code=
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:30:26 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:30:26 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "wxLogin" 动作.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php:486
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(270): CController->missingAction('wxLogin')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('wxLogin')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('GfUser1/wxLogin')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#5 {main}
-REQUEST_URI=/sport2024/index.php?r=GfUser1/wxLogin&code=0a3jCE0w3Ackh23keb1w3MQESi4jCE0I&phone_code=
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:30:32 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:30:33 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "wxLogin" 动作.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php:486
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(270): CController->missingAction('wxLogin')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('wxLogin')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('GfUser1/wxLogin')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#5 {main}
-REQUEST_URI=/sport2024/index.php?r=GfUser1/wxLogin&code=0b3aJI000GU0CR175H000Hqm4B4aJI0F&phone_code=
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:30:35 [error] [exception.CHttpException.404] exception 'CHttpException' with message '系统无法找到请求的 "GetStadiumList" 动作.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php:486
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(270): CController->missingAction('GetStadiumList')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('GetStadiumList')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('GfUser1/GetStad...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#5 {main}
-REQUEST_URI=/sport2024/index.php?r=GfUser1/GetStadiumList
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:42:07 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:42:07 [error] [exception.CException] exception 'CException' with message 'GfUser1 and its behaviors do not have a method or closure named "getwxOpenid".' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:266
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(229): CComponent->__call('getwxOpenid', Array)
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\GfUser1Controller.php(635): CActiveRecord->__call('getwxOpenid', Array)
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\GfUser1Controller.php(635): GfUser1->getwxOpenid('0a3yqd1w36kRh23...')
-#3 [internal function]: GfUser1Controller->actionwxLogin('0a3yqd1w36kRh23...', '')
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(GfUser1Controller), Array)
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(GfUser1Controller), Object(ReflectionMethod), Array)
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('wxLogin')
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('GfUser1/wxLogin')
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#13 {main}
-REQUEST_URI=/sport2024/index.php?r=GfUser1/wxLogin&code=0a3yqd1w36kRh23BOD3w33TwY53yqd1x&phone_code=
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:42:20 [error] [exception.CException] exception 'CException' with message 'GfUser1 and its behaviors do not have a method or closure named "getwxOpenid".' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:266
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(229): CComponent->__call('getwxOpenid', Array)
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\GfUser1Controller.php(635): CActiveRecord->__call('getwxOpenid', Array)
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\GfUser1Controller.php(635): GfUser1->getwxOpenid('0d3koW0w35a2h23...')
-#3 [internal function]: GfUser1Controller->actionwxLogin('0d3koW0w35a2h23...', 'e0d6113b68babb9...')
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(GfUser1Controller), Array)
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(GfUser1Controller), Object(ReflectionMethod), Array)
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('wxLogin')
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('GfUser1/wxLogin')
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#13 {main}
-REQUEST_URI=/sport2024/index.php?r=GfUser1/wxLogin&code=0d3koW0w35a2h23wVo1w35J4zj3koW0h&phone_code=e0d6113b68babb9677c19d6caeb84d4cc41d30a1870d5e2e528aa9d91b45217d
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:48:28 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:54:36 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:57:31 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:57:59 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 15:59:36 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 16:00:33 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 16:03:32 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 16:34:14 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 16:36:00 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 16:48:33 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 17:10:19 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(121): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(133): IndexController->get_signin()
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(122): Menu->get_role_menu()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(134): IndexController->get_signin()
 #2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
 #3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
 #4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
@@ -568,152 +91,11 @@ Stack trace:
 #7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
 #8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
 #9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
-REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456
-2024/02/18 17:11:58 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
+REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=SQ202402009&PASSWORD=123456
+2024/02/18 21:10:17 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
 Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(121): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(133): IndexController->get_signin()
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): IndexController->runActionWithFilters()
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): IndexController->run()
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
-REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456
-2024/02/18 17:21:47 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(121): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(133): IndexController->get_signin()
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): IndexController->runActionWithFilters()
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): IndexController->run()
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
-REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456
-2024/02/18 17:28:19 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 17:28:31 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 17:36:52 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(121): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(133): IndexController->get_signin()
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): IndexController->runActionWithFilters()
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): IndexController->run()
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
-REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456
-2024/02/18 17:36:54 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(121): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(133): IndexController->get_signin()
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): IndexController->runActionWithFilters()
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): IndexController->run()
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
-REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456
-2024/02/18 19:47:26 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(121): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(133): IndexController->get_signin()
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): IndexController->runActionWithFilters()
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): IndexController->run()
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
-REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456
-2024/02/18 20:07:51 [error] [exception.CException] exception 'CException' with message '属性 "QualificationsPerson.sex" 未被定义.' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CComponent.php:130
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(145): CComponent->__get('sex')
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1173): CActiveRecord->__get('sex')
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\BaseLib.php(1186): BaseLib->recToArray(Object(QualificationsPerson), 'id,phone,email,...')
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\include\functions.php(759): BaseLib->toArray(Array, 'id,phone,email,...', Array)
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\QualificationsPersonController.php(956): toIoArray(Array, 'id,phone,email,...')
-#5 [internal function]: QualificationsPersonController->actionValidCouch('0')
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(QualificationsPersonController), Array)
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(QualificationsPersonController), Object(ReflectionMethod), Array)
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('ValidCouch')
-#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('QualificationsP...')
-#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#14 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
-#15 {main}
-REQUEST_URI=/sport2024/index.php?r=QualificationsPerson/ValidCouch&club_id=0
-HTTP_REFERER=https://servicewechat.com/wx8d045a8ae8b1ca29/devtools/page-frame.html
----
-2024/02/18 20:12:26 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(121): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(133): IndexController->get_signin()
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): IndexController->runActionWithFilters()
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): IndexController->run()
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
-REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456
-2024/02/18 20:13:09 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(121): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(133): IndexController->get_signin()
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(122): Menu->get_role_menu()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(134): IndexController->get_signin()
 #2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
 #3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
 #4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()

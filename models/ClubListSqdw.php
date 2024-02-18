@@ -142,7 +142,7 @@ class ClubListSqdw extends BaseModel {
         return array("audState='审核通过'",'id','club_name');
     }
     //创建后端登录账号
-    private function createAdminUser(){
+    public function createAdminUser(){
         if(!isset($this->club_code)) return;
         $club_code = $this->club_code;
         //查重
@@ -154,7 +154,12 @@ class ClubListSqdw extends BaseModel {
         $user->club_name=$this->club_name;
         $user->ec_salt = rand(1,9999);
         $user->password = pass_md5($user->ec_salt,123456);
+        $user->club_id=$this->id;
+        $user->partnership_type=624;
+        $user->partnership_name='项目公司';
+        $user->lang_type=0;
         $user->save();
+        put_msg($user->club_name);
     }
 
 }

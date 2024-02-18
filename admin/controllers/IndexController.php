@@ -97,6 +97,7 @@ public function actionMenu($type='A'){
       $w1="admin_gfaccount ='".$gfacc."' and club_code='";
       $tmp=QmddAdministrators::model()->find($w1.$users[0]."'");
       if(!empty($tmp)){
+        //有数据
          ini_set('session.gc_divisor', 1);
          ini_set('session.gc_maxlifetime',  5000000);
          ini_set('session.cookie_lifetime', 1000000);
@@ -131,10 +132,10 @@ public function actionMenu($type='A'){
       $data['TUNAME']="";
       if (isset($_REQUEST['TUNAME'])) { $usercode=$_REQUEST['TUNAME'];};
       if ($this-> get_signin($usercode,$_REQUEST['PASSWORD'])){
+
         $data['TUNAME']=$usercode;
         $data['menu']=$_SESSION['role_menu'];
       }   
- 
       echo CJSON::encode($data);
     }
 
