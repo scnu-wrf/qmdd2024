@@ -1,0 +1,197 @@
+
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/public.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/font.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.fallr/jquery.fallr.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.datetimepicker.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.uploadifive/uploadifive.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/artDialog/skins/default.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.contextMenu.css" />
+<script type="text/javascript" src="/qmdd2018/assets/c6aea6c/jquery.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.fallr/jquery.fallr.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.parse.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.uploadifive/jquery.uploadifive.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/artDialog/jquery.artDialog.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/artDialog/plugins/iframeTools.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.ui.position.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.contextMenu.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/md5.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/Base64.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/base64_1.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/public.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/spark-md5.js"></script>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=gfUser1%2Findex_exam&state=1&keywords=';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+</style>
+<style>
+</style>
+<div class="box">
+    <div class="box-title c">
+        <h1>
+            <span>
+                当前界面：会员 》实名管理 》实名认证审核             </span>
+            <script>var webstate = 1</script>
+        </h1>
+        <span style="float: right; padding-right: 15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+    </div><!--box-title end-->
+    <div class="box-content">
+        <div class="box-detail-tab" style="margin-top: 15px; border: 0px;">
+            <ul class="c">
+                <li id="waitting_for_exam" style="width:150px;"><a href="javascript:;" onclick="on_exam(1);">待审核：<span style="color:red;font-weight: bold;">5</span></a></li>
+                <li id="exam_list" style="width:150px;"><a href="javascript:;" onclick="on_exam(0);">审核记录</a></li>
+            </ul>
+        </div><!--box-detail-tab end-->
+    		<!-- <div class="box-header">
+            <span class="exam" onclick="on_exam();"><p>待审核：<span style="color:red;font-weight: bold;"></span></p></span>
+        </div> -->
+	        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=gfUser1%2Findex_exam&state=1&keywords=" method="get">
+                <input type="hidden" name="r" value="gfUser1/index_exam">
+                <input type="hidden" name="state" id="state" value="1">
+       
+                <label style="margin-right:10px;">
+                                        <!-- <span>申请日期：</span> -->
+                                     
+                </label>
+                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="账号/昵称/姓名">
+                </label>
+                <button id="click_submit" class="btn btn-blue" type="submit">查询</button>
+          
+            </form>
+        </div><!--box-search end-->
+         <div class="box-table">
+        <table class="list" >
+<tr class="table-title"><th class="check">
+<input id="j-checkall" class="input-check" type="checkbox"></th>
+<th  align="center" >GF账号</th><th  align="center" >昵称</th><th  align="center" >姓名</th><th  align="center" >性别</th><th  align="center" >籍贯/地区</th><th  align="center" >绑定手机号</th><th  align="center" >证件类型</th>
+<th>操作</th>
+</tr><tbody id="tbody1"><tr>
+<td class="check check-item"><input class="input-check" type="checkbox" value="28282"></td>
+<td >193720</td><td >193720</td><td >陈</td><td >女</td><td >不知道</td><td >1378853098</td><td >846</td>
+<td>
+<a class="btn" href="/qmdd2018/index.php?r=gfUser1/update_exam&GF_ID=28282"
+ title="审核"><i class="fa fa-edit"></i></a></td><script> var deleteUrl ="/qmdd2018/index.php?r=gfUser1/delete&id=ID";</script></tr> <tr style="background: #eee">
+<td class="check check-item"><input class="input-check" type="checkbox" value="26564"></td>
+<td >100722</td><td >周瑜</td><td >陈丽</td><td >男</td><td >海南海南</td><td ></td><td >843</td>
+<td>
+<a class="btn" href="/qmdd2018/index.php?r=gfUser1/update_exam&GF_ID=26564"
+ title="审核"><i class="fa fa-edit"></i></a></td></tr><tr>
+<td class="check check-item"><input class="input-check" type="checkbox" value="26570"></td>
+<td >104263</td><td >1:</td><td >z1</td><td >女</td><td >q</td><td ></td><td >843</td>
+<td>
+<a class="btn" href="/qmdd2018/index.php?r=gfUser1/update_exam&GF_ID=26570"
+ title="审核"><i class="fa fa-edit"></i></a></td></tr> <tr style="background: #eee">
+<td class="check check-item"><input class="input-check" type="checkbox" value="26575"></td>
+<td >100087</td><td >GF营销部</td><td >营销部</td><td >女</td><td >海南儋州</td><td ></td><td >843</td>
+<td>
+<a class="btn" href="/qmdd2018/index.php?r=gfUser1/update_exam&GF_ID=26575"
+ title="审核"><i class="fa fa-edit"></i></a></td></tr><tr>
+<td class="check check-item"><input class="input-check" type="checkbox" value="26603"></td>
+<td >131100</td><td >嘿嘿</td><td >123</td><td >男</td><td >哈哈</td><td ></td><td >846</td>
+<td>
+<a class="btn" href="/qmdd2018/index.php?r=gfUser1/update_exam&GF_ID=26603"
+ title="审核"><i class="fa fa-edit"></i></a></td></tr><tbody></table></table>
+        
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=gfUser1/delete&id=ID';
+    $(function(){
+        var $realname_time=$('#realname_time');
+        var $realname_entertime=$('#realname_entertime');
+        $realname_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+        });
+        $realname_entertime.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+        });
+    });
+    // 切换待审核与审核记录
+    function on_exam(state){
+        // var exam = $('.exam p span').text();
+        // if(exam > 0){
+        // if($('#state').val() == 0) {
+        if(state == '1') {
+            $('#state').val(1);
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('click_submit').click();
+        }else {
+            $('#state').val(0);
+            document.getElementById('click_submit').click();
+        }
+    }
+    // 页面加载完成时添加导航栏选中
+    $(window).load(function() {
+        if(webstate == 0) {
+            document.getElementById('waitting_for_exam').className='';
+            document.getElementById('exam_list').style.backgroundColor='#FDE9D9';
+            document.getElementById('exam_list').className='current';
+        }else if(webstate == 1) {
+            document.getElementById('exam_list').className='';
+            document.getElementById('waitting_for_exam').style.backgroundColor='#FDE9D9';
+            document.getElementById('waitting_for_exam').className='current';
+        }
+    });
+    onchangeCountry($('#country'));
+    function onchangeCountry(obj){
+        var obj = $('#country option:selected').attr('tvalue');
+        var province = $('#province');
+        var pr = '';
+        var s_html = '<option value>请选择</option>';
+        if(obj!=''){
+            $.ajax({
+                type: 'post',
+                url: '/qmdd2018/index.php?r=gfUser1/province&id='+obj,
+                dataType: 'json',
+                success: function(data){
+                    if(data!=''){
+                        for(var i=0;i<data.length;i++){
+                            s_html += '<option value="'+data[i]['region_name_c']+'" '+((data[i]['region_name_c']==pr) ? 'selected>' : '>')+data[i]['region_name_c']+'</option>';
+                        }
+                        $('#province').css('display','inline-block');
+                    }
+                    province.html(s_html);
+                }
+            })
+        }
+        else{
+            province.html(s_html);
+        }
+    }
+</script>
+</body>
+</html>

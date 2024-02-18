@@ -1,0 +1,277 @@
+1
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+
+
+
+
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=clubMemberImportfile/index';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+
+<div id="mask" style="display:none;width: 100%; height: 100%; position: fixed; z-index: 2000; top: 0px; left: 0px; overflow: hidden;">
+<div  style="line-height: 30px;position: absolute;top: calc(50% - 15px);left: calc(50% - 115px);"><span>导入中...</span></div> <!--aui_loading-->
+</div>
+<div class="box">
+    <span style="float:right;padding-right:15px;">
+        <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+    </span>
+    <div class="box-title c"><h1>当前界面：会员 》会员管理 》会员导入管理</h1></div><!--box-title end-->
+    <div class="box-content">
+        <div class="box-header">
+            <button class="btn btn-blue" type="button" onclick="javascript:add_member()" >导入</button>
+            <a class="btn" href="javascript:;" type="button" onclick="javascript:excel();"><i class="fa fa-file-excel-o"></i>导出</a>
+            <a class="btn btn-blue" href="javascript:;" onclick="checkval('.check-item input:checked');">批量确认</a>
+            <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>删除</a>        </div><!--box-header end-->
+        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=clubMemberImportfile/index" method="get">
+                <input type="hidden" name="r" value="clubMemberImportfile/index">
+                <label style="margin-right:10px;">
+                    <span>导入日期：</span>
+                    <input style="width:120px;" class="input-text" type="text" id="regtime" name="regtime" value="2024-01-09">
+                    <span>-</span>
+                    <input style="width:120px;" class="input-text" type="text" id="endregtime" name="endregtime" value="2024-02-09">
+                </label>
+                <label style="margin-right:10px;">
+                    <span>导入单位：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="key_club" value="" >
+                </label>
+                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="请输入姓名/账号">
+                </label>
+                <button id="submit_button" class="btn btn-blue" type="submit">查询</button>
+                <input id="is_excel" type="hidden" name="is_excel" value="0">
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                        <th class="check"><input id="j-checkall" class="input-check" type="checkbox"></th>
+                        <th>序号</th>
+                        <th>GF账号</th>
+                        <th>姓名</th>
+                        <th>性别</th>
+                        <th>籍贯/地区</th>
+                        <th>联系电话</th>
+                        <th>身份证号码</th>
+                        <th>会员类型</th>
+                        <th>项目</th>
+                        <th>归属单位类型</th>
+                        <th>归属单位</th>
+                        <th>导入日期</th>
+                        <th>操作员</th>
+                        <th>备注</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=clubMemberImportfile/delete&id=ID';
+    $(function(){
+        var $regtime=$('#regtime');
+        var $endregtime=$('#endregtime');
+        $regtime.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd'});
+        });
+        $endregtime.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd'});
+        });
+    });
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#state').val(371);
+            $('#index').val('');
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('submit_button').click();
+        }
+    }
+
+    var add_html = 
+        '<div id="add_format" style="width:500px;">'+
+            '<form id="add_form" name="add_form">'+
+                '<table class="list" id="table_tag" style="width:100%;border: solid 1px #d9d9d9;">'+
+                    '<thead>'+
+                        '<tr>'+
+                            '<td colspan="8" style="width:25px;padding: 5px;">选择单位类型&nbsp;&nbsp;</td>'+
+                            '<td>'+
+                            '<span class="check">'+
+                            '<input class="input-check" id="club_type1" name="club_type" type="radio" value="189">'+
+                            '<label for="club_type1">战略伙伴</label>&nbsp;&nbsp;'+
+                            '<input class="input-check" id="club_type2" name="club_type" type="radio" value="8">'+
+                            '<label for="club_type2">社区单位</label>&nbsp;&nbsp;'+
+                            '</span>'+
+                            '</td>'+
+                        '</tr>'+
+                        '<tr>'+
+                            '<td colspan="8" style="width:25px;padding: 5px;">选择单位&nbsp;&nbsp;</td><td><input type="button" class="btn btn-blue" onclick="add_tag();" value="选择"></td>'+
+                        '</tr>'+
+                    '</thead>'+
+                '</table>'+
+            '</form>'+
+        '</div>';
+
+    function add_member(){
+        if_data=0;
+        $.dialog({
+            id:'tianjia',
+            lock:true,
+            opacity:0.3,
+            height: '60%',
+            // width:'80%',
+            title:'选择单位',
+            content:add_html,
+            button:[
+                // {
+                //     name:'保存',
+					
+                //     callback:function(){
+                //         return fn_add_tr();
+                //     },
+					
+                //     focus:true
+                // },
+                // {
+                //     name:'取消',
+                //     callback:function(){
+                //         return true;
+                //     }
+                // }
+            ]
+        });
+        $('.aui_main').css('height','auto');
+    }
+        
+    function add_tag(){
+        var club_type=$("input[name='club_type']:checked").val();
+        if(club_type==undefined||club_type=='undefined'||club_type=='null'||club_type==null){
+            we.msg('minus', '请选择单位类型');
+            return false;
+        }
+        $.dialog.data('club_id', 0);
+            $.dialog.open('/qmdd2018/index.php?r=select/club&club_type='+club_type+'&edit_state=372',{
+            id:'danwei',
+            lock:true,opacity:0.3,
+            width:'500px',
+            height:'80%',
+            title:'选择单位',		
+            close: function () {
+                if($.dialog.data('club_id')>0){    
+                    if(club_type==8){
+                        importfile($.dialog.data('club_id'),'/qmdd2018/index.php?r=clubMemberList/upExcel')
+                    }else if(club_type==189){
+                        importfile($.dialog.data('club_id'),'/qmdd2018/index.php?r=gfPartnerMemberApply/upExcel')
+                    }
+                }
+            }
+        })
+    }
+
+    function excel(){
+        $("#is_excel").val(1);
+        $("#submit_button").click();
+        $("#is_excel").val(0);
+    }
+    
+    function importfile(club_id,cont){
+        $.dialog.open(cont+'&club_id='+club_id+'&logon_way=1461',{
+            id:'sensitive',
+            lock:true,
+            opacity:0.3,
+            title:'',
+            width:'60%',
+            // height:'50%',
+            close: function () {
+                // window.location.reload(true);
+            }
+        });
+    }
+    
+    // 获取所有选中多选框的值
+    checkval = function(op,num){
+        // console.log(op)
+        if(num=='one'){
+            var str = op;
+        }else{
+            var str = '';
+            $(op).each(function() {
+                str += $(this).val() + ',';
+            });
+        }
+        if(str.length > 0){
+            str = str.substring(0, str.length - 1);
+        }
+        if(str.length<1){
+            we.msg('minus','请先选中要确认的数据');
+            return false;
+        }
+        var an = function(){
+            confirmed(str);
+        }
+        $.fallr('show', {
+            buttons: {
+                button1: {text: '确定', danger: true, onclick: an},
+                button2: {text: '取消'}
+            },
+            content: '是否确认？',
+            icon: 'trash',
+            afterHide: function() {
+                we.loading('hide');
+            }
+        });
+    };
+
+    // 确认操作
+    function confirmed(id){
+        console.log(id)
+        we.loading('show');
+        $.ajax({
+            type:'post',
+            url:'/qmdd2018/index.php?r=clubMemberImportfile/confirmed&id='+id,
+            // data:{id:id},
+            dataType:'json',
+            success: function(data){
+                we.loading('hide');
+                if(data.status==1){
+                    we.success(data.msg, data.redirect);
+                }else{
+                    we.msg('minus', data.msg);
+                }
+            }
+        });
+        return false;
+    }
+</script></body>
+</html>
+

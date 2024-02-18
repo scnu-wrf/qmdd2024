@@ -1,0 +1,263 @@
+
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/public.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/font.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.fallr/jquery.fallr.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.datetimepicker.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.uploadifive/uploadifive.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/artDialog/skins/default.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.contextMenu.css" />
+<script type="text/javascript" src="/qmdd2018/assets/c6aea6c/jquery.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.fallr/jquery.fallr.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.parse.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.uploadifive/jquery.uploadifive.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/artDialog/jquery.artDialog.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/artDialog/plugins/iframeTools.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.ui.position.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.contextMenu.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/md5.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/Base64.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/base64_1.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/public.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/spark-md5.js"></script>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=ClubNews/index&state=721';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+<div class="box">
+    <div class="box-title c">
+        <h1>当前界面：资讯》资讯发布》发布资讯</h1>
+    </div><!--box-title end-->
+    <div class="box-content">
+        <div class="box-header">
+            <a class="btn" href="/qmdd2018/index.php?r=clubNews/create"><i class="fa fa-plus"></i>添加</a>
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+            <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>删除</a>
+        </div><!--box-header end-->
+        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=ClubNews/index&state=721" method="get">
+                <input type="hidden" name="r" value="ClubNews/index">
+                <input type="hidden" name="news_type" value="">
+                <label style="margin-right:20px;">
+                    <span>类型：</span>
+                    <select name="news_type">
+                        <option value="">请选择</option>
+                                                <option value="883">图文</option>
+                                                <option value="884">图集</option>
+                                                <option value="885">视频</option>
+                                            </select>
+                </label>
+                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="编号/标题">
+                </label>
+                <button class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                        <th class="check"><input id="j-checkall" class="input-check" type="checkbox"></th>
+                        <th width="4%">序号</th>
+                        <th width="5%">类型</th>
+                        <th width="9%">编号</th>
+                        <th width="10%">缩略图</th>
+                        <th width="24%">标题</th>
+                        <th style='display: none;'>发布单位</th>
+                        <!-- 隐藏 发布单位 表头代码 -->
+                        <th width="5%" style="display: none;">排序号</th>
+                        <!-- 隐藏 排序号 表头代码 -->
+                        <th width="7%">状态</th>
+                        <!-- <th style='text-align: center;'>点击量</th> -->
+                        <!-- 保存 点击量 表头代码 -->
+                        <th width="12%">上下线时间</th>
+                        <!-- 备份 -->
+                        <!-- <th style='text-align: center;'>上线时间</th> -->
+                        <!-- <th style='text-align: center;'>下线时间</th> -->
+                        <!-- 备份 -->
+                        <th width="12%">操作时间</th>
+                        <th width="10%">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="table_html">
+                                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="851"></td>
+                        <td><span class="num num-1">1</span></td>
+                        <td>图文</td>
+                        <td>201910300007</td>
+                        <td><a href="https://upload.gfinter.net/2021/05/20/1621513363915_0.png" target="_blank"><img src="https://upload.gfinter.net/2021/05/20/1621513363915_0.png" style="max-height:100px; max-width:100px;"></a></td>
+                        <td>今天是</td>
+                        <td style='display: none;'>GF平台运维事业群</td>
+                        <!-- 隐藏 俱乐部 代码 -->
+                        <td style="display: none;">0</td>
+                        <!-- 隐藏 排序号 代码 -->
+                        <td>编辑中</td>
+                        <td style='display: none;'>0</td>
+                        <!-- 隐藏 点击量 代码 -->
+                        <td>2021-04-26 20:22:19<br>
+                            2021-06-05 20:22:23</td>
+                        <td>2021-05-20 20:22:48</td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubNews/update&id=851" title="编辑"><i class="fa fa-edit"></i></a>
+                            <a class="btn" href="javascript:;" onclick="we.dele('851', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="850"></td>
+                        <td><span class="num num-1">2</span></td>
+                        <td>图文</td>
+                        <td>201910300006</td>
+                        <td><a href="https://upload.gfinter.net/2021/05/20/1621512857245_0.png" target="_blank"><img src="https://upload.gfinter.net/2021/05/20/1621512857245_0.png" style="max-height:100px; max-width:100px;"></a></td>
+                        <td>问问二维</td>
+                        <td style='display: none;'>GF平台运维事业群</td>
+                        <!-- 隐藏 俱乐部 代码 -->
+                        <td style="display: none;">0</td>
+                        <!-- 隐藏 排序号 代码 -->
+                        <td>编辑中</td>
+                        <td style='display: none;'>0</td>
+                        <!-- 隐藏 点击量 代码 -->
+                        <td>2021-05-02 20:13:58<br>
+                            2021-06-05 20:14:02</td>
+                        <td>2021-05-20 20:14:22</td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubNews/update&id=850" title="编辑"><i class="fa fa-edit"></i></a>
+                            <a class="btn" href="javascript:;" onclick="we.dele('850', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="849"></td>
+                        <td><span class="num num-1">3</span></td>
+                        <td>图文</td>
+                        <td>201910300005</td>
+                        <td><a href="https://upload.gfinter.net/2021/05/20/1621512661436_0.png" target="_blank"><img src="https://upload.gfinter.net/2021/05/20/1621512661436_0.png" style="max-height:100px; max-width:100px;"></a></td>
+                        <td>按时大大大叔大叔大</td>
+                        <td style='display: none;'>GF平台运维事业群</td>
+                        <!-- 隐藏 俱乐部 代码 -->
+                        <td style="display: none;">0</td>
+                        <!-- 隐藏 排序号 代码 -->
+                        <td>编辑中</td>
+                        <td style='display: none;'>0</td>
+                        <!-- 隐藏 点击量 代码 -->
+                        <td>2021-03-29 20:10:42<br>
+                            2021-08-26 20:10:29</td>
+                        <td>2021-05-20 20:13:46</td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubNews/update&id=849" title="编辑"><i class="fa fa-edit"></i></a>
+                            <a class="btn" href="javascript:;" onclick="we.dele('849', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="848"></td>
+                        <td><span class="num num-1">4</span></td>
+                        <td>图文</td>
+                        <td>201910300004</td>
+                        <td><a href="https://upload.gfinter.net/2021/05/20/1621510839042_0.png" target="_blank"><img src="https://upload.gfinter.net/2021/05/20/1621510839042_0.png" style="max-height:100px; max-width:100px;"></a></td>
+                        <td>达到</td>
+                        <td style='display: none;'>GF平台运维事业群</td>
+                        <!-- 隐藏 俱乐部 代码 -->
+                        <td style="display: none;">0</td>
+                        <!-- 隐藏 排序号 代码 -->
+                        <td>编辑中</td>
+                        <td style='display: none;'>0</td>
+                        <!-- 隐藏 点击量 代码 -->
+                        <td>2021-05-05 19:40:17<br>
+                            2021-05-04 19:40:21</td>
+                        <td>2021-05-20 20:10:15</td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubNews/update&id=848" title="编辑"><i class="fa fa-edit"></i></a>
+                            <a class="btn" href="javascript:;" onclick="we.dele('848', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="846"></td>
+                        <td><span class="num num-1">5</span></td>
+                        <td>图文</td>
+                        <td>201910300002</td>
+                        <td><a href="https://upload.gfinter.net/2021/05/20/1621510293624_0.PNG" target="_blank"><img src="https://upload.gfinter.net/2021/05/20/1621510293624_0.PNG" style="max-height:100px; max-width:100px;"></a></td>
+                        <td>奥术大师大所大所</td>
+                        <td style='display: none;'>GF平台运维事业群</td>
+                        <!-- 隐藏 俱乐部 代码 -->
+                        <td style="display: none;">0</td>
+                        <!-- 隐藏 排序号 代码 -->
+                        <td>编辑中</td>
+                        <td style='display: none;'>0</td>
+                        <!-- 隐藏 点击量 代码 -->
+                        <td>2021-03-03 19:31:18<br>
+                            2021-03-24 19:31:13</td>
+                        <td>2021-05-20 19:31:37</td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubNews/update&id=846" title="编辑"><i class="fa fa-edit"></i></a>
+                            <a class="btn" href="javascript:;" onclick="we.dele('846', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="845"></td>
+                        <td><span class="num num-1">6</span></td>
+                        <td>图集</td>
+                        <td>201906250004</td>
+                        <td><a href="https://upload.gfinter.net/2021/05/20/1621483542577_0.jpg" target="_blank"><img src="https://upload.gfinter.net/2021/05/20/1621483542577_0.jpg" style="max-height:100px; max-width:100px;"></a></td>
+                        <td>图集测试</td>
+                        <td style='display: none;'>GF平台运维事业群</td>
+                        <!-- 隐藏 俱乐部 代码 -->
+                        <td style="display: none;">0</td>
+                        <!-- 隐藏 排序号 代码 -->
+                        <td>编辑中</td>
+                        <td style='display: none;'>0</td>
+                        <!-- 隐藏 点击量 代码 -->
+                        <td>2021-05-20 15:21:50<br>
+                            2021-05-31 15:21:55</td>
+                        <td>2021-05-20 15:27:49</td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubNews/update&id=845" title="编辑"><i class="fa fa-edit"></i></a>
+                            <a class="btn" href="javascript:;" onclick="we.dele('845', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!--box-table end-->
+        
+        <div class="box-page c" id="page_html" ></div>
+        
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+var deleteUrl = '/qmdd2018/index.php?r=clubNews/delete&id=ID';
+$(function(){
+    var $start_time=$('#start_date');
+    var $end_time=$('#end_date');
+	$start_time.on('click', function(){
+WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss'});});
+$end_time.on('click', function(){
+WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd HH:mm:ss '});});
+});
+</script>
+
+<script> var mfields=["<input class=\"input-check\" type=\"checkbox\" value=\"{{CHtml::encode($v->id)}}\">","<span class=\"num num-1\">{{($pages->currentPage)*($pages->pageSize)+$index}<\/span>","{{$v->news_type_name}}","{{$v->news_code}}","<a href=\"{{$basepath->F_WWWPATH.$v->news_pic}}\" target=\"_blank\"><img src=\"{{$basepath->F_WWWPATH.$v->news_pic}}\" style=\"max-height:100px; max-width:100px;\"><\/a>","{{$v->news_title}}","{{$v->news_club_name}}","{{$v->order_num}}","{{$v->state_name}}","{{$v->news_clicked}}","{{$v->news_date_start}}<br>{{$v->news_date_end}}","{{$v->uDate}}","                            <a class=\"btn\" href=\"{{$this->createUrl('update', array('id'=>$v->id))}}\" title=\"编辑\"><i class=\"fa fa-edit\"><\/i><\/a>                            <a class=\"btn\" href=\"javascript:;\" onclick=\"we.dele('{{$v->id}}', deleteUrl);\" title=\"删除\"><i class=\"fa fa-trash-o\"><\/i><\/a>                        "]</script>
+</body>
+</html>

@@ -1,0 +1,618 @@
+<?php// var_dump($_REQUEST);?>
+<div class="box">
+    <div class="box-title c">
+        <h1>当前界面：首页》单位入会管理》入会待审核</h1>
+        <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+    </div><!--box-title end-->
+    <div class="box-content">
+                <div class="box-search">
+            <form action="/qmdd2018/index.php?r=gfPartnerMemberApply/index_club&index=3&type=404" method="get">
+                <input type="hidden" name="r" value="gfPartnerMemberApply/index_club">
+                <input type="hidden" name="index" id="index" value="3">
+                <input type="hidden" name="state" id="state" value="">
+                <input type="hidden" name="type" value="404">
+				<!-- <label style="margin-right:20px;">
+                    <span>会员类型：</span>
+                                    </label> -->
+				<label style="margin-right:20px;">
+                    <span>项目：</span>
+                    <select name="project_id" ><option value="">请选择</option><option value="188">太极</option><option value="222">散打</option><option value="235">跆拳道</option><option value="236">拳击</option><option value="605">健美操</option><option value="606">健美</option><option value="607">技巧运动</option><option value="608">运动飞机</option><option value="614">航空模型</option><option value="621">田径</option><option value="650">篮球</option><option value="653">棒球</option><option value="654">掷球</option><option value="655">羽毛球</option><option value="656">冬季两项</option><option value="659">搏击</option><option value="660">自行车</option><option value="665">热气球</option><option value="671">飞镖</option><option value="672">保龄球</option><option value="673">赛艇</option><option value="674">台球</option><option value="675">建筑</option><option value="676">汽车</option><option value="677">冰壶</option><option value="678">登山</option><option value="683">信鸽</option><option value="684">舞龙舞狮</option><option value="685">龙舟</option><option value="686">导引养生功</option><option value="687">潜水</option><option value="689">体育舞蹈</option><option value="690">跳水</option><option value="693">马术</option><option value="697">电子竞技</option><option value="698">足球</option><option value="702">击剑</option><option value="703">脚斗士</option><option value="704">钓鱼</option><option value="705">门球</option><option value="706">高尔夫球</option><option value="707">滑翔</option><option value="712">体操</option><option value="716">手球</option><option value="717">曲棍球</option><option value="718">冰球</option><option value="719">柔道</option><option value="720">跳伞</option><option value="727">风筝</option><option value="728">拉丁舞</option><option value="729">救生</option><option value="730">摩托艇</option><option value="731">摩托车</option><option value="732">现代五项</option><option value="738">泰拳</option><option value="739">双节棍</option><option value="740">新媒体</option><option value="741">航海模型</option><option value="748">定向</option><option value="754">健身气功</option><option value="755">壁球</option><option value="756">橄榄球</option><option value="757">业余无线电</option><option value="761">轮滑</option><option value="762">帆船</option><option value="763">垒球</option><option value="764">篆刻</option><option value="765">街舞</option><option value="766">藤球</option><option value="767">滑雪</option><option value="773">皮划艇</option><option value="774">滑板</option><option value="777">游泳</option><option value="778">花样游泳</option><option value="796">雕塑</option><option value="797">滑冰</option><option value="801">毽球</option><option value="802">短兵</option><option value="803">网球</option><option value="804">软式网球</option><option value="805">铁人三项</option><option value="809">乒乓球</option><option value="810">拔河</option><option value="811">射箭</option><option value="812">车辆模型</option><option value="819">排球</option><option value="822">咏春</option><option value="823">举重</option><option value="824">水球</option><option value="827">摔跤</option><option value="828">滑水</option><option value="829">武术套路</option><option value="830">棋类</option><option value="836">桥牌</option><option value="837">设计</option><option value="838">书法</option><option value="839">工艺</option><option value="840">二胡                            </option><option value="841">吉他                            </option><option value="842">绘画</option><option value="843">摄影</option><option value="844">魔术                            </option><option value="846">帆船 </option><option value="865">1</option></select>                </label>
+                                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="请输入编号/单位">
+                </label>
+                <button id="submit_button" class="btn btn-blue" type="submit">查询</button>
+                <input id="is_excel" type="hidden" name="is_excel" value="0">
+                <!-- <button class="btn btn-blue" type="button" onclick="javascript:excel();" >导出</button> -->
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                                                    <th class="check"><input id="j-checkall" class="input-check" type="checkbox"></th>
+                            <th>序号</th>
+                            <th>所属单位名称</th>
+                            <th>单位类型</th>
+                            <th>加入项目</th>
+                            <th>联系人</th>
+                            <th>联系电话</th>
+                            <th>入会方式</th>
+                            <th>状态</th>
+                            <th>申请日期</th>
+                            <th>操作</th>
+                                            </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                                                    <td class="check check-item"><input class="input-check" type="checkbox" value="667"></td>
+                            <td><span class="num num-1">1</span></td>
+                            <td>GF平台运维事业群</td>
+                            <td>集团公司</td>
+                            <td>太极</td>
+                            <td></td>
+                            <td></td>
+                            <td>邀请入会</td>
+                            <td>邀请中</td>
+                            <td>2019-09-28 16:03:33</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=gfPartnerMemberApply/update_club&id=667&type=404"  title="编辑">编辑</a>                                                            </td>
+                                            </tr>
+                </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=gfPartnerMemberApply/delete&id=ID';
+    var unuseUrl = '/qmdd2018/index.php?r=gfPartnerMemberApply/unuse&id=ID&new=auth_state&del=1485';
+    var cancelUrl = '/qmdd2018/index.php?r=gfPartnerMemberApply/cancel&id=ID&new=state&del=374';
+    var cancelUrl2 = '/qmdd2018/index.php?r=gfPartnerMemberApply/cancel&id=ID&new=auth_state&del=931';
+    var unuse = function(id, url) {
+        we.overlay('show');
+        if (id == '' || id == undefined) {
+            we.msg('error', '请选择要申请退出的单位', function() {
+                we.loading('hide');
+            });
+            return false;
+        }
+        var fnUnuse = function() {
+            url = url.replace(/ID/, id);
+            console.log(url)
+            $.ajax({
+                type: 'get',
+                url: url,
+                dataType: 'json',
+                success: function(data) {
+                    if (data.status == 1) {
+                        we.msg('check', data.msg, function() {
+                            we.loading('hide');
+                            we.reload();
+                        });
+                    } else {
+                        we.msg('error', data.msg, function() {
+                            we.loading('hide');
+                        });
+                    }
+                }
+            });
+        };
+        $.fallr('show', {
+            buttons: {
+                button1: {text: '申请退出', danger: true, onclick: fnUnuse},
+                button2: {text: '取消'}
+            },
+            content: '确定申请退出？',
+            icon: 'trash',
+            afterHide: function() {
+                we.loading('hide');
+            }
+        });
+    };
+
+    $(function(){
+        var $effective_start_time=$('#effective_start_time');
+        var $effective_end_time=$('#effective_end_time');
+        $effective_start_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd'});
+        });
+        $effective_end_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd'});
+        });
+    });
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#state').val(371);
+            $('#index').val('');
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('submit_button').click();
+        }
+    }
+
+    function excel(){
+        $("#is_excel").val(1);
+        $("#submit_button").click();
+        $("#is_excel").val(0);
+    }
+</script><?php// var_dump($_REQUEST);?>
+<div class="box">
+    <div class="box-title c">
+        <h1>当前界面：首页 》单位入会管理 》退会列表</h1>
+        <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+    </div><!--box-title end-->
+    <div class="box-content">
+                <div class="box-search">
+            <form action="/qmdd2018/index.php?r=gfPartnerMemberApply/index_club&index=4&type=404" method="get">
+                <input type="hidden" name="r" value="gfPartnerMemberApply/index_club">
+                <input type="hidden" name="index" id="index" value="4">
+                <input type="hidden" name="state" id="state" value="">
+                <input type="hidden" name="type" value="404">
+				<!-- <label style="margin-right:20px;">
+                    <span>会员类型：</span>
+                                    </label> -->
+				<label style="margin-right:20px;">
+                    <span>项目：</span>
+                    <select name="project_id" ><option value="">请选择</option><option value="188">太极</option><option value="222">散打</option><option value="235">跆拳道</option><option value="236">拳击</option><option value="605">健美操</option><option value="606">健美</option><option value="607">技巧运动</option><option value="608">运动飞机</option><option value="614">航空模型</option><option value="621">田径</option><option value="650">篮球</option><option value="653">棒球</option><option value="654">掷球</option><option value="655">羽毛球</option><option value="656">冬季两项</option><option value="659">搏击</option><option value="660">自行车</option><option value="665">热气球</option><option value="671">飞镖</option><option value="672">保龄球</option><option value="673">赛艇</option><option value="674">台球</option><option value="675">建筑</option><option value="676">汽车</option><option value="677">冰壶</option><option value="678">登山</option><option value="683">信鸽</option><option value="684">舞龙舞狮</option><option value="685">龙舟</option><option value="686">导引养生功</option><option value="687">潜水</option><option value="689">体育舞蹈</option><option value="690">跳水</option><option value="693">马术</option><option value="697">电子竞技</option><option value="698">足球</option><option value="702">击剑</option><option value="703">脚斗士</option><option value="704">钓鱼</option><option value="705">门球</option><option value="706">高尔夫球</option><option value="707">滑翔</option><option value="712">体操</option><option value="716">手球</option><option value="717">曲棍球</option><option value="718">冰球</option><option value="719">柔道</option><option value="720">跳伞</option><option value="727">风筝</option><option value="728">拉丁舞</option><option value="729">救生</option><option value="730">摩托艇</option><option value="731">摩托车</option><option value="732">现代五项</option><option value="738">泰拳</option><option value="739">双节棍</option><option value="740">新媒体</option><option value="741">航海模型</option><option value="748">定向</option><option value="754">健身气功</option><option value="755">壁球</option><option value="756">橄榄球</option><option value="757">业余无线电</option><option value="761">轮滑</option><option value="762">帆船</option><option value="763">垒球</option><option value="764">篆刻</option><option value="765">街舞</option><option value="766">藤球</option><option value="767">滑雪</option><option value="773">皮划艇</option><option value="774">滑板</option><option value="777">游泳</option><option value="778">花样游泳</option><option value="796">雕塑</option><option value="797">滑冰</option><option value="801">毽球</option><option value="802">短兵</option><option value="803">网球</option><option value="804">软式网球</option><option value="805">铁人三项</option><option value="809">乒乓球</option><option value="810">拔河</option><option value="811">射箭</option><option value="812">车辆模型</option><option value="819">排球</option><option value="822">咏春</option><option value="823">举重</option><option value="824">水球</option><option value="827">摔跤</option><option value="828">滑水</option><option value="829">武术套路</option><option value="830">棋类</option><option value="836">桥牌</option><option value="837">设计</option><option value="838">书法</option><option value="839">工艺</option><option value="840">二胡                            </option><option value="841">吉他                            </option><option value="842">绘画</option><option value="843">摄影</option><option value="844">魔术                            </option><option value="846">帆船 </option><option value="865">1</option></select>                </label>
+                                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="请输入编号/单位">
+                </label>
+                <button id="submit_button" class="btn btn-blue" type="submit">查询</button>
+                <input id="is_excel" type="hidden" name="is_excel" value="0">
+                <!-- <button class="btn btn-blue" type="button" onclick="javascript:excel();" >导出</button> -->
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                                                    <th class="check"><input id="j-checkall" class="input-check" type="checkbox"></th>
+                            <th>序号</th>
+                            <th>所属单位名称</th>
+                            <th>单位类型</th>
+                            <th>加入项目</th>
+                            <th>会员编号</th>
+                            <th>联系人</th>
+                            <th>联系电话</th>
+                            <th>状态</th>
+                            <th>申请解除时间</th>
+                            <th>正式解除时间</th>
+                            <th>操作</th>
+                                            </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                                                    <td class="check check-item"><input class="input-check" type="checkbox" value="658"></td>
+                            <td><span class="num num-1">1</span></td>
+                            <td>GF平台运维事业群</td>
+                            <td>集团公司</td>
+                            <td>跆拳道</td>
+                            <td></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>已退会</td>
+                            <td></td>
+                            <td>2019-09-12 10:55:39</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=gfPartnerMemberApply/update_club&id=658&type=404"  title="编辑">编辑</a>                                                            </td>
+                                            </tr>
+                </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=gfPartnerMemberApply/delete&id=ID';
+    var unuseUrl = '/qmdd2018/index.php?r=gfPartnerMemberApply/unuse&id=ID&new=auth_state&del=1485';
+    var cancelUrl = '/qmdd2018/index.php?r=gfPartnerMemberApply/cancel&id=ID&new=state&del=374';
+    var cancelUrl2 = '/qmdd2018/index.php?r=gfPartnerMemberApply/cancel&id=ID&new=auth_state&del=931';
+    var unuse = function(id, url) {
+        we.overlay('show');
+        if (id == '' || id == undefined) {
+            we.msg('error', '请选择要申请退出的单位', function() {
+                we.loading('hide');
+            });
+            return false;
+        }
+        var fnUnuse = function() {
+            url = url.replace(/ID/, id);
+            console.log(url)
+            $.ajax({
+                type: 'get',
+                url: url,
+                dataType: 'json',
+                success: function(data) {
+                    if (data.status == 1) {
+                        we.msg('check', data.msg, function() {
+                            we.loading('hide');
+                            we.reload();
+                        });
+                    } else {
+                        we.msg('error', data.msg, function() {
+                            we.loading('hide');
+                        });
+                    }
+                }
+            });
+        };
+        $.fallr('show', {
+            buttons: {
+                button1: {text: '申请退出', danger: true, onclick: fnUnuse},
+                button2: {text: '取消'}
+            },
+            content: '确定申请退出？',
+            icon: 'trash',
+            afterHide: function() {
+                we.loading('hide');
+            }
+        });
+    };
+
+    $(function(){
+        var $effective_start_time=$('#effective_start_time');
+        var $effective_end_time=$('#effective_end_time');
+        $effective_start_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd'});
+        });
+        $effective_end_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd'});
+        });
+    });
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#state').val(371);
+            $('#index').val('');
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('submit_button').click();
+        }
+    }
+
+    function excel(){
+        $("#is_excel").val(1);
+        $("#submit_button").click();
+        $("#is_excel").val(0);
+    }
+</script><?php// var_dump($_REQUEST);?>
+<div class="box">
+    <div class="box-title c">
+        <h1>当前界面：首页 》单位入会管理 》退会列表</h1>
+        <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+    </div><!--box-title end-->
+    <div class="box-content">
+                <div class="box-search">
+            <form action="/qmdd2018/index.php?r=gfPartnerMemberApply/index_club&index=4&type=404" method="get">
+                <input type="hidden" name="r" value="gfPartnerMemberApply/index_club">
+                <input type="hidden" name="index" id="index" value="4">
+                <input type="hidden" name="state" id="state" value="">
+                <input type="hidden" name="type" value="404">
+				<!-- <label style="margin-right:20px;">
+                    <span>会员类型：</span>
+                                    </label> -->
+				<label style="margin-right:20px;">
+                    <span>项目：</span>
+                    <select name="project_id" ><option value="">请选择</option><option value="188">太极</option><option value="222">散打</option><option value="235">跆拳道</option><option value="236">拳击</option><option value="605">健美操</option><option value="606">健美</option><option value="607">技巧运动</option><option value="608">运动飞机</option><option value="614">航空模型</option><option value="621">田径</option><option value="650">篮球</option><option value="653">棒球</option><option value="654">掷球</option><option value="655">羽毛球</option><option value="656">冬季两项</option><option value="659">搏击</option><option value="660">自行车</option><option value="665">热气球</option><option value="671">飞镖</option><option value="672">保龄球</option><option value="673">赛艇</option><option value="674">台球</option><option value="675">建筑</option><option value="676">汽车</option><option value="677">冰壶</option><option value="678">登山</option><option value="683">信鸽</option><option value="684">舞龙舞狮</option><option value="685">龙舟</option><option value="686">导引养生功</option><option value="687">潜水</option><option value="689">体育舞蹈</option><option value="690">跳水</option><option value="693">马术</option><option value="697">电子竞技</option><option value="698">足球</option><option value="702">击剑</option><option value="703">脚斗士</option><option value="704">钓鱼</option><option value="705">门球</option><option value="706">高尔夫球</option><option value="707">滑翔</option><option value="712">体操</option><option value="716">手球</option><option value="717">曲棍球</option><option value="718">冰球</option><option value="719">柔道</option><option value="720">跳伞</option><option value="727">风筝</option><option value="728">拉丁舞</option><option value="729">救生</option><option value="730">摩托艇</option><option value="731">摩托车</option><option value="732">现代五项</option><option value="738">泰拳</option><option value="739">双节棍</option><option value="740">新媒体</option><option value="741">航海模型</option><option value="748">定向</option><option value="754">健身气功</option><option value="755">壁球</option><option value="756">橄榄球</option><option value="757">业余无线电</option><option value="761">轮滑</option><option value="762">帆船</option><option value="763">垒球</option><option value="764">篆刻</option><option value="765">街舞</option><option value="766">藤球</option><option value="767">滑雪</option><option value="773">皮划艇</option><option value="774">滑板</option><option value="777">游泳</option><option value="778">花样游泳</option><option value="796">雕塑</option><option value="797">滑冰</option><option value="801">毽球</option><option value="802">短兵</option><option value="803">网球</option><option value="804">软式网球</option><option value="805">铁人三项</option><option value="809">乒乓球</option><option value="810">拔河</option><option value="811">射箭</option><option value="812">车辆模型</option><option value="819">排球</option><option value="822">咏春</option><option value="823">举重</option><option value="824">水球</option><option value="827">摔跤</option><option value="828">滑水</option><option value="829">武术套路</option><option value="830">棋类</option><option value="836">桥牌</option><option value="837">设计</option><option value="838">书法</option><option value="839">工艺</option><option value="840">二胡                            </option><option value="841">吉他                            </option><option value="842">绘画</option><option value="843">摄影</option><option value="844">魔术                            </option><option value="846">帆船 </option><option value="865">1</option></select>                </label>
+                                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="请输入编号/单位">
+                </label>
+                <button id="submit_button" class="btn btn-blue" type="submit">查询</button>
+                <input id="is_excel" type="hidden" name="is_excel" value="0">
+                <!-- <button class="btn btn-blue" type="button" onclick="javascript:excel();" >导出</button> -->
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                                                    <th class="check"><input id="j-checkall" class="input-check" type="checkbox"></th>
+                            <th>序号</th>
+                            <th>所属单位名称</th>
+                            <th>单位类型</th>
+                            <th>加入项目</th>
+                            <th>会员编号</th>
+                            <th>联系人</th>
+                            <th>联系电话</th>
+                            <th>状态</th>
+                            <th>申请解除时间</th>
+                            <th>正式解除时间</th>
+                            <th>操作</th>
+                                            </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                                                    <td class="check check-item"><input class="input-check" type="checkbox" value="658"></td>
+                            <td><span class="num num-1">1</span></td>
+                            <td>GF平台运维事业群</td>
+                            <td>集团公司</td>
+                            <td>跆拳道</td>
+                            <td></td>
+                            <td>1</td>
+                            <td>1</td>
+                            <td>已退会</td>
+                            <td></td>
+                            <td>2019-09-12 10:55:39</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=gfPartnerMemberApply/update_club&id=658&type=404"  title="编辑">编辑</a>                                                            </td>
+                                            </tr>
+                </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=gfPartnerMemberApply/delete&id=ID';
+    var unuseUrl = '/qmdd2018/index.php?r=gfPartnerMemberApply/unuse&id=ID&new=auth_state&del=1485';
+    var cancelUrl = '/qmdd2018/index.php?r=gfPartnerMemberApply/cancel&id=ID&new=state&del=374';
+    var cancelUrl2 = '/qmdd2018/index.php?r=gfPartnerMemberApply/cancel&id=ID&new=auth_state&del=931';
+    var unuse = function(id, url) {
+        we.overlay('show');
+        if (id == '' || id == undefined) {
+            we.msg('error', '请选择要申请退出的单位', function() {
+                we.loading('hide');
+            });
+            return false;
+        }
+        var fnUnuse = function() {
+            url = url.replace(/ID/, id);
+            console.log(url)
+            $.ajax({
+                type: 'get',
+                url: url,
+                dataType: 'json',
+                success: function(data) {
+                    if (data.status == 1) {
+                        we.msg('check', data.msg, function() {
+                            we.loading('hide');
+                            we.reload();
+                        });
+                    } else {
+                        we.msg('error', data.msg, function() {
+                            we.loading('hide');
+                        });
+                    }
+                }
+            });
+        };
+        $.fallr('show', {
+            buttons: {
+                button1: {text: '申请退出', danger: true, onclick: fnUnuse},
+                button2: {text: '取消'}
+            },
+            content: '确定申请退出？',
+            icon: 'trash',
+            afterHide: function() {
+                we.loading('hide');
+            }
+        });
+    };
+
+    $(function(){
+        var $effective_start_time=$('#effective_start_time');
+        var $effective_end_time=$('#effective_end_time');
+        $effective_start_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd'});
+        });
+        $effective_end_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd'});
+        });
+    });
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#state').val(371);
+            $('#index').val('');
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('submit_button').click();
+        }
+    }
+
+    function excel(){
+        $("#is_excel").val(1);
+        $("#submit_button").click();
+        $("#is_excel").val(0);
+    }
+</script><?php// var_dump($_REQUEST);?>
+<div class="box">
+    <div class="box-title c">
+        <h1>当前界面：首页 》单位入会管理 》取消/审核未通过</h1>
+        <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+    </div><!--box-title end-->
+    <div class="box-content">
+                <div class="box-search">
+            <form action="/qmdd2018/index.php?r=gfPartnerMemberApply/index_club&index=2&type=404" method="get">
+                <input type="hidden" name="r" value="gfPartnerMemberApply/index_club">
+                <input type="hidden" name="index" id="index" value="2">
+                <input type="hidden" name="state" id="state" value="">
+                <input type="hidden" name="type" value="404">
+				<!-- <label style="margin-right:20px;">
+                    <span>会员类型：</span>
+                                    </label> -->
+				<label style="margin-right:20px;">
+                    <span>项目：</span>
+                    <select name="project_id" ><option value="">请选择</option><option value="188">太极</option><option value="222">散打</option><option value="235">跆拳道</option><option value="236">拳击</option><option value="605">健美操</option><option value="606">健美</option><option value="607">技巧运动</option><option value="608">运动飞机</option><option value="614">航空模型</option><option value="621">田径</option><option value="650">篮球</option><option value="653">棒球</option><option value="654">掷球</option><option value="655">羽毛球</option><option value="656">冬季两项</option><option value="659">搏击</option><option value="660">自行车</option><option value="665">热气球</option><option value="671">飞镖</option><option value="672">保龄球</option><option value="673">赛艇</option><option value="674">台球</option><option value="675">建筑</option><option value="676">汽车</option><option value="677">冰壶</option><option value="678">登山</option><option value="683">信鸽</option><option value="684">舞龙舞狮</option><option value="685">龙舟</option><option value="686">导引养生功</option><option value="687">潜水</option><option value="689">体育舞蹈</option><option value="690">跳水</option><option value="693">马术</option><option value="697">电子竞技</option><option value="698">足球</option><option value="702">击剑</option><option value="703">脚斗士</option><option value="704">钓鱼</option><option value="705">门球</option><option value="706">高尔夫球</option><option value="707">滑翔</option><option value="712">体操</option><option value="716">手球</option><option value="717">曲棍球</option><option value="718">冰球</option><option value="719">柔道</option><option value="720">跳伞</option><option value="727">风筝</option><option value="728">拉丁舞</option><option value="729">救生</option><option value="730">摩托艇</option><option value="731">摩托车</option><option value="732">现代五项</option><option value="738">泰拳</option><option value="739">双节棍</option><option value="740">新媒体</option><option value="741">航海模型</option><option value="748">定向</option><option value="754">健身气功</option><option value="755">壁球</option><option value="756">橄榄球</option><option value="757">业余无线电</option><option value="761">轮滑</option><option value="762">帆船</option><option value="763">垒球</option><option value="764">篆刻</option><option value="765">街舞</option><option value="766">藤球</option><option value="767">滑雪</option><option value="773">皮划艇</option><option value="774">滑板</option><option value="777">游泳</option><option value="778">花样游泳</option><option value="796">雕塑</option><option value="797">滑冰</option><option value="801">毽球</option><option value="802">短兵</option><option value="803">网球</option><option value="804">软式网球</option><option value="805">铁人三项</option><option value="809">乒乓球</option><option value="810">拔河</option><option value="811">射箭</option><option value="812">车辆模型</option><option value="819">排球</option><option value="822">咏春</option><option value="823">举重</option><option value="824">水球</option><option value="827">摔跤</option><option value="828">滑水</option><option value="829">武术套路</option><option value="830">棋类</option><option value="836">桥牌</option><option value="837">设计</option><option value="838">书法</option><option value="839">工艺</option><option value="840">二胡                            </option><option value="841">吉他                            </option><option value="842">绘画</option><option value="843">摄影</option><option value="844">魔术                            </option><option value="846">帆船 </option><option value="865">1</option></select>                </label>
+                                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="请输入编号/单位">
+                </label>
+                <button id="submit_button" class="btn btn-blue" type="submit">查询</button>
+                <input id="is_excel" type="hidden" name="is_excel" value="0">
+                <!-- <button class="btn btn-blue" type="button" onclick="javascript:excel();" >导出</button> -->
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                                                    <th class="check"><input id="j-checkall" class="input-check" type="checkbox"></th>
+                            <th>序号</th>
+                            <th>所属单位名称</th>
+                            <th>单位类型</th>
+                            <th>加入项目</th>
+                            <th>联系人</th>
+                            <th>联系电话</th>
+                            <th>审核状态</th>
+                            <th>操作时间</th>
+                            <th>操作</th>
+                                            </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                                                    <td class="check check-item"><input class="input-check" type="checkbox" value="657"></td>
+                            <td><span class="num num-1">1</span></td>
+                            <td>GF平台运维事业群</td>
+                            <td>集团公司</td>
+                            <td>跆拳道</td>
+                            <td></td>
+                            <td></td>
+                            <td>  
+                                已撤销    
+                            </td>
+                            <td>2019-09-12 10:28:14</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=gfPartnerMemberApply/update_club&id=657&type=404"  title="编辑">编辑</a>                            </td>
+                                            </tr>
+                    <tr>
+                                                    <td class="check check-item"><input class="input-check" type="checkbox" value="656"></td>
+                            <td><span class="num num-1">2</span></td>
+                            <td>GF平台运维事业群</td>
+                            <td>集团公司</td>
+                            <td>太极</td>
+                            <td></td>
+                            <td></td>
+                            <td>  
+                                已撤销    
+                            </td>
+                            <td>2019-09-11 09:08:31</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=gfPartnerMemberApply/update_club&id=656&type=404"  title="编辑">编辑</a>                            </td>
+                                            </tr>
+                    <tr>
+                                                    <td class="check check-item"><input class="input-check" type="checkbox" value="655"></td>
+                            <td><span class="num num-1">3</span></td>
+                            <td>GF平台运维事业群</td>
+                            <td>集团公司</td>
+                            <td>台球</td>
+                            <td></td>
+                            <td></td>
+                            <td>  
+                                已撤销    
+                            </td>
+                            <td>2019-09-10 18:03:33</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=gfPartnerMemberApply/update_club&id=655&type=404"  title="编辑">编辑</a>                            </td>
+                                            </tr>
+                    <tr>
+                                                    <td class="check check-item"><input class="input-check" type="checkbox" value="654"></td>
+                            <td><span class="num num-1">4</span></td>
+                            <td>GF平台运维事业群</td>
+                            <td>集团公司</td>
+                            <td>跆拳道</td>
+                            <td></td>
+                            <td></td>
+                            <td>  
+                                已撤销    
+                            </td>
+                            <td>2019-09-10 18:03:38</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=gfPartnerMemberApply/update_club&id=654&type=404"  title="编辑">编辑</a>                            </td>
+                                            </tr>
+                </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=gfPartnerMemberApply/delete&id=ID';
+    var unuseUrl = '/qmdd2018/index.php?r=gfPartnerMemberApply/unuse&id=ID&new=auth_state&del=1485';
+    var cancelUrl = '/qmdd2018/index.php?r=gfPartnerMemberApply/cancel&id=ID&new=state&del=374';
+    var cancelUrl2 = '/qmdd2018/index.php?r=gfPartnerMemberApply/cancel&id=ID&new=auth_state&del=931';
+    var unuse = function(id, url) {
+        we.overlay('show');
+        if (id == '' || id == undefined) {
+            we.msg('error', '请选择要申请退出的单位', function() {
+                we.loading('hide');
+            });
+            return false;
+        }
+        var fnUnuse = function() {
+            url = url.replace(/ID/, id);
+            console.log(url)
+            $.ajax({
+                type: 'get',
+                url: url,
+                dataType: 'json',
+                success: function(data) {
+                    if (data.status == 1) {
+                        we.msg('check', data.msg, function() {
+                            we.loading('hide');
+                            we.reload();
+                        });
+                    } else {
+                        we.msg('error', data.msg, function() {
+                            we.loading('hide');
+                        });
+                    }
+                }
+            });
+        };
+        $.fallr('show', {
+            buttons: {
+                button1: {text: '申请退出', danger: true, onclick: fnUnuse},
+                button2: {text: '取消'}
+            },
+            content: '确定申请退出？',
+            icon: 'trash',
+            afterHide: function() {
+                we.loading('hide');
+            }
+        });
+    };
+
+    $(function(){
+        var $effective_start_time=$('#effective_start_time');
+        var $effective_end_time=$('#effective_end_time');
+        $effective_start_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd'});
+        });
+        $effective_end_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd'});
+        });
+    });
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#state').val(371);
+            $('#index').val('');
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('submit_button').click();
+        }
+    }
+
+    function excel(){
+        $("#is_excel").val(1);
+        $("#submit_button").click();
+        $("#is_excel").val(0);
+    }
+</script>

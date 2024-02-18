@@ -1,0 +1,362 @@
+1
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+
+
+
+
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=projectList/index';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+
+<script>
+    var p_project=250</script>
+<div class="box">
+    <span style="float:right;padding-right:15px;">
+        <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+    </span>
+    <div class="box-title c"><h1>当前界面：项目》平台项目管理》平台项目列表</div><!--box-title end-->
+    <div class="box-content">
+    	<div class="box-header">
+            <a class="btn" href="/qmdd2018/index.php?r=projectList/create&pid=1"><i class="fa fa-plus"></i>添加</a>
+            <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>删除</a>
+        </div><!--box-header end-->
+        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=projectList/index" method="get">
+                <input type="hidden" name="r" value="projectList/index">
+                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="请输入国际编码或项目名称">
+                </label>
+                <button id="submit_button" class="btn btn-blue" type="submit">查询</button>
+                <input id="is_excel" type="hidden" name="is_excel" value="0">
+                <button class="btn btn-blue" type="button" onclick="javascript:excel();">导出</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                        <th class="check"><input id="j-checkall" class="input-check" type="checkbox"></th>
+                        <th class="list-id">序号</th>
+                        <th>项目编码</th>
+                        <th>项目名称(一级)</th>
+                        <th>项目名称(二级)</th>
+                        <th>英文名称</th>
+                        <th>是否上线</th>
+                        <th>是否显示</th>
+                        <th>更新时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr id="poj_605">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="605"></td>
+                        <td><span class="num num-1">1</span></td>
+                        <td>AD</td>
+                        <td>健美操</td>
+                        <td></td>
+                        <td>cs</td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2019-07-13 17:33:55</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                            <a class="btn" href="/qmdd2018/index.php?r=projectList/create&pid=2&fater_id=605">添加二级</a>
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=605" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('605', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr id="poj_606">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="606"></td>
+                        <td><span class="num num-1">2</span></td>
+                        <td>AE</td>
+                        <td>健美</td>
+                        <td></td>
+                        <td>Bodybuilding</td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2019-03-29 17:07:12</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                            <a class="btn" href="/qmdd2018/index.php?r=projectList/create&pid=2&fater_id=606">添加二级</a>
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=606" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('606', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr id="poj_607">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="607"></td>
+                        <td><span class="num num-1">3</span></td>
+                        <td>AG</td>
+                        <td>技巧运动</td>
+                        <td></td>
+                        <td>Acrobatic Gymnastics</td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2019-03-29 17:07:30</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                            <a class="btn" href="/qmdd2018/index.php?r=projectList/create&pid=2&fater_id=607">添加二级</a>
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=607" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('607', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr id="poj_608">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="608"></td>
+                        <td><span class="num num-1">4</span></td>
+                        <td>AI</td>
+                        <td>运动飞机</td>
+                        <td></td>
+                        <td>Sports aircraft</td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2019-03-29 17:07:45</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                            <a class="btn" href="/qmdd2018/index.php?r=projectList/create&pid=2&fater_id=608">添加二级</a>
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=608" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('608', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr id="poj_609">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="609"></td>
+                        <td><span class="num num-1">5</span></td>
+                        <td>AI01</td>
+                        <td></td>
+                        <td>超轻型飞机</td>
+                        <td></td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2016-12-07 12:12:28</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=609" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('609', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr id="poj_610">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="610"></td>
+                        <td><span class="num num-1">6</span></td>
+                        <td>AI02</td>
+                        <td></td>
+                        <td>轻型飞机</td>
+                        <td></td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2016-12-07 12:12:28</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=610" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('610', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr id="poj_611">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="611"></td>
+                        <td><span class="num num-1">7</span></td>
+                        <td>AI03</td>
+                        <td></td>
+                        <td>特技飞机</td>
+                        <td></td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2016-12-07 12:12:28</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=611" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('611', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr id="poj_612">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="612"></td>
+                        <td><span class="num num-1">8</span></td>
+                        <td>AI04</td>
+                        <td></td>
+                        <td>旋翼类运动飞机</td>
+                        <td></td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2016-12-07 12:12:28</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=612" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('612', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr id="poj_613">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="613"></td>
+                        <td><span class="num num-1">9</span></td>
+                        <td>AI05</td>
+                        <td></td>
+                        <td>模拟飞机</td>
+                        <td></td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2016-12-07 12:12:28</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=613" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('613', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr id="poj_614">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="614"></td>
+                        <td><span class="num num-1">10</span></td>
+                        <td>AM</td>
+                        <td>航空模型</td>
+                        <td></td>
+                        <td>Model airplane</td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2019-03-29 17:08:02</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                            <a class="btn" href="/qmdd2018/index.php?r=projectList/create&pid=2&fater_id=614">添加二级</a>
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=614" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('614', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr id="poj_615">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="615"></td>
+                        <td><span class="num num-1">11</span></td>
+                        <td>AM01</td>
+                        <td></td>
+                        <td>航天模型</td>
+                        <td></td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2016-12-07 12:12:28</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=615" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('615', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr id="poj_616">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="616"></td>
+                        <td><span class="num num-1">12</span></td>
+                        <td>AM02</td>
+                        <td></td>
+                        <td>电动航空模型</td>
+                        <td></td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2016-12-07 12:12:28</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=616" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('616', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr id="poj_617">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="617"></td>
+                        <td><span class="num num-1">13</span></td>
+                        <td>AM03</td>
+                        <td></td>
+                        <td>仿真航空模型</td>
+                        <td></td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2016-12-07 12:12:28</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=617" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('617', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr id="poj_618">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="618"></td>
+                        <td><span class="num num-1">14</span></td>
+                        <td>AM04</td>
+                        <td></td>
+                        <td>无线电遥控航空模型</td>
+                        <td></td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2016-12-07 12:12:28</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=618" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('618', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                    <tr id="poj_619">
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="619"></td>
+                        <td><span class="num num-1">15</span></td>
+                        <td>AM05</td>
+                        <td></td>
+                        <td>线操纵航空模型</td>
+                        <td></td>
+                        <td>否</td>
+                        <td>是</td>
+                        <td>2016-12-07 12:12:28</a></td>
+                        <td style='text-align: center;width:15%;'>
+                            <!-- <a class="btn" href="" title="下级项目">子项目</a> -->
+                                                        <a class="btn" href="/qmdd2018/index.php?r=projectList/update&id=619" title="编辑"><i class="fa fa-edit"></i></a>
+                                                        <a class="btn" href="javascript:;" onclick="we.dele('619', deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c"><ul id="yw0" class="yiiPager"><li class="first hidden"><a href="/qmdd2018/index.php?r=projectList/index">首页</a></li>
+<li class="previous hidden"><a href="/qmdd2018/index.php?r=projectList/index">上一页</a></li>
+<li class="page selected"><a href="/qmdd2018/index.php?r=projectList/index">1</a></li>
+<li class="page"><a href="/qmdd2018/index.php?r=projectList/index&amp;page=2">2</a></li>
+<li class="page"><a href="/qmdd2018/index.php?r=projectList/index&amp;page=3">3</a></li>
+<li class="page"><a href="/qmdd2018/index.php?r=projectList/index&amp;page=4">4</a></li>
+<li class="page"><a href="/qmdd2018/index.php?r=projectList/index&amp;page=5">5</a></li>
+<li class="next"><a href="/qmdd2018/index.php?r=projectList/index&amp;page=2">下一页</a></li>
+<li class="last"><a href="/qmdd2018/index.php?r=projectList/index&amp;page=17">末页</a></li></ul><div class="info">共250条内容，当前第1/17页,<span>显示行:</span>
+        <select name="PageSize" onchange="javascript:changPage()" id="PageSize"><option selected="selected" value="15">15</option><option  value="20">20</option><option  value="30">30</option><option  value="50">50</option><option  value="100">100</option></select></span></div><script> function changPage(){ var s2 = "/qmdd2018/index.php?r=public/setPageSize"; 
+    var options=$('#PageSize option:selected').val(); //获取选中的项
+    $.ajax({
+        type: 'post', url: s2,
+        data: { pageSize: options, },
+        dataType: 'json',
+        success: function(data) {
+ console.log(data);
+             document.getElementById('tbody1').innerHTML =data['html'];
+//            console.log(data);
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest);
+        }
+    });
+  }
+ </script></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=projectList/delete&id=ID';
+    function d_error(){
+        we.msg('minus','项目正在使用，请先处理');
+    }
+    function excel(){
+        $("#is_excel").val(1);
+        $("#submit_button").click();
+        $("#is_excel").val(0);
+    }
+</script></body>
+</html>
+

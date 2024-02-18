@@ -1,0 +1,458 @@
+f_code like "X%" and f_mtype in(1,2) order by f_code
+comCode = '0'
+f_id in (1700,1701,1702)
+
+comCode = '0'
+f_id in (1700,1701,1702)
+
+comCode = '0'
+f_id in (1700,1701,1702)
+
+f_id in(483,484,485)
+f_id in (361,351,352,353,354,355,356,357,359,364,777,1424,1700,1701,1702)
+mall_sales_order_info.if_del=648 AND mall_sales_order_info.type=757 and mall_sales_order_info.pay_time>="2024-02-15 00:00:00"
+t.if_del=648 AND t.type=757
+info_id=8538
+(order_num="qmdd20201219000049113601") order by id DESC
+info_id=8537
+(order_num="qmdd20201219000078715205") order by id DESC
+info_id=8536
+(order_num="qmdd20201219000078715203") order by id DESC
+info_id=8535
+(order_num="qmdd20201219000078715201") order by id DESC
+info_id=8534
+(order_num="qmdd20201218000078715203") order by id DESC
+info_id=8531
+(order_num="qmdd20201218000033468214") order by id DESC
+info_id=8530
+(order_num="qmdd20201218000033468213") order by id DESC
+info_id=8507
+(order_num="qmdd20201218000033468201") order by id DESC
+info_id=8506
+(order_num="qmdd20201217000022762701") order by id DESC
+info_id=8505
+(order_num="qmdd20201211000028785601") order by id DESC
+info_id=8504
+(order_num="qmdd20200630202000004401") order by id DESC
+info_id=8503
+(order_num="qmdd20200615000068933001") order by id DESC
+info_id=8502
+(order_num="qmdd20200605000049494902") order by id DESC
+info_id=8501
+(order_num="qmdd20200603000049494902") order by id DESC
+info_id=8500
+(order_num="qmdd20200603000049494901") order by id DESC
+f_id in(483,484,485)
+f_id in (361,351,352,353,354,355,356,357,359,364,777,1424,1700,1701,1702)
+mall_sales_order_info.if_del=648 AND mall_sales_order_info.type=757 and mall_sales_order_info.pay_time>="2024-02-15 00:00:00"
+t.if_del=648 AND t.type=757
+info_id=8538
+(order_num="qmdd20201219000049113601") order by id DESC
+info_id=8537
+(order_num="qmdd20201219000078715205") order by id DESC
+info_id=8536
+(order_num="qmdd20201219000078715203") order by id DESC
+info_id=8535
+(order_num="qmdd20201219000078715201") order by id DESC
+info_id=8534
+(order_num="qmdd20201218000078715203") order by id DESC
+info_id=8531
+(order_num="qmdd20201218000033468214") order by id DESC
+info_id=8530
+(order_num="qmdd20201218000033468213") order by id DESC
+info_id=8507
+(order_num="qmdd20201218000033468201") order by id DESC
+info_id=8506
+(order_num="qmdd20201217000022762701") order by id DESC
+info_id=8505
+(order_num="qmdd20201211000028785601") order by id DESC
+info_id=8504
+(order_num="qmdd20200630202000004401") order by id DESC
+info_id=8503
+(order_num="qmdd20200615000068933001") order by id DESC
+info_id=8502
+(order_num="qmdd20200605000049494902") order by id DESC
+info_id=8501
+(order_num="qmdd20200603000049494902") order by id DESC
+info_id=8500
+(order_num="qmdd20200603000049494901") order by id DESC
+comCode = '0'
+f_id in (1700,1701,1702)
+
+f_id in(483,484,485)
+f_id in (361,351,352,353,354,355,356,357,359,364,777,1424,1700,1701,1702)
+mall_sales_order_info.if_del=648 AND mall_sales_order_info.type=757 and mall_sales_order_info.pay_time>="2024-02-15 00:00:00"
+t.if_del=648 AND t.type=757
+info_id=8538
+(order_num="qmdd20201219000049113601") order by id DESC
+info_id=8537
+(order_num="qmdd20201219000078715205") order by id DESC
+info_id=8536
+(order_num="qmdd20201219000078715203") order by id DESC
+info_id=8535
+(order_num="qmdd20201219000078715201") order by id DESC
+info_id=8534
+(order_num="qmdd20201218000078715203") order by id DESC
+info_id=8531
+(order_num="qmdd20201218000033468214") order by id DESC
+info_id=8530
+(order_num="qmdd20201218000033468213") order by id DESC
+info_id=8507
+(order_num="qmdd20201218000033468201") order by id DESC
+info_id=8506
+(order_num="qmdd20201217000022762701") order by id DESC
+info_id=8505
+(order_num="qmdd20201211000028785601") order by id DESC
+info_id=8504
+(order_num="qmdd20200630202000004401") order by id DESC
+info_id=8503
+(order_num="qmdd20200615000068933001") order by id DESC
+info_id=8502
+(order_num="qmdd20200605000049494902") order by id DESC
+info_id=8501
+(order_num="qmdd20200603000049494902") order by id DESC
+info_id=8500
+(order_num="qmdd20200603000049494901") order by id DESC
+info_id=8538
+order_num="qmdd20201219000049113601"
+(order_num="qmdd20201219000049113601") order by id DESC
+comCode = '0'
+f_id in (1700,1701,1702)
+
+f_id in(483,484,485)
+f_id in (361,351,352,353,354,355,356,357,359,364,777,1424,1700,1701,1702)
+mall_sales_order_info.if_del=648 AND mall_sales_order_info.type=757 and mall_sales_order_info.pay_time>="2024-02-15 00:00:00"
+t.if_del=648 AND t.type=757
+info_id=8538
+(order_num="qmdd20201219000049113601") order by id DESC
+info_id=8537
+(order_num="qmdd20201219000078715205") order by id DESC
+info_id=8536
+(order_num="qmdd20201219000078715203") order by id DESC
+info_id=8535
+(order_num="qmdd20201219000078715201") order by id DESC
+info_id=8534
+(order_num="qmdd20201218000078715203") order by id DESC
+info_id=8531
+(order_num="qmdd20201218000033468214") order by id DESC
+info_id=8530
+(order_num="qmdd20201218000033468213") order by id DESC
+info_id=8507
+(order_num="qmdd20201218000033468201") order by id DESC
+info_id=8506
+(order_num="qmdd20201217000022762701") order by id DESC
+info_id=8505
+(order_num="qmdd20201211000028785601") order by id DESC
+info_id=8504
+(order_num="qmdd20200630202000004401") order by id DESC
+info_id=8503
+(order_num="qmdd20200615000068933001") order by id DESC
+info_id=8502
+(order_num="qmdd20200605000049494902") order by id DESC
+info_id=8501
+(order_num="qmdd20200603000049494902") order by id DESC
+info_id=8500
+(order_num="qmdd20200603000049494901") order by id DESC
+comCode = '0'
+f_id in (1700,1701,1702)
+
+f_id in(483,484,485)
+f_id in (361,351,352,353,354,355,356,357,359,364,777,1424,1700,1701,1702)
+mall_sales_order_info.if_del=648 AND mall_sales_order_info.type=757 and mall_sales_order_info.pay_time>="2024-02-15 00:00:00"
+t.if_del=648 AND t.type=757
+info_id=8538
+(order_num="qmdd20201219000049113601") order by id DESC
+info_id=8537
+(order_num="qmdd20201219000078715205") order by id DESC
+info_id=8536
+(order_num="qmdd20201219000078715203") order by id DESC
+info_id=8535
+(order_num="qmdd20201219000078715201") order by id DESC
+info_id=8534
+(order_num="qmdd20201218000078715203") order by id DESC
+info_id=8531
+(order_num="qmdd20201218000033468214") order by id DESC
+info_id=8530
+(order_num="qmdd20201218000033468213") order by id DESC
+info_id=8507
+(order_num="qmdd20201218000033468201") order by id DESC
+info_id=8506
+(order_num="qmdd20201217000022762701") order by id DESC
+info_id=8505
+(order_num="qmdd20201211000028785601") order by id DESC
+info_id=8504
+(order_num="qmdd20200630202000004401") order by id DESC
+info_id=8503
+(order_num="qmdd20200615000068933001") order by id DESC
+info_id=8502
+(order_num="qmdd20200605000049494902") order by id DESC
+info_id=8501
+(order_num="qmdd20200603000049494902") order by id DESC
+info_id=8500
+(order_num="qmdd20200603000049494901") order by id DESC
+f_id in(483,484,485)
+f_id in (361,351,352,353,354,355,356,357,359,364,777,1424,1700,1701,1702)
+mall_sales_order_info.if_del=648 AND mall_sales_order_info.type=757 and mall_sales_order_info.pay_time>="2024-02-15 00:00:00"
+t.if_del=648 AND t.type=757
+info_id=8538
+(order_num="qmdd20201219000049113601") order by id DESC
+info_id=8537
+(order_num="qmdd20201219000078715205") order by id DESC
+info_id=8536
+(order_num="qmdd20201219000078715203") order by id DESC
+info_id=8535
+(order_num="qmdd20201219000078715201") order by id DESC
+info_id=8534
+(order_num="qmdd20201218000078715203") order by id DESC
+info_id=8531
+(order_num="qmdd20201218000033468214") order by id DESC
+info_id=8530
+(order_num="qmdd20201218000033468213") order by id DESC
+info_id=8507
+(order_num="qmdd20201218000033468201") order by id DESC
+info_id=8506
+(order_num="qmdd20201217000022762701") order by id DESC
+info_id=8505
+(order_num="qmdd20201211000028785601") order by id DESC
+info_id=8504
+(order_num="qmdd20200630202000004401") order by id DESC
+info_id=8503
+(order_num="qmdd20200615000068933001") order by id DESC
+info_id=8502
+(order_num="qmdd20200605000049494902") order by id DESC
+info_id=8501
+(order_num="qmdd20200603000049494902") order by id DESC
+info_id=8500
+(order_num="qmdd20200603000049494901") order by id DESC
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_code like "X%" and f_mtype in(1,2) order by f_code
+f_id in(483,484,485)
+f_id in (361,351,352,353,354,355,356,357,359,364,777,1424,1700,1701,1702)
+mall_sales_order_info.if_del=648 AND mall_sales_order_info.type=757 and mall_sales_order_info.pay_time>="2024-02-15 00:00:00"
+t.if_del=648 AND t.type=757
+info_id=8538
+(order_num="qmdd20201219000049113601") order by id DESC
+info_id=8537
+(order_num="qmdd20201219000078715205") order by id DESC
+info_id=8536
+(order_num="qmdd20201219000078715203") order by id DESC
+info_id=8535
+(order_num="qmdd20201219000078715201") order by id DESC
+info_id=8534
+(order_num="qmdd20201218000078715203") order by id DESC
+info_id=8531
+(order_num="qmdd20201218000033468214") order by id DESC
+info_id=8530
+(order_num="qmdd20201218000033468213") order by id DESC
+info_id=8507
+(order_num="qmdd20201218000033468201") order by id DESC
+info_id=8506
+(order_num="qmdd20201217000022762701") order by id DESC
+info_id=8505
+(order_num="qmdd20201211000028785601") order by id DESC
+info_id=8504
+(order_num="qmdd20200630202000004401") order by id DESC
+info_id=8503
+(order_num="qmdd20200615000068933001") order by id DESC
+info_id=8502
+(order_num="qmdd20200605000049494902") order by id DESC
+info_id=8501
+(order_num="qmdd20200603000049494902") order by id DESC
+info_id=8500
+(order_num="qmdd20200603000049494901") order by id DESC
+f_id in(483,484,485)
+f_id in (361,351,352,353,354,355,356,357,359,364,777,1424,1700,1701,1702)
+mall_sales_order_info.if_del=648 AND mall_sales_order_info.type=757 and mall_sales_order_info.pay_time>="2024-02-15 00:00:00"
+t.if_del=648 AND t.type=757
+info_id=8538
+(order_num="qmdd20201219000049113601") order by id DESC
+info_id=8537
+(order_num="qmdd20201219000078715205") order by id DESC
+info_id=8536
+(order_num="qmdd20201219000078715203") order by id DESC
+info_id=8535
+(order_num="qmdd20201219000078715201") order by id DESC
+info_id=8534
+(order_num="qmdd20201218000078715203") order by id DESC
+info_id=8531
+(order_num="qmdd20201218000033468214") order by id DESC
+info_id=8530
+(order_num="qmdd20201218000033468213") order by id DESC
+info_id=8507
+(order_num="qmdd20201218000033468201") order by id DESC
+info_id=8506
+(order_num="qmdd20201217000022762701") order by id DESC
+info_id=8505
+(order_num="qmdd20201211000028785601") order by id DESC
+info_id=8504
+(order_num="qmdd20200630202000004401") order by id DESC
+info_id=8503
+(order_num="qmdd20200615000068933001") order by id DESC
+info_id=8502
+(order_num="qmdd20200605000049494902") order by id DESC
+info_id=8501
+(order_num="qmdd20200603000049494902") order by id DESC
+info_id=8500
+(order_num="qmdd20200603000049494901") order by id DESC
+f_id in(483,484,485)
+f_id in (361,351,352,353,354,355,356,357,359,364,777,1424,1700,1701,1702)
+mall_sales_order_info.if_del=648 AND mall_sales_order_info.type=757 and mall_sales_order_info.pay_time>="2024-02-15 00:00:00"
+t.if_del=648 AND t.type=757
+info_id=8538
+(order_num="qmdd20201219000049113601") order by id DESC
+info_id=8537
+(order_num="qmdd20201219000078715205") order by id DESC
+info_id=8536
+(order_num="qmdd20201219000078715203") order by id DESC
+info_id=8535
+(order_num="qmdd20201219000078715201") order by id DESC
+info_id=8534
+(order_num="qmdd20201218000078715203") order by id DESC
+info_id=8531
+(order_num="qmdd20201218000033468214") order by id DESC
+info_id=8530
+(order_num="qmdd20201218000033468213") order by id DESC
+info_id=8507
+(order_num="qmdd20201218000033468201") order by id DESC
+info_id=8506
+(order_num="qmdd20201217000022762701") order by id DESC
+info_id=8505
+(order_num="qmdd20201211000028785601") order by id DESC
+info_id=8504
+(order_num="qmdd20200630202000004401") order by id DESC
+info_id=8503
+(order_num="qmdd20200615000068933001") order by id DESC
+info_id=8502
+(order_num="qmdd20200605000049494902") order by id DESC
+info_id=8501
+(order_num="qmdd20200603000049494902") order by id DESC
+info_id=8500
+(order_num="qmdd20200603000049494901") order by id DESC
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_code like "O%" and f_mtype in(1,2) order by f_code
+state=2 and auth_state=461 and club_id=2450
+f_id in(1504,1505) and if_del=510
+fater_id in(-1) and if_del=510
+train_state=721 and train_clubid=2450
+train_id=125
+f_code like "R%" and f_mtype in(1,2) order by f_code
+
+
+
+
+
+
+1
+time="" and price=0 and  week=""
+
+1
+
+1
+time="" and price=0 and  week=""
+
+1
+
+
+
+1 order by id limit 500
+1=1 order by code limit 500
+
+
+
+
+
+
+
+1
+time="" and price=0 and  week=""
+
+1
+
+
+
+
+
+
+
+
+
+
+
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_code like "B%" and f_mtype in(1,2) order by f_code
+fater_id=505
+1 and id=2450  and club_type=8 AND left(lock_date,10)>="2024-02-18" AND left(lock_date,10)<="2024-02-18"
+f_code like "B%" and f_mtype in(1,2) order by f_code
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_code like "B%" and f_mtype in(1,2) order by f_code
+audState='审核通过'
+audState='待提交'
+audState='待审核'
+audState='待提交'
+table_name='ClubListSqdw' and code_year='2024' and code_month='02'
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_code like "B%" and f_mtype in(1,2) order by f_code
+audState='待审核'
+audState='待提交'
+table_name='ClubListSqdw' and code_year='2024' and code_month='02'
+audState='待提交'
+table_name='ClubListSqdw' and code_year='2024' and code_month='02'
+audState='待提交'
+table_name='ClubListSqdw' and code_year='2024' and code_month='02'
+f_code like "Z%" and f_mtype in(1,2) order by f_code
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+lang_type=0 and admin_gfaccount<>'0' 
+f_code like "B%" and f_mtype in(1,2) order by f_code
+audState='待审核'
+audState='待提交'
+1
+1
+audState='待提交'
+table_name='ClubListSqdw' and code_year='2024' and code_month='02'
+audState='待审核'
+audState='待审核'
+audState='待提交'
+audState='待审核'
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_code like "B%" and f_mtype in(1,2) order by f_code
+audState='待提交'
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+

@@ -1,0 +1,214 @@
+@charset "utf-8";
+/* CSS Document */
+a:hover {
+  color: #EB8A3D;
+  text-decoration: underline;
+}
+
+a:active {
+  color: #EB8A3D;
+  text-decoration: underline;
+}
+@CHARSET"UTF-8";
+ @media screen and (max-device-width:760px) {
+    .auth_conf {
+        width:28% !important;
+        height:90% !important;
+    }
+    .auth_conr {
+        width:59% !important;
+        height:90% !important;
+    }
+    .auth_conr a {
+        float:none !important;
+        margin-top:10% !important;
+        width:90% !important;
+    }
+}
+.title_3 {
+    border-bottom: #f60 2px solid;
+    color: #f60!important;
+}
+.container {
+    background-color:#f8f8f8 !important;
+}
+.club_auth {
+    width:90%;
+    margin:0 auto
+}
+.prog {
+    height:30px;
+    text-indent: 20px;
+}
+.auth_content {
+    width:100%;
+    background-color:#FFF;
+    margin:12px 0;
+}
+
+
+.auth_conf, .auth_conr {
+    display:inline-block;
+    vertical-align:top;
+    height:70%;
+}
+
+.auth_conf{
+    width:16%;
+    border-right:1px solid #f1f1f1;
+	float:left;
+    text-align:center;
+    overflow:visible;
+	
+}
+.auth_conf hr {
+    width:90%;
+	
+}
+.auth_conf p {
+    display:block;
+    width:110%;
+    height:40px;
+    line-height:40px;
+    cursor:default;
+    overflow:visible;
+
+}
+.auth_conf_bg {
+    color:#FFF;
+    background:url(../images/grdw_club_grrz_03_03.png);
+    background-size:101% 100%
+}
+.auth_conr {
+    width:80%;
+	margin-left:2%;
+}
+#auth {display:block; width:150px; height:40px; color:#FFFFFF;font-family:'方正兰亭黑_GBK'; font-size:16px; background:#fe7e00; text-decoration:none; text-align:center; margin-bottom:20px;}
+
+.auth_conr hr {
+    width:100%;
+	
+}
+
+.compn {
+    display:none
+}
+.auth_conr a {
+    float:right;
+    display:block;
+    margin-top:20%;
+    border-radius:5px;
+    width:40%;
+    height:40px;
+    line-height:40px;
+}
+.tit_line {
+    width: 5px;
+    height: 30px;
+    background-color: #FF6B00;
+    float: left;
+    border-radius: 15px;
+}
+.my_auth_tit {
+    padding-left: 10px;
+    color: #FF6B00;
+    height: 30px;
+    line-height: 30px;
+    float: left;
+    padding-right: 10px;
+}
+.auth_add_btn {
+    float: left;
+    height: 16px;
+    line-height: 16px;
+    margin: 6px;
+    width: 16px;
+    text-align: center;
+    border: solid 1px #030303;
+    border-radius: 50%;
+}
+.auth_add_tit {
+    height: 30px;
+    line-height: 30px;
+    float: left;
+}
+.auth_add_box {
+    position: fixed;
+    width: 60%;
+    height: 70%;
+    top: 22%;
+    left: 20%;
+    z-index: 22222;
+    background-color: #FEFEFE;
+    border-top: solid 3px #FA9321;
+    display: none;
+}
+.add_box_tit {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: solid 1px #ccc;
+    padding-left: 10px;
+}
+.add_box_tit span {
+    font-size: 14px;
+    padding-left: 10px;
+    color: #676767;
+}
+.auth_add_proc {
+    margin: 30px auto;
+    overflow: hidden;
+    width: 488px;
+}
+.auth_add_proc li {
+    float: left;
+    padding: 0 3px;
+    color: #676767;
+}
+.auth_select {
+    text-align: center;
+    padding: 10px 0;
+}
+.auth_select select {
+    width: 280px;
+    height: 40px;
+    font-size: 16px;
+    font-family: 微软雅黑;
+}
+.auth_start_btn {
+    text-align: center;
+    margin-top: 50px;
+}
+.auth_start_btn input[type="button"] {
+    width: 220px;
+    height: 40px;
+}
+.add_box_bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 11111;
+    display: none;
+}
+.my_auth_box table {
+    border-collapse:collpase;
+    border-spacing:0 0;
+    border-top:3px solid #FF7F00;
+    background-color:#FFF;
+    width:100%;
+    margin:12px 0;
+}
+.my_auth_box table tr {
+    width:20%;
+    height:46px;
+    text-align:center;
+}
+.my_auth_box table th, .my_auth_box table td {
+    border-top:1px solid #ECECEC
+}
+.auth_stat {
+    color:#FF7F24
+}
+

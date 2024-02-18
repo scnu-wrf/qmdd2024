@@ -1,0 +1,177 @@
+1
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+
+
+
+
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=clubProject/index_strat_confirmed';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+
+
+<div class="box">
+    <!-- <div class="box-detail-tab">
+        <ul class="c">
+            <li><a href="">服务机构入驻实收费用列表</a></li>
+            <li><a href="">服务者入驻实收费用列表</a></li>
+            <li><a href="#">龙虎会员注册实收费用列表</a></li>
+            <li class="current" style="border-right:none;"><a href="">战略伙伴会员注册实收费用列表</a></li>
+        </ul>
+    </div>box-detail-tab end -->
+    <div class="box-title c">
+        <h1>
+            当前界面：项目》单位项目费用》项目缴费确认        </h1>
+        <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+    </div><!--box-title end-->
+    <div class="box-content">
+    	<div class="box-header">
+                        <span class="exam" onclick="on_exam();"><p>待确认：<span style="color:red;font-weight: bold;">0</span></p></span>
+                    </div><!--box-header end-->
+        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=clubProject/index_strat_confirmed" method="get">
+                <input type="hidden" name="r" value="clubProject/index_strat_confirmed">
+                <input type="hidden" name="free_state_Id" id="free_state_Id" value="">
+                                    <label style="margin-right:10px;">
+                        <span>确认时间：</span>
+                        <input style="width:80px;" class="input-text" type="text" placeholder="" id="time_start" name="time_start" value="2024-02-09">
+                        <span>-</span>
+                        <input style="width:80px;" class="input-text" type="text" placeholder="" id="time_end" name="time_end" value="2024-02-09">
+                    </label>
+                                <label style="margin-right:20px;">
+                    <span>注册项目：</span>
+                    <select name="project" ><option value="">请选择</option><option value="188">太极</option><option value="222">散打</option><option value="235">跆拳道</option><option value="236">拳击</option><option value="605">健美操</option><option value="606">健美</option><option value="607">技巧运动</option><option value="608">运动飞机</option><option value="614">航空模型</option><option value="621">田径</option><option value="650">篮球</option><option value="653">棒球</option><option value="654">掷球</option><option value="655">羽毛球</option><option value="656">冬季两项</option><option value="659">搏击</option><option value="660">自行车</option><option value="665">热气球</option><option value="671">飞镖</option><option value="672">保龄球</option><option value="673">赛艇</option><option value="674">台球</option><option value="675">建筑</option><option value="676">汽车</option><option value="677">冰壶</option><option value="678">登山</option><option value="683">信鸽</option><option value="684">舞龙舞狮</option><option value="685">龙舟</option><option value="686">导引养生功</option><option value="687">潜水</option><option value="689">体育舞蹈</option><option value="690">跳水</option><option value="693">马术</option><option value="697">电子竞技</option><option value="698">足球</option><option value="702">击剑</option><option value="703">脚斗士</option><option value="704">钓鱼</option><option value="705">门球</option><option value="706">高尔夫球</option><option value="707">滑翔</option><option value="712">体操</option><option value="716">手球</option><option value="717">曲棍球</option><option value="718">冰球</option><option value="719">柔道</option><option value="720">跳伞</option><option value="727">风筝</option><option value="728">拉丁舞</option><option value="729">救生</option><option value="730">摩托艇</option><option value="731">摩托车</option><option value="732">现代五项</option><option value="738">泰拳</option><option value="739">双节棍</option><option value="740">新媒体</option><option value="741">航海模型</option><option value="748">定向</option><option value="754">健身气功</option><option value="755">壁球</option><option value="756">橄榄球</option><option value="757">业余无线电</option><option value="761">轮滑</option><option value="762">帆船</option><option value="763">垒球</option><option value="764">篆刻</option><option value="765">街舞</option><option value="766">藤球</option><option value="767">滑雪</option><option value="773">皮划艇</option><option value="774">滑板</option><option value="777">游泳</option><option value="778">花样游泳</option><option value="796">雕塑</option><option value="797">滑冰</option><option value="801">毽球</option><option value="802">短兵</option><option value="803">网球</option><option value="804">软式网球</option><option value="805">铁人三项</option><option value="809">乒乓球</option><option value="810">拔河</option><option value="811">射箭</option><option value="812">车辆模型</option><option value="819">排球</option><option value="822">咏春</option><option value="823">举重</option><option value="824">水球</option><option value="827">摔跤</option><option value="828">滑水</option><option value="829">武术套路</option><option value="830">棋类</option><option value="836">桥牌</option><option value="837">设计</option><option value="838">书法</option><option value="839">工艺</option><option value="840">二胡                            </option><option value="841">吉他                            </option><option value="842">绘画</option><option value="843">摄影</option><option value="844">魔术                            </option><option value="846">帆船 </option><option value="865">1</option></select>                </label>
+                                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" placeholder="请输入项目名称 / 单位名称" name="keywords" value="">
+                </label>
+                <button id="click_submit" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <thead>
+                <table class="list">
+                    <tr>
+                        <th class="check"><input type="checkbox" id="j-checkall" class="input-check"></th>
+                        <th>序号</th>
+                        <th>支付订单号</th>
+                        <th>单位管理账号</th>
+                        <th>服务平台名称</th>
+                        <th>单位类型</th>
+                        <th>注册项目</th>
+                        <th>费用方案</th>
+                        <th>入驻费用</th>
+                        <th>收费方式</th>
+                        <th>实付金额</th>
+                        <th>状态</th>
+                                                    <th>确认时间</th>
+                            <th>操作员</th> 
+                                                <th>操作</th>
+                    </tr>
+                                    </table>
+            </thead>
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var $start_time=$('#time_start');
+    var $end_time=$('#time_end');
+    $start_time.on('click', function(){
+        WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+    $end_time.on('click', function(){
+         WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        $('#free_state_Id').val(1201);
+        $('.box-search select').html('<option value>请选择</option>');
+        $('.box-search .input-text').val('');
+        document.getElementById('click_submit').click();
+    }
+    $('#j-checkall').on('click', function(){
+        $temp1 = $('.check-item .input-check');
+        $temp2 = $('.box-table .list tbody tr');
+        $this = $(this);
+        if($this.is(':checked')){
+            $temp1.each(function(){
+                this.checked = true;
+            });
+            $temp2.addClass('selected');
+        }
+        else{
+            $temp1.each(function(){
+                this.checked = false;
+            });
+            $temp2.removeClass('selected');
+        }
+    });
+
+    // 获取所有选中多选框的值
+    checkval = function(op,num){
+        if(num=='one'){
+            var str = op;
+        }else{
+            var str = '';
+            $(op).each(function() {
+                str += $(this).val() + ',';
+            });
+        }
+        if(str.length > 0){
+            str = str.substring(0, str.length - 1);
+        }
+        if(str.length<1){
+            we.msg('minus','请先选中要确认的数据');
+            return false;
+        }
+        confirmed(str);
+    };
+
+    // 确认操作
+    function confirmed(id){
+        we.loading('show');
+        $.ajax({
+            type:'post',
+            url:'/qmdd2018/index.php?r=clubProject/confirmed&id='+id,
+            // data:{id:id},
+            dataType:'json',
+            success: function(data){
+                we.loading('hide');
+                if(data.status==1){
+                    we.success(data.msg, data.redirect);
+                }else{
+                    we.msg('minus', data.msg);
+                }
+            }
+        });
+        return false;
+    }
+</script>
+</body>
+</html>
+

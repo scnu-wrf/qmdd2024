@@ -1,0 +1,726 @@
+1
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+
+
+
+
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=clubProject/index_unit&index=3';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+
+<style>
+    #j-delete{
+        margin:10px;
+    }
+    </style>
+<div class="box">
+    <div class="box-title c">
+        <h1>当前界面：项目》单位项目注册》注册项目</h1>
+        <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+            </div><!--box-title end-->
+    <div class="box-content">
+            	<div class="box-header" style="">
+                                    <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>添加</a>                        <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>删除</a>        </div><!--box-header end-->
+                <div class="box-search">
+            <form action="/qmdd2018/index.php?r=clubProject/index_unit&index=3" method="get">
+                <input type="hidden" name="r" value="clubProject/index_unit">
+                <input id="index" type="hidden" name="index" value="3">
+                <input type="hidden" name="club_id" value="0">
+                <input type="hidden" name="state" id="state" value="">
+                                <label style="margin-right:10px;">
+                    <span>申请日期：</span>
+                    <input style="width:120px;" class="input-text" type="text" id="start_date" name="start_date" value="">
+                    <span>-</span>
+                    <input style="width:120px;" class="input-text" type="text" id="end_date" name="end_date" value="">
+                </label>
+				<label style="margin-right:20px;">
+                    <span>项目：</span>
+                    <select name="project_id" ><option value="">请选择</option><option value="188">太极</option><option value="222">散打</option><option value="235">跆拳道</option><option value="236">拳击</option><option value="605">健美操</option><option value="606">健美</option><option value="607">技巧运动</option><option value="608">运动飞机</option><option value="614">航空模型</option><option value="621">田径</option><option value="650">篮球</option><option value="653">棒球</option><option value="654">掷球</option><option value="655">羽毛球</option><option value="656">冬季两项</option><option value="659">搏击</option><option value="660">自行车</option><option value="665">热气球</option><option value="671">飞镖</option><option value="672">保龄球</option><option value="673">赛艇</option><option value="674">台球</option><option value="675">建筑</option><option value="676">汽车</option><option value="677">冰壶</option><option value="678">登山</option><option value="683">信鸽</option><option value="684">舞龙舞狮</option><option value="685">龙舟</option><option value="686">导引养生功</option><option value="687">潜水</option><option value="689">体育舞蹈</option><option value="690">跳水</option><option value="693">马术</option><option value="697">电子竞技</option><option value="698">足球</option><option value="702">击剑</option><option value="703">脚斗士</option><option value="704">钓鱼</option><option value="705">门球</option><option value="706">高尔夫球</option><option value="707">滑翔</option><option value="712">体操</option><option value="716">手球</option><option value="717">曲棍球</option><option value="718">冰球</option><option value="719">柔道</option><option value="720">跳伞</option><option value="727">风筝</option><option value="728">拉丁舞</option><option value="729">救生</option><option value="730">摩托艇</option><option value="731">摩托车</option><option value="732">现代五项</option><option value="738">泰拳</option><option value="739">双节棍</option><option value="740">新媒体</option><option value="741">航海模型</option><option value="748">定向</option><option value="754">健身气功</option><option value="755">壁球</option><option value="756">橄榄球</option><option value="757">业余无线电</option><option value="761">轮滑</option><option value="762">帆船</option><option value="763">垒球</option><option value="764">篆刻</option><option value="765">街舞</option><option value="766">藤球</option><option value="767">滑雪</option><option value="773">皮划艇</option><option value="774">滑板</option><option value="777">游泳</option><option value="778">花样游泳</option><option value="796">雕塑</option><option value="797">滑冰</option><option value="801">毽球</option><option value="802">短兵</option><option value="803">网球</option><option value="804">软式网球</option><option value="805">铁人三项</option><option value="809">乒乓球</option><option value="810">拔河</option><option value="811">射箭</option><option value="812">车辆模型</option><option value="819">排球</option><option value="822">咏春</option><option value="823">举重</option><option value="824">水球</option><option value="827">摔跤</option><option value="828">滑水</option><option value="829">武术套路</option><option value="830">棋类</option><option value="836">桥牌</option><option value="837">设计</option><option value="838">书法</option><option value="839">工艺</option><option value="840">二胡                            </option><option value="841">吉他                            </option><option value="842">绘画</option><option value="843">摄影</option><option value="844">魔术                            </option><option value="846">帆船 </option><option value="865">1</option></select>                </label>
+                                                                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" placeholder="注册单位名称" name="keywords" value="">
+                </label>
+                <button id="click_submit" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+        	<table class="list"><!--此处项目，链接club_project表-->
+                	<tr class="table-title">
+                                                    <th class="check"><input id="j-checkall" class="input-check" type="checkbox"></th>
+                            <td >序号</td>
+                            <td>注册项目</td>
+                            <td>入驻方式</td>
+                            <td>状态</td>
+                            <td>操作日期</td>
+                            <td>操作</td>
+                                            </tr>
+                                    </table>
+                 
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=clubProject/delete&id=ID';
+    var cancelUrl = '/qmdd2018/index.php?r=clubProject/cancel&id=ID&new=state&del=721&yes=%E6%92%A4%E9%94%80%E6%88%90%E5%8A%9F&no=%E6%92%A4%E9%94%80%E5%A4%B1%E8%B4%A5';
+
+    $(function(){
+        var $start_time=$('#start_date');
+        var $end_time=$('#end_date');
+        $start_time.on('click', function(){
+            var end_input=$dp.$('end_date')
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd',alwaysUseStartDate:false,onpicked:function(){end_input.click();},maxDate:'#F{$dp.$D(\'end_date\')}'});
+        });
+        $end_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd',alwaysUseStartDate:false,minDate:'#F{$dp.$D(\'start_date\')}'});
+        });
+    });
+
+    function getBack(){
+        history.go(-1);
+    }
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#index').val(4);
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('click_submit').click();
+        }
+    }
+</script>
+</body>
+</html>
+
+1
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+
+
+
+
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=clubProject/index_unit&index=7';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+
+<style>
+    #j-delete{
+        margin:10px;
+    }
+    </style>
+<div class="box">
+    <div class="box-title c">
+        <h1>当前界面：项目 》单位项目注册 》注册待审核</h1>
+        <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+            </div><!--box-title end-->
+    <div class="box-content">
+            	<div class="box-header" style="display:none">
+                                    <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>删除</a>        </div><!--box-header end-->
+                <div class="box-search">
+            <form action="/qmdd2018/index.php?r=clubProject/index_unit&index=7" method="get">
+                <input type="hidden" name="r" value="clubProject/index_unit">
+                <input id="index" type="hidden" name="index" value="7">
+                <input type="hidden" name="club_id" value="0">
+                <input type="hidden" name="state" id="state" value="">
+                                <label style="margin-right:10px;">
+                    <span>申请日期：</span>
+                    <input style="width:120px;" class="input-text" type="text" id="start_date" name="start_date" value="2024-02-09">
+                    <span>-</span>
+                    <input style="width:120px;" class="input-text" type="text" id="end_date" name="end_date" value="2024-02-09">
+                </label>
+				<label style="margin-right:20px;">
+                    <span>项目：</span>
+                    <select name="project_id" ><option value="">请选择</option><option value="188">太极</option><option value="222">散打</option><option value="235">跆拳道</option><option value="236">拳击</option><option value="605">健美操</option><option value="606">健美</option><option value="607">技巧运动</option><option value="608">运动飞机</option><option value="614">航空模型</option><option value="621">田径</option><option value="650">篮球</option><option value="653">棒球</option><option value="654">掷球</option><option value="655">羽毛球</option><option value="656">冬季两项</option><option value="659">搏击</option><option value="660">自行车</option><option value="665">热气球</option><option value="671">飞镖</option><option value="672">保龄球</option><option value="673">赛艇</option><option value="674">台球</option><option value="675">建筑</option><option value="676">汽车</option><option value="677">冰壶</option><option value="678">登山</option><option value="683">信鸽</option><option value="684">舞龙舞狮</option><option value="685">龙舟</option><option value="686">导引养生功</option><option value="687">潜水</option><option value="689">体育舞蹈</option><option value="690">跳水</option><option value="693">马术</option><option value="697">电子竞技</option><option value="698">足球</option><option value="702">击剑</option><option value="703">脚斗士</option><option value="704">钓鱼</option><option value="705">门球</option><option value="706">高尔夫球</option><option value="707">滑翔</option><option value="712">体操</option><option value="716">手球</option><option value="717">曲棍球</option><option value="718">冰球</option><option value="719">柔道</option><option value="720">跳伞</option><option value="727">风筝</option><option value="728">拉丁舞</option><option value="729">救生</option><option value="730">摩托艇</option><option value="731">摩托车</option><option value="732">现代五项</option><option value="738">泰拳</option><option value="739">双节棍</option><option value="740">新媒体</option><option value="741">航海模型</option><option value="748">定向</option><option value="754">健身气功</option><option value="755">壁球</option><option value="756">橄榄球</option><option value="757">业余无线电</option><option value="761">轮滑</option><option value="762">帆船</option><option value="763">垒球</option><option value="764">篆刻</option><option value="765">街舞</option><option value="766">藤球</option><option value="767">滑雪</option><option value="773">皮划艇</option><option value="774">滑板</option><option value="777">游泳</option><option value="778">花样游泳</option><option value="796">雕塑</option><option value="797">滑冰</option><option value="801">毽球</option><option value="802">短兵</option><option value="803">网球</option><option value="804">软式网球</option><option value="805">铁人三项</option><option value="809">乒乓球</option><option value="810">拔河</option><option value="811">射箭</option><option value="812">车辆模型</option><option value="819">排球</option><option value="822">咏春</option><option value="823">举重</option><option value="824">水球</option><option value="827">摔跤</option><option value="828">滑水</option><option value="829">武术套路</option><option value="830">棋类</option><option value="836">桥牌</option><option value="837">设计</option><option value="838">书法</option><option value="839">工艺</option><option value="840">二胡                            </option><option value="841">吉他                            </option><option value="842">绘画</option><option value="843">摄影</option><option value="844">魔术                            </option><option value="846">帆船 </option><option value="865">1</option></select>                </label>
+                                                                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" placeholder="注册单位名称" name="keywords" value="">
+                </label>
+                <button id="click_submit" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+        	<table class="list"><!--此处项目，链接club_project表-->
+                	<tr class="table-title">
+                                                    <td >序号</td>
+                            <td >注册项目</td>
+                            <td >入驻方式</td>
+                            <td >状态</td>
+                            <td >申请时间</td>
+                            <td>操作</td>
+                                            </tr>
+                                    </table>
+                 
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=clubProject/delete&id=ID';
+    var cancelUrl = '/qmdd2018/index.php?r=clubProject/cancel&id=ID&new=state&del=721&yes=%E6%92%A4%E9%94%80%E6%88%90%E5%8A%9F&no=%E6%92%A4%E9%94%80%E5%A4%B1%E8%B4%A5';
+
+    $(function(){
+        var $start_time=$('#start_date');
+        var $end_time=$('#end_date');
+        $start_time.on('click', function(){
+            var end_input=$dp.$('end_date')
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd',alwaysUseStartDate:false,onpicked:function(){end_input.click();},maxDate:'#F{$dp.$D(\'end_date\')}'});
+        });
+        $end_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd',alwaysUseStartDate:false,minDate:'#F{$dp.$D(\'start_date\')}'});
+        });
+    });
+
+    function getBack(){
+        history.go(-1);
+    }
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#index').val(4);
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('click_submit').click();
+        }
+    }
+</script>
+</body>
+</html>
+
+1
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+
+
+
+
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=clubProject/index_unit&index=1';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+
+<style>
+    #j-delete{
+        margin:10px;
+    }
+    </style>
+<div class="box">
+    <div class="box-title c">
+        <h1>当前界面：项目 》单位项目注册 》项目注册审核</h1>
+        <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+            </div><!--box-title end-->
+    <div class="box-content">
+            	<div class="box-header" style="">
+                        <span class="exam" onclick="on_exam();"><p>待审核：<span style="color:red;font-weight: bold;">0</span></p></span>
+                                    <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>删除</a>        </div><!--box-header end-->
+                <div class="box-search">
+            <form action="/qmdd2018/index.php?r=clubProject/index_unit&index=1" method="get">
+                <input type="hidden" name="r" value="clubProject/index_unit">
+                <input id="index" type="hidden" name="index" value="1">
+                <input type="hidden" name="club_id" value="0">
+                <input type="hidden" name="state" id="state" value="">
+                                <label style="margin-right:10px;">
+                    <span>审核日期：</span>
+                    <input style="width:120px;" class="input-text" type="text" id="start_date" name="start_date" value="">
+                    <span>-</span>
+                    <input style="width:120px;" class="input-text" type="text" id="end_date" name="end_date" value="">
+                </label>
+				<label style="margin-right:20px;">
+                    <span>项目：</span>
+                    <select name="project_id" ><option value="">请选择</option><option value="188">太极</option><option value="222">散打</option><option value="235">跆拳道</option><option value="236">拳击</option><option value="605">健美操</option><option value="606">健美</option><option value="607">技巧运动</option><option value="608">运动飞机</option><option value="614">航空模型</option><option value="621">田径</option><option value="650">篮球</option><option value="653">棒球</option><option value="654">掷球</option><option value="655">羽毛球</option><option value="656">冬季两项</option><option value="659">搏击</option><option value="660">自行车</option><option value="665">热气球</option><option value="671">飞镖</option><option value="672">保龄球</option><option value="673">赛艇</option><option value="674">台球</option><option value="675">建筑</option><option value="676">汽车</option><option value="677">冰壶</option><option value="678">登山</option><option value="683">信鸽</option><option value="684">舞龙舞狮</option><option value="685">龙舟</option><option value="686">导引养生功</option><option value="687">潜水</option><option value="689">体育舞蹈</option><option value="690">跳水</option><option value="693">马术</option><option value="697">电子竞技</option><option value="698">足球</option><option value="702">击剑</option><option value="703">脚斗士</option><option value="704">钓鱼</option><option value="705">门球</option><option value="706">高尔夫球</option><option value="707">滑翔</option><option value="712">体操</option><option value="716">手球</option><option value="717">曲棍球</option><option value="718">冰球</option><option value="719">柔道</option><option value="720">跳伞</option><option value="727">风筝</option><option value="728">拉丁舞</option><option value="729">救生</option><option value="730">摩托艇</option><option value="731">摩托车</option><option value="732">现代五项</option><option value="738">泰拳</option><option value="739">双节棍</option><option value="740">新媒体</option><option value="741">航海模型</option><option value="748">定向</option><option value="754">健身气功</option><option value="755">壁球</option><option value="756">橄榄球</option><option value="757">业余无线电</option><option value="761">轮滑</option><option value="762">帆船</option><option value="763">垒球</option><option value="764">篆刻</option><option value="765">街舞</option><option value="766">藤球</option><option value="767">滑雪</option><option value="773">皮划艇</option><option value="774">滑板</option><option value="777">游泳</option><option value="778">花样游泳</option><option value="796">雕塑</option><option value="797">滑冰</option><option value="801">毽球</option><option value="802">短兵</option><option value="803">网球</option><option value="804">软式网球</option><option value="805">铁人三项</option><option value="809">乒乓球</option><option value="810">拔河</option><option value="811">射箭</option><option value="812">车辆模型</option><option value="819">排球</option><option value="822">咏春</option><option value="823">举重</option><option value="824">水球</option><option value="827">摔跤</option><option value="828">滑水</option><option value="829">武术套路</option><option value="830">棋类</option><option value="836">桥牌</option><option value="837">设计</option><option value="838">书法</option><option value="839">工艺</option><option value="840">二胡                            </option><option value="841">吉他                            </option><option value="842">绘画</option><option value="843">摄影</option><option value="844">魔术                            </option><option value="846">帆船 </option><option value="865">1</option></select>                </label>
+                                				<label style="margin-right:20px;">
+                    <span>单位类别：</span>
+                    <select name="partnership_type" ><option value="">请选择</option><option value="624">社区单位</option><option value="586">官方组织</option><option value="598">科教组织</option><option value="599">社会组织</option><option value="600">全媒体联盟</option><option value="601">企业组织</option><option value="605">普通商家</option><option value="643">自营商家</option><option value="631">GF官方</option><option value="629">管理部门</option></select>                </label>
+                                                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" placeholder="注册单位名称" name="keywords" value="">
+                </label>
+                <button id="click_submit" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+        	<table class="list"><!--此处项目，链接club_project表-->
+                	<tr class="table-title">
+                                                    <td >序号</td>
+                            <td >单位管理账号</td>
+                            <td >服务平台名称</td>
+                            <td >单位类别</td>
+                            <td >注册项目</td>
+                            <td >入驻方式</td>
+                            <td >审核状态</td>
+                            <td >审核时间</td> 
+                            <td >审核员</td> 
+                            <td>操作</td>
+                                            </tr>
+                                        <tr>
+                                                    <td><span class="num num-1">1</span></td>
+                            <td>2018000094</td>
+                            <td>华体通得闲体育服务</td>
+                            <td>管理部门</td>
+                            <td>台球</td>
+                            <td>免费</td>
+                            <td>审核通过</td>
+                            <td>2019-08-16</td>
+                            <td>/</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=clubProject/update_unit&id=1542&index=1"  title="详情">详情</a>                            </td>
+                                            </tr>
+                                       <tr>
+                                                    <td><span class="num num-1">2</span></td>
+                            <td>2018000094</td>
+                            <td>华体通得闲体育服务</td>
+                            <td>管理部门</td>
+                            <td>乒乓球</td>
+                            <td>免费</td>
+                            <td>审核通过</td>
+                            <td>2019-08-16</td>
+                            <td>/</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=clubProject/update_unit&id=1540&index=1"  title="详情">详情</a>                            </td>
+                                            </tr>
+                                       <tr>
+                                                    <td><span class="num num-1">3</span></td>
+                            <td>2018000094</td>
+                            <td>华体通得闲体育服务</td>
+                            <td>管理部门</td>
+                            <td>篮球</td>
+                            <td>免费</td>
+                            <td>审核通过</td>
+                            <td>2019-08-16</td>
+                            <td>/</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=clubProject/update_unit&id=1541&index=1"  title="详情">详情</a>                            </td>
+                                            </tr>
+                                       <tr>
+                                                    <td><span class="num num-1">4</span></td>
+                            <td>2018000094</td>
+                            <td>华体通得闲体育服务</td>
+                            <td>管理部门</td>
+                            <td>网球</td>
+                            <td>免费</td>
+                            <td>审核通过</td>
+                            <td>2019-08-16</td>
+                            <td>/</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=clubProject/update_unit&id=1539&index=1"  title="详情">详情</a>                            </td>
+                                            </tr>
+                                       <tr>
+                                                    <td><span class="num num-1">5</span></td>
+                            <td>2018000094</td>
+                            <td>华体通得闲体育服务</td>
+                            <td>管理部门</td>
+                            <td>拳击</td>
+                            <td>有偿</td>
+                            <td>审核通过</td>
+                            <td>2019-08-16</td>
+                            <td>/</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=clubProject/update_unit&id=1511&index=1"  title="详情">详情</a>                            </td>
+                                            </tr>
+                                       <tr>
+                                                    <td><span class="num num-1">6</span></td>
+                            <td>2018000094</td>
+                            <td>华体通得闲体育服务</td>
+                            <td>管理部门</td>
+                            <td>排球</td>
+                            <td>免费</td>
+                            <td>审核通过</td>
+                            <td>2019-08-16</td>
+                            <td>/</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=clubProject/update_unit&id=1512&index=1"  title="详情">详情</a>                            </td>
+                                            </tr>
+                                       <tr>
+                                                    <td><span class="num num-1">7</span></td>
+                            <td>2018000094</td>
+                            <td>华体通得闲体育服务</td>
+                            <td>管理部门</td>
+                            <td>跆拳道</td>
+                            <td>免费</td>
+                            <td>审核通过</td>
+                            <td>2019-08-16</td>
+                            <td>/</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=clubProject/update_unit&id=1504&index=1"  title="详情">详情</a>                            </td>
+                                            </tr>
+                                       <tr>
+                                                    <td><span class="num num-1">8</span></td>
+                            <td>2018000094</td>
+                            <td>华体通得闲体育服务</td>
+                            <td>管理部门</td>
+                            <td>足球</td>
+                            <td>免费</td>
+                            <td>审核通过</td>
+                            <td>2019-08-16</td>
+                            <td>/</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=clubProject/update_unit&id=1510&index=1"  title="详情">详情</a>                            </td>
+                                            </tr>
+                                       <tr>
+                                                    <td><span class="num num-1">9</span></td>
+                            <td>2018000094</td>
+                            <td>华体通得闲体育服务</td>
+                            <td>管理部门</td>
+                            <td>太极</td>
+                            <td>免费</td>
+                            <td>审核通过</td>
+                            <td>2020-01-01</td>
+                            <td>/</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=clubProject/update_unit&id=1503&index=1"  title="详情">详情</a>                            </td>
+                                            </tr>
+                                   </table>
+                 
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=clubProject/delete&id=ID';
+    var cancelUrl = '/qmdd2018/index.php?r=clubProject/cancel&id=ID&new=state&del=721&yes=%E6%92%A4%E9%94%80%E6%88%90%E5%8A%9F&no=%E6%92%A4%E9%94%80%E5%A4%B1%E8%B4%A5';
+
+    $(function(){
+        var $start_time=$('#start_date');
+        var $end_time=$('#end_date');
+        $start_time.on('click', function(){
+            var end_input=$dp.$('end_date')
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd',alwaysUseStartDate:false,onpicked:function(){end_input.click();},maxDate:'#F{$dp.$D(\'end_date\')}'});
+        });
+        $end_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd',alwaysUseStartDate:false,minDate:'#F{$dp.$D(\'start_date\')}'});
+        });
+    });
+
+    function getBack(){
+        history.go(-1);
+    }
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#index').val(4);
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('click_submit').click();
+        }
+    }
+</script>
+</body>
+</html>
+
+1
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+
+
+
+
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=clubProject/index_unit&index=5';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+
+<style>
+    #j-delete{
+        margin:10px;
+    }
+    .box-header{padding:0;}</style>
+<div class="box">
+    <div class="box-title c">
+        <h1>当前界面：项目》单位项目注册》审核未通过列表</h1>
+        <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+            </div><!--box-title end-->
+    <div class="box-content">
+            	<div class="box-header" style="">
+                                    <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>删除</a>        </div><!--box-header end-->
+                <div class="box-search">
+            <form action="/qmdd2018/index.php?r=clubProject/index_unit&index=5" method="get">
+                <input type="hidden" name="r" value="clubProject/index_unit">
+                <input id="index" type="hidden" name="index" value="5">
+                <input type="hidden" name="club_id" value="0">
+                <input type="hidden" name="state" id="state" value="">
+                                <label style="margin-right:10px;">
+                    <span>审核日期：</span>
+                    <input style="width:120px;" class="input-text" type="text" id="start_date" name="start_date" value="2024-02-09">
+                    <span>-</span>
+                    <input style="width:120px;" class="input-text" type="text" id="end_date" name="end_date" value="2024-02-09">
+                </label>
+				<label style="margin-right:20px;">
+                    <span>项目：</span>
+                    <select name="project_id" ><option value="">请选择</option><option value="188">太极</option><option value="222">散打</option><option value="235">跆拳道</option><option value="236">拳击</option><option value="605">健美操</option><option value="606">健美</option><option value="607">技巧运动</option><option value="608">运动飞机</option><option value="614">航空模型</option><option value="621">田径</option><option value="650">篮球</option><option value="653">棒球</option><option value="654">掷球</option><option value="655">羽毛球</option><option value="656">冬季两项</option><option value="659">搏击</option><option value="660">自行车</option><option value="665">热气球</option><option value="671">飞镖</option><option value="672">保龄球</option><option value="673">赛艇</option><option value="674">台球</option><option value="675">建筑</option><option value="676">汽车</option><option value="677">冰壶</option><option value="678">登山</option><option value="683">信鸽</option><option value="684">舞龙舞狮</option><option value="685">龙舟</option><option value="686">导引养生功</option><option value="687">潜水</option><option value="689">体育舞蹈</option><option value="690">跳水</option><option value="693">马术</option><option value="697">电子竞技</option><option value="698">足球</option><option value="702">击剑</option><option value="703">脚斗士</option><option value="704">钓鱼</option><option value="705">门球</option><option value="706">高尔夫球</option><option value="707">滑翔</option><option value="712">体操</option><option value="716">手球</option><option value="717">曲棍球</option><option value="718">冰球</option><option value="719">柔道</option><option value="720">跳伞</option><option value="727">风筝</option><option value="728">拉丁舞</option><option value="729">救生</option><option value="730">摩托艇</option><option value="731">摩托车</option><option value="732">现代五项</option><option value="738">泰拳</option><option value="739">双节棍</option><option value="740">新媒体</option><option value="741">航海模型</option><option value="748">定向</option><option value="754">健身气功</option><option value="755">壁球</option><option value="756">橄榄球</option><option value="757">业余无线电</option><option value="761">轮滑</option><option value="762">帆船</option><option value="763">垒球</option><option value="764">篆刻</option><option value="765">街舞</option><option value="766">藤球</option><option value="767">滑雪</option><option value="773">皮划艇</option><option value="774">滑板</option><option value="777">游泳</option><option value="778">花样游泳</option><option value="796">雕塑</option><option value="797">滑冰</option><option value="801">毽球</option><option value="802">短兵</option><option value="803">网球</option><option value="804">软式网球</option><option value="805">铁人三项</option><option value="809">乒乓球</option><option value="810">拔河</option><option value="811">射箭</option><option value="812">车辆模型</option><option value="819">排球</option><option value="822">咏春</option><option value="823">举重</option><option value="824">水球</option><option value="827">摔跤</option><option value="828">滑水</option><option value="829">武术套路</option><option value="830">棋类</option><option value="836">桥牌</option><option value="837">设计</option><option value="838">书法</option><option value="839">工艺</option><option value="840">二胡                            </option><option value="841">吉他                            </option><option value="842">绘画</option><option value="843">摄影</option><option value="844">魔术                            </option><option value="846">帆船 </option><option value="865">1</option></select>                </label>
+                                                                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" placeholder="注册单位名称" name="keywords" value="">
+                </label>
+                <button id="click_submit" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+        	<table class="list"><!--此处项目，链接club_project表-->
+                	<tr class="table-title">
+                                                    <th class="check"><input id="j-checkall" class="input-check" type="checkbox"></th>
+                            <td >序号</td>
+                            <td >单位管理账号</td>
+                            <td >服务平台名称</td>
+                            <td >单位类别</td>
+                            <td >注册项目</td>
+                            <td >入驻方式</td>
+                            <td >审核状态</td>
+                            <td >审核时间</td>
+                            <td >审核员</td> 
+                            <td>操作</td>
+                                            </tr>
+                                    </table>
+                 
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=clubProject/delete&id=ID';
+    var cancelUrl = '/qmdd2018/index.php?r=clubProject/cancel&id=ID&new=state&del=721&yes=%E6%92%A4%E9%94%80%E6%88%90%E5%8A%9F&no=%E6%92%A4%E9%94%80%E5%A4%B1%E8%B4%A5';
+
+    $(function(){
+        var $start_time=$('#start_date');
+        var $end_time=$('#end_date');
+        $start_time.on('click', function(){
+            var end_input=$dp.$('end_date')
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd',alwaysUseStartDate:false,onpicked:function(){end_input.click();},maxDate:'#F{$dp.$D(\'end_date\')}'});
+        });
+        $end_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd',alwaysUseStartDate:false,minDate:'#F{$dp.$D(\'start_date\')}'});
+        });
+    });
+
+    function getBack(){
+        history.go(-1);
+    }
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#index').val(4);
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('click_submit').click();
+        }
+    }
+</script>
+</body>
+</html>
+
+1
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+
+
+
+
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=clubProject/index_unit&index=5';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+
+<style>
+    #j-delete{
+        margin:10px;
+    }
+    .box-header{padding:0;}</style>
+<div class="box">
+    <div class="box-title c">
+        <h1>当前界面：项目》单位项目注册》审核未通过列表</h1>
+        <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+            </div><!--box-title end-->
+    <div class="box-content">
+            	<div class="box-header" style="">
+                                    <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>删除</a>        </div><!--box-header end-->
+                <div class="box-search">
+            <form action="/qmdd2018/index.php?r=clubProject/index_unit&index=5" method="get">
+                <input type="hidden" name="r" value="clubProject/index_unit">
+                <input id="index" type="hidden" name="index" value="5">
+                <input type="hidden" name="club_id" value="0">
+                <input type="hidden" name="state" id="state" value="">
+                                <label style="margin-right:10px;">
+                    <span>审核日期：</span>
+                    <input style="width:120px;" class="input-text" type="text" id="start_date" name="start_date" value="2024-02-09">
+                    <span>-</span>
+                    <input style="width:120px;" class="input-text" type="text" id="end_date" name="end_date" value="2024-02-09">
+                </label>
+				<label style="margin-right:20px;">
+                    <span>项目：</span>
+                    <select name="project_id" ><option value="">请选择</option><option value="188">太极</option><option value="222">散打</option><option value="235">跆拳道</option><option value="236">拳击</option><option value="605">健美操</option><option value="606">健美</option><option value="607">技巧运动</option><option value="608">运动飞机</option><option value="614">航空模型</option><option value="621">田径</option><option value="650">篮球</option><option value="653">棒球</option><option value="654">掷球</option><option value="655">羽毛球</option><option value="656">冬季两项</option><option value="659">搏击</option><option value="660">自行车</option><option value="665">热气球</option><option value="671">飞镖</option><option value="672">保龄球</option><option value="673">赛艇</option><option value="674">台球</option><option value="675">建筑</option><option value="676">汽车</option><option value="677">冰壶</option><option value="678">登山</option><option value="683">信鸽</option><option value="684">舞龙舞狮</option><option value="685">龙舟</option><option value="686">导引养生功</option><option value="687">潜水</option><option value="689">体育舞蹈</option><option value="690">跳水</option><option value="693">马术</option><option value="697">电子竞技</option><option value="698">足球</option><option value="702">击剑</option><option value="703">脚斗士</option><option value="704">钓鱼</option><option value="705">门球</option><option value="706">高尔夫球</option><option value="707">滑翔</option><option value="712">体操</option><option value="716">手球</option><option value="717">曲棍球</option><option value="718">冰球</option><option value="719">柔道</option><option value="720">跳伞</option><option value="727">风筝</option><option value="728">拉丁舞</option><option value="729">救生</option><option value="730">摩托艇</option><option value="731">摩托车</option><option value="732">现代五项</option><option value="738">泰拳</option><option value="739">双节棍</option><option value="740">新媒体</option><option value="741">航海模型</option><option value="748">定向</option><option value="754">健身气功</option><option value="755">壁球</option><option value="756">橄榄球</option><option value="757">业余无线电</option><option value="761">轮滑</option><option value="762">帆船</option><option value="763">垒球</option><option value="764">篆刻</option><option value="765">街舞</option><option value="766">藤球</option><option value="767">滑雪</option><option value="773">皮划艇</option><option value="774">滑板</option><option value="777">游泳</option><option value="778">花样游泳</option><option value="796">雕塑</option><option value="797">滑冰</option><option value="801">毽球</option><option value="802">短兵</option><option value="803">网球</option><option value="804">软式网球</option><option value="805">铁人三项</option><option value="809">乒乓球</option><option value="810">拔河</option><option value="811">射箭</option><option value="812">车辆模型</option><option value="819">排球</option><option value="822">咏春</option><option value="823">举重</option><option value="824">水球</option><option value="827">摔跤</option><option value="828">滑水</option><option value="829">武术套路</option><option value="830">棋类</option><option value="836">桥牌</option><option value="837">设计</option><option value="838">书法</option><option value="839">工艺</option><option value="840">二胡                            </option><option value="841">吉他                            </option><option value="842">绘画</option><option value="843">摄影</option><option value="844">魔术                            </option><option value="846">帆船 </option><option value="865">1</option></select>                </label>
+                                                                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" placeholder="注册单位名称" name="keywords" value="">
+                </label>
+                <button id="click_submit" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+        	<table class="list"><!--此处项目，链接club_project表-->
+                	<tr class="table-title">
+                                                    <th class="check"><input id="j-checkall" class="input-check" type="checkbox"></th>
+                            <td >序号</td>
+                            <td >单位管理账号</td>
+                            <td >服务平台名称</td>
+                            <td >单位类别</td>
+                            <td >注册项目</td>
+                            <td >入驻方式</td>
+                            <td >审核状态</td>
+                            <td >审核时间</td>
+                            <td >审核员</td> 
+                            <td>操作</td>
+                                            </tr>
+                                    </table>
+                 
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=clubProject/delete&id=ID';
+    var cancelUrl = '/qmdd2018/index.php?r=clubProject/cancel&id=ID&new=state&del=721&yes=%E6%92%A4%E9%94%80%E6%88%90%E5%8A%9F&no=%E6%92%A4%E9%94%80%E5%A4%B1%E8%B4%A5';
+
+    $(function(){
+        var $start_time=$('#start_date');
+        var $end_time=$('#end_date');
+        $start_time.on('click', function(){
+            var end_input=$dp.$('end_date')
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd',alwaysUseStartDate:false,onpicked:function(){end_input.click();},maxDate:'#F{$dp.$D(\'end_date\')}'});
+        });
+        $end_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd',alwaysUseStartDate:false,minDate:'#F{$dp.$D(\'start_date\')}'});
+        });
+    });
+
+    function getBack(){
+        history.go(-1);
+    }
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#index').val(4);
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('click_submit').click();
+        }
+    }
+</script>
+</body>
+</html>
+

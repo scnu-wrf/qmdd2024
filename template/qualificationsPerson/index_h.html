@@ -1,0 +1,315 @@
+
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/public.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/font.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.fallr/jquery.fallr.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.datetimepicker.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.uploadifive/uploadifive.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/artDialog/skins/default.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.contextMenu.css" />
+<script type="text/javascript" src="/qmdd2018/assets/c6aea6c/jquery.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.fallr/jquery.fallr.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.parse.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.uploadifive/jquery.uploadifive.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/artDialog/jquery.artDialog.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/artDialog/plugins/iframeTools.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.ui.position.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.contextMenu.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/md5.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/Base64.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/base64_1.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/public.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/spark-md5.js"></script>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=qualificationsPerson/index_h';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+<div class="box">
+    <div class="box-title c">
+        <h1>
+            <span>当前界面：服务者 》服务者管理 》入驻待审核</span>
+        </h1>
+        <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+    </div><!--box-title end-->
+    <div class="box-content">
+        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=qualificationsPerson/index_h" method="get">
+                <input type="hidden" name="r" value="qualificationsPerson/index_h">
+                <label style="margin-right:10px;">
+                    <span>申请时间：</span>
+                    <input style="width:120px;" class="input-text" type="text" id="start_date" name="start_date" value="">
+                    <span>-</span>
+                    <input style="width:120px;" class="input-text" type="text" id="end_date" name="end_date" value="">
+                </label>
+                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input type="text" style="width:200px" class="input-text" name="keywords" value="" placeholder="请输入账号/姓名">
+                </label>
+                <button id="click_submit" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div>
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                        <th width="3%">序号</th>
+                        <th width="12%">GF帐号</th>
+                        <th width="12%">姓名</th>
+                        <th width="12%">入驻项目</th>
+                        <th width="12%">入驻类型</th>
+                        <th width="12%">入驻来源</th>
+                        <th width="12%">入驻状态</th>
+                        <th width="12%">申请时间</th>
+                        <th width="12%">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="table_html">
+                                            <tr>
+                            <td><span class="num num-1">1</span></td>
+                            <td>227627</td>
+                            <td>塔里木</td>
+                            <td>羽毛球</td>
+                            <td>裁判员</td>
+                            <td>普通注册</td>
+                            <td>待审核</td>
+                            <td>2021-02-03 17:10:54</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2061&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                            <tr>
+                            <td><span class="num num-1">2</span></td>
+                            <td>272727</td>
+                            <td>梁辰曦</td>
+                            <td>乒乓球</td>
+                            <td>裁判员</td>
+                            <td>普通注册</td>
+                            <td>待审核</td>
+                            <td>2020-06-22 10:00:16</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2045&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                            <tr>
+                            <td><span class="num num-1">3</span></td>
+                            <td>693726</td>
+                            <td>令狐仁</td>
+                            <td>网球</td>
+                            <td>教练员</td>
+                            <td>单位导入</td>
+                            <td>待审核</td>
+                            <td>2020-04-07 16:31:32</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2012&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                            <tr>
+                            <td><span class="num num-1">4</span></td>
+                            <td>543226</td>
+                            <td>孙思欣</td>
+                            <td>网球</td>
+                            <td>教练员</td>
+                            <td>单位导入</td>
+                            <td>待审核</td>
+                            <td>2020-04-07 16:31:32</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2013&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                            <tr>
+                            <td><span class="num num-1">5</span></td>
+                            <td>684009</td>
+                            <td>曲翠</td>
+                            <td>网球</td>
+                            <td>教练员</td>
+                            <td>单位导入</td>
+                            <td>待审核</td>
+                            <td>2020-04-07 16:31:32</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2014&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                            <tr>
+                            <td><span class="num num-1">6</span></td>
+                            <td>786896</td>
+                            <td>弘中</td>
+                            <td>网球</td>
+                            <td>教练员</td>
+                            <td>单位导入</td>
+                            <td>待审核</td>
+                            <td>2020-04-07 16:31:32</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2015&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                            <tr>
+                            <td><span class="num num-1">7</span></td>
+                            <td>402113</td>
+                            <td>丁超翰</td>
+                            <td>网球</td>
+                            <td>教练员</td>
+                            <td>单位导入</td>
+                            <td>待审核</td>
+                            <td>2020-04-07 16:31:32</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2016&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                            <tr>
+                            <td><span class="num num-1">8</span></td>
+                            <td>323502</td>
+                            <td>步琬</td>
+                            <td>网球</td>
+                            <td>教练员</td>
+                            <td>单位导入</td>
+                            <td>待审核</td>
+                            <td>2020-04-07 16:31:32</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2017&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                            <tr>
+                            <td><span class="num num-1">9</span></td>
+                            <td>229452</td>
+                            <td>温旭</td>
+                            <td>网球</td>
+                            <td>教练员</td>
+                            <td>单位导入</td>
+                            <td>待审核</td>
+                            <td>2020-04-07 16:31:32</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2018&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                            <tr>
+                            <td><span class="num num-1">10</span></td>
+                            <td>202205</td>
+                            <td>苏军</td>
+                            <td>网球</td>
+                            <td>教练员</td>
+                            <td>单位导入</td>
+                            <td>待审核</td>
+                            <td>2020-04-07 16:31:32</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2019&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                            <tr>
+                            <td><span class="num num-1">11</span></td>
+                            <td>138728</td>
+                            <td>诸葛胜倩</td>
+                            <td>网球</td>
+                            <td>教练员</td>
+                            <td>单位导入</td>
+                            <td>待审核</td>
+                            <td>2020-04-07 16:31:32</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2020&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                            <tr>
+                            <td><span class="num num-1">12</span></td>
+                            <td>839211</td>
+                            <td>金瑶新</td>
+                            <td>网球</td>
+                            <td>教练员</td>
+                            <td>单位导入</td>
+                            <td>待审核</td>
+                            <td>2020-04-07 16:31:25</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2021&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                            <tr>
+                            <td><span class="num num-1">13</span></td>
+                            <td>602676</td>
+                            <td>慕容健茗</td>
+                            <td>网球</td>
+                            <td>教练员</td>
+                            <td>单位导入</td>
+                            <td>待审核</td>
+                            <td>2020-04-07 16:31:18</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2022&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                            <tr>
+                            <td><span class="num num-1">14</span></td>
+                            <td>374736</td>
+                            <td>郑瑞雯</td>
+                            <td>网球</td>
+                            <td>教练员</td>
+                            <td>单位导入</td>
+                            <td>待审核</td>
+                            <td>2020-04-07 16:29:52</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2023&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                            <tr>
+                            <td><span class="num num-1">15</span></td>
+                            <td>223701</td>
+                            <td>王明辉</td>
+                            <td>太极</td>
+                            <td>教练员</td>
+                            <td>单位导入</td>
+                            <td>待审核</td>
+                            <td>2020-03-27 21:31:52</td>
+                            <td>
+                                <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update_examine&id=2011&s=1"  title="审核">审核</a>                            </td>
+                        </tr>
+                                    </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c" id="page_html" ><ul id="yw0" class="yiiPager"><li class="first hidden"><a href="/qmdd2018/index.php?r=qualificationsPerson/index_h">首页</a></li>
+<li class="previous hidden"><a href="/qmdd2018/index.php?r=qualificationsPerson/index_h">上一页</a></li>
+<li class="page selected"><a href="/qmdd2018/index.php?r=qualificationsPerson/index_h">1</a></li>
+<li class="page"><a href="/qmdd2018/index.php?r=qualificationsPerson/index_h&amp;page=2">2</a></li>
+<li class="next"><a href="/qmdd2018/index.php?r=qualificationsPerson/index_h&amp;page=2">下一页</a></li>
+<li class="last"><a href="/qmdd2018/index.php?r=qualificationsPerson/index_h&amp;page=2">末页</a></li></ul><div class="info">共18条内容，当前第1/2页,<span>显示行:</span>
+        <select name="PageSize" onchange="javascript:changPage()" id="PageSize"><option selected="selected" value="15">15</option><option  value="20">20</option><option  value="30">30</option><option  value="50">50</option><option  value="100">100</option></select></span></div><script> function changPage(){ var s2 = "/qmdd2018/index.php?r=public/setPageSize"; 
+    var options=$('#PageSize option:selected').val(); //获取选中的项
+    $.ajax({
+        type: 'post', url: s2,
+        data: { pageSize: options, },
+        dataType: 'json',
+        success: function(data) {
+             document.getElementById('tbody1').innerHTML =data['html'];
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest);
+        }
+    });
+  }
+ </script></div>
+    </div><!--box-content end-->
+</div>
+<script>
+    $(function(){
+        var $lock_date_start=$('#lock_date_start,#start_date');
+        var $lock_date_end=$('#lock_date_end,#end_date');
+        $lock_date_start.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd'});
+        });
+        $lock_date_end.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd'});
+        });
+    });
+    var cancelUrl = '/qmdd2018/index.php?r=qualificationsPerson/cancel&id=ID&new=check_state&del=374&yes=%E6%92%A4%E9%94%80%E6%88%90%E5%8A%9F&no=%E6%92%A4%E9%94%80%E5%A4%B1%E8%B4%A5';
+</script>
+<script> var mfields=["<span class=\"num num-1\">{{$index}}<\/span>","{{$v->qualification_gfaccount}}","{{$v->qualification_name}}","{{$v->qualification_project_name}}","{{$v->qualification_type}}","{{$v->logon_way_name}}","{{$v->check_state_name}}","{ if($v->uDate!='0000-00-00 00:00:00'){$v->uDate}}","{{show_command('审核', $this->createUrl('update_examine', array('id'=>$v->id,'s'=>'1')), '审核')}}"]</script>
+</body>
+</html>

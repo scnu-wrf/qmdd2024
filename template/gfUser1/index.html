@@ -1,0 +1,150 @@
+
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/public.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/font.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.fallr/jquery.fallr.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.datetimepicker.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.uploadifive/uploadifive.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/artDialog/skins/default.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.contextMenu.css" />
+<script type="text/javascript" src="/qmdd2018/assets/c6aea6c/jquery.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.fallr/jquery.fallr.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.parse.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.uploadifive/jquery.uploadifive.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/artDialog/jquery.artDialog.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/artDialog/plugins/iframeTools.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.ui.position.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.contextMenu.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/md5.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/Base64.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/base64_1.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/public.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/spark-md5.js"></script>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=gfUser1/index';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+<div class="box">
+    <div class="box-title c">
+        <h1>
+            <span>
+              当前界面：会员 》会员管理 》注册会员列表
+            </span>
+        </h1>
+        <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();">
+            <i class="fa fa-refresh"></i>刷新</a>
+        </span>
+    </div><!--box-title end-->
+    <div class="box-content">
+        <div class="box-header">
+            <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>注册账号</a>            <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>注册实名</a>            <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>账号实名</a>                        <a style="margin-left: 45px; color: #000000;">今日注册：<span style="color:red;font-weight: bold;">0</span></a>
+            <!-- <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>删除</a> -->
+        </div><!--box-header end-->
+        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=gfUser1/index" method="get">
+                <input type="hidden" name="r" value="gfUser1/index">
+                <input type="hidden" id="to_day" name="to_day" value="">
+       
+                <label style="margin-right:10px;">
+                    <span>注册时间：</span>
+                    <input style="width:100px;" class="input-text" type="text" id="realname_time" name="realname_time" value="2024-02-11">
+                    <span>-</span>
+                    <input style="width:100px;" class="input-text" type="text" id="realname_entertime" name="realname_entertime" value="2024-02-11">
+                </label>
+                <label style="margin-right:20px;">
+                    <span>注册方式：</span>
+                    <select name="logon_way" ><option value="">请选择</option><option value="1356">普通注册</option><option value="1357">手机注册</option><option value="1375">后台添加</option><option value="1438">QQ授权</option><option value="1439">微信授权</option><option value="1440">新浪微博授权</option><option value="1441">支付宝授权</option></select>                </label>
+                <label style="margin-right:20px;">
+                    <span>账号状态：</span>
+                    <select name="user_state" ><option value="">请选择</option><option value="506">正常</option><option value="507">永久冻结</option><option value="1282">冻结7天</option><option value="1283">冻结30天</option><option value="1556">已注销</option></select>                </label>
+                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="账号/昵称/手机号">
+                </label>
+                <button id="submit_button" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                        <th width="3%">序号</th>
+                        <th width="8.8%">GF账号</th>
+                        <th width="8.8%">昵称</th>
+                        <th width="8.8%">绑定手机号</th>
+                        <th width="8.8%">账号状态</th>
+                        <th width="8.8%">实名状态</th>
+                        <!-- <th ></th> -->
+                        <th width="8.8%">注册时间</th>
+                        <th width="8.8%">有效期限</th>
+                        <th width="8.8%">注册方式</th>
+                        <th width="8.8%">注册IP地址</th>
+                        <th width="8.8%">注册客户端</th>
+                        <th width="8.8%">操作</th>
+                    </tr>
+                </thead>
+                <tbody id="table_html">
+                                    </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c" id="page_html" ></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=gfUser1/delete&id=ID';
+    $(function(){
+        var $realname_time=$('#realname_time');
+        var $realname_entertime=$('#realname_entertime');
+        $realname_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+        });
+        $realname_entertime.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+        });
+    });
+    $("#zsxm").on("click",function(){
+        $.dialog.data('GF_ID', 0);
+            $.dialog.open('/qmdd2018/index.php?r=select/gfuser&passed=0',{
+            id:'zhanghao',
+            lock:true,opacity:0.3,
+            width:'500px',
+            // height:'60%',
+            title:'选择未登记账号',
+            close: function () {
+                if($.dialog.data('GF_ID')>0){
+                    window.location.href="/qmdd2018/index.php?r=gfUser1/update_c&passed=372&id="+$.dialog.data('GF_ID');
+                }
+            }
+        })
+    })
+</script>
+
+<script></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+@charset "utf-8";
+/* CSS Document */
+body {margin:0; padding:0;}
+.clear {clear:both;}
+a {cursor:pointer;}
+.info_menu_border{border-bottom:solid 3px #fe8100;}
+.info_menu{width:100%; height:35px; border-bottom:solid 1px #CCCCCC;}
+.info_menu a {text-decoration:none; display:block; width:100px; height:32px; text-align:center; float:left;font-family:'方正兰亭黑_GBK'; font-size:14px; line-height:32px;}
+.top_text{width:100%; height:50px; background:#fdefbe; line-height:50px; margin-bottom:10px;}
+.top_text p {font-family:'方正兰亭黑_GBK'; font-size:14px; text-indent:1em;}
+
+.detail_table {border:solid 1px #cccccc;font-family:'方正兰亭黑_GBK'; font-size:14px; margin-bottom:5px;}
+.detail_table th {height:20px; padding:5px 10px 5px 10px;}
+.detail_table td {padding:8px 10px 8px 10px;border-top:solid 1px #cccccc; height:30px;}
+.detail_t_img {width:60px;}
+.unit_detail_btn {border:solid 1px #cccccc; background:#e8e8e8; border-radius:30px; padding:5px 15px 5px 15px; outline:none; cursor:pointer;font-family:'方正兰亭黑_GBK'; font-size:14px; margin:auto 0;}
+.detail_address {margin-left:15px; margin-right:15px;}
+
+.footer p {margin:0; line-height:70px;font-family:'方正兰亭黑_GBK'; font-size:14px;}

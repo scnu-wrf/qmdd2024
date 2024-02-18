@@ -1,0 +1,26 @@
+2024/02/15 16:34:41 [error] [php] Undefined variable: menustr_ss (D:\wamp64\www\sport2024\models\Menu.php:158)
+Stack trace:
+#0 D:\wamp64\www\sport2024\admin\controllers\IndexController.php(121): Menu->get_role_menu()
+#1 D:\wamp64\www\sport2024\admin\controllers\IndexController.php(133): IndexController->get_signin()
+#2 D:\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
+#3 D:\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
+#5 D:\wamp64\www\sport2024\framework\web\CController.php(265): IndexController->runActionWithFilters()
+#6 D:\wamp64\www\sport2024\framework\web\CWebApplication.php(282): IndexController->run()
+#7 D:\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 D:\wamp64\www\sport2024\index.php(34): CWebApplication->run()
+REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456
+2024/02/15 20:13:46 [error] [php] Undefined variable: menustr_ss (D:\wamp64\www\sport2024\models\Menu.php:158)
+Stack trace:
+#0 D:\wamp64\www\sport2024\admin\controllers\IndexController.php(121): Menu->get_role_menu()
+#1 D:\wamp64\www\sport2024\admin\controllers\IndexController.php(133): IndexController->get_signin()
+#2 D:\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
+#3 D:\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 D:\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
+#5 D:\wamp64\www\sport2024\framework\web\CController.php(265): IndexController->runActionWithFilters()
+#6 D:\wamp64\www\sport2024\framework\web\CWebApplication.php(282): IndexController->run()
+#7 D:\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 D:\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 D:\wamp64\www\sport2024\index.php(34): CWebApplication->run()
+REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456

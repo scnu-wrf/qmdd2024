@@ -1,0 +1,484 @@
+
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/public.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/font.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.fallr/jquery.fallr.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.datetimepicker.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.uploadifive/uploadifive.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/artDialog/skins/default.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.contextMenu.css" />
+<script type="text/javascript" src="/qmdd2018/assets/c6aea6c/jquery.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.fallr/jquery.fallr.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.parse.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.uploadifive/jquery.uploadifive.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/artDialog/jquery.artDialog.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/artDialog/plugins/iframeTools.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.ui.position.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.contextMenu.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/md5.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/Base64.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/base64_1.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/public.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/spark-md5.js"></script>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=clubQualificationPerson/index_renew';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+<div class="box" div style="font-size: 9px">
+	<div class="box-title c"><h1><i class="fa fa-table"></i>服务者信息</h1></div>
+    <div class="box-content">
+    	<div class="box-header">
+    		<a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/create"><i class="fa fa-plus"></i>添加</a>   
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+            <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>删除</a>
+        </div><!--box-header end-->
+        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=clubQualificationPerson/index_renew" method="get">
+                <input type="hidden" name="r" value="clubQualificationPerson/index_renew">
+                <label style="margin-right:20px;">
+                    <span>性别：</span>
+                    <select name="sex" ><option value="">请选择</option><option value="205">男</option><option value="207">女</option></select>                </label>
+				<label style="margin-right:20px;">
+                    <span>项目：</span>
+                    <select name="project" ><option value="">请选择</option><option value="188">太极</option><option value="189">太极剑</option><option value="190">太极扇</option><option value="191">太极操</option><option value="192">太极拳</option><option value="193">太极瑜伽</option><option value="222">散打</option><option value="235">跆拳道</option><option value="236">拳击</option><option value="605">健美操</option><option value="606">健美</option><option value="607">技巧运动</option><option value="608">运动飞机</option><option value="609">超轻型飞机</option><option value="610">轻型飞机</option><option value="611">特技飞机</option><option value="612">旋翼类运动飞机</option><option value="613">模拟飞机</option><option value="614">航空模型</option><option value="615">航天模型</option><option value="616">电动航空模型</option><option value="617">仿真航空模型</option><option value="618">无线电遥控航空模型</option><option value="619">线操纵航空模型</option><option value="620">自由飞航空模型</option><option value="621">田径</option><option value="622">1500米赛跑</option><option value="623">2000米赛跑</option><option value="624">5000米跑</option><option value="625">10000米跑</option><option value="626">12000米跑</option><option value="627">110米栏（男）</option><option value="628">100米栏（女）</option><option value="629">400米栏</option><option value="630">4X100米接力</option><option value="631">4X400米接力</option><option value="632">400米障碍</option><option value="633">3000米障碍</option><option value="634">20公里竞走</option><option value="635">50公里竞走</option><option value="636">100公里竞走</option><option value="637">跳高</option><option value="638">撑竿跳高</option><option value="639">跳远</option><option value="640">三级跳远</option><option value="641">铅球</option><option value="642">铁饼</option><option value="643">链球</option><option value="644">标枪</option><option value="645">100米短跑</option><option value="646">200米短跑</option><option value="647">400米短跑</option><option value="648">800米短跑</option><option value="649">马拉松</option><option value="650">篮球</option><option value="651">三人制篮球</option><option value="652">五人制篮球</option><option value="653">棒球</option><option value="654">掷球</option><option value="655">羽毛球</option><option value="656">冬季两项</option><option value="657">射击</option><option value="658">越野滑雪</option><option value="659">搏击</option><option value="660">自行车</option><option value="661">场地自行车</option><option value="662">公路自行车</option><option value="663">山地自行车</option><option value="664">BMX小轮自行车</option><option value="665">热气球</option><option value="666">热气飞艇</option><option value="667">氦气球</option><option value="668">氦气飞艇</option><option value="669">混合式气球</option><option value="670">热气球</option><option value="671">飞镖</option><option value="672">保龄球</option><option value="673">赛艇</option><option value="674">台球</option><option value="675">建筑</option><option value="676">汽车</option><option value="677">冰壶</option><option value="678">登山</option><option value="679">攀岩</option><option value="680">攀冰</option><option value="681">山地户外运动</option><option value="682">登山</option><option value="683">信鸽</option><option value="684">舞龙舞狮</option><option value="685">龙舟</option><option value="686">导引养生功</option><option value="687">潜水</option><option value="688">蹼泳</option><option value="689">体育舞蹈</option><option value="690">跳水</option><option value="691">跳板跳水</option><option value="692">跳台跳水 </option><option value="693">马术</option><option value="694">障碍赛</option><option value="695">三日赛</option><option value="696">盛装舞步</option><option value="697">电子竞技</option><option value="698">足球</option><option value="699">三人制足球</option><option value="700">足球高尔夫</option><option value="701">足球</option><option value="702">击剑</option><option value="703">脚斗士</option><option value="704">钓鱼</option><option value="705">门球</option><option value="706">高尔夫球</option><option value="707">滑翔</option><option value="708">滑翔机</option><option value="709">悬挂滑翔</option><option value="710">滑翔伞</option><option value="711">动力滑翔伞</option><option value="712">体操</option><option value="713">艺术体操</option><option value="714">体操</option><option value="715">蹦床</option><option value="716">手球</option><option value="717">曲棍球</option><option value="718">冰球</option><option value="719">柔道</option><option value="720">跳伞</option><option value="721">特技定点跳伞</option><option value="722">造型跳伞</option><option value="723">踩伞</option><option value="724">低空跳伞</option><option value="725">牵引跳伞</option><option value="726">花样跳伞</option><option value="727">风筝</option><option value="728">拉丁舞</option><option value="729">救生</option><option value="730">摩托艇</option><option value="731">摩托车</option><option value="732">现代五项</option><option value="733">跑射</option><option value="734">游泳</option><option value="735">马术</option><option value="736">射击</option><option value="737">击剑</option><option value="738">泰拳</option><option value="739">双节棍</option><option value="740">新媒体</option><option value="741">航海模型</option><option value="742">仿真</option><option value="743">仿真航行</option><option value="744">帆船</option><option value="745">耐久</option><option value="746">动力艇</option><option value="747">建筑场景</option><option value="748">定向</option><option value="749">徒步定向</option><option value="750">滑雪定向</option><option value="751">轮椅定向</option><option value="752">山地车定向</option><option value="753">GPS定向</option><option value="754">健身气功</option><option value="755">壁球</option><option value="756">橄榄球</option><option value="757">业余无线电</option><option value="758">业余无线电台</option><option value="759">无线电测向</option><option value="760">无线电通信</option><option value="761">轮滑</option><option value="762">帆船</option><option value="763">垒球</option><option value="764">篆刻</option><option value="765">街舞</option><option value="766">藤球</option><option value="767">滑雪</option><option value="768">高山滑雪</option><option value="769">越野滑雪</option><option value="770">自由滑雪</option><option value="771">跳台滑雪</option><option value="772">单板滑雪</option><option value="773">皮划艇</option><option value="774">滑板</option><option value="775">激流回旋皮划艇</option><option value="776">静水皮划艇</option><option value="777">游泳</option><option value="778">花样游泳</option><option value="779">个人混合泳200米                     </option><option value="780">混合泳接力4*100米                   </option><option value="781">自由泳50米                        </option><option value="782">自由泳100米                       </option><option value="783">自由泳200米                       </option><option value="784">自由泳400米                       </option><option value="785">自由泳800米                       </option><option value="786">自由泳1500米                      </option><option value="787">仰泳100米                        </option><option value="788">仰泳200米                        </option><option value="789">蛙泳100米                        </option><option value="790">蛙泳200米                        </option><option value="791">蝶泳100米                        </option><option value="792">蝶泳200米                        </option><option value="793">自由泳接力4*100米                   </option><option value="794">自由泳接力4*200米                   </option><option value="795">公开水域游泳</option><option value="796">雕塑</option><option value="797">滑冰</option><option value="798">短道速滑</option><option value="799">速度滑冰</option><option value="800">花样滑冰</option><option value="801">毽球</option><option value="802">短兵</option><option value="803">网球</option><option value="804">软式网球</option><option value="805">铁人三项</option><option value="806">马拉松</option><option value="807">游泳</option><option value="808">自行车</option><option value="809">乒乓球</option><option value="810">拔河</option><option value="811">射箭</option><option value="812">车辆模型</option><option value="813">非遥控车</option><option value="814">电动公路车</option><option value="815">电动越野车</option><option value="816">内燃机公路车</option><option value="817">内燃机越野车</option><option value="818">火车模型</option><option value="819">排球</option><option value="820">沙滩排球</option><option value="821">排球</option><option value="822">咏春</option><option value="823">举重</option><option value="824">水球</option><option value="825">摔跤</option><option value="826">中国式摔跤</option><option value="827">摔跤</option><option value="828">滑水</option><option value="829">武术套路</option><option value="830">棋类</option><option value="831">中国象棋</option><option value="832">国际跳棋</option><option value="833">围棋</option><option value="834">国际象棋</option><option value="835">五子棋</option><option value="836">桥牌</option><option value="837">设计</option><option value="838">书法</option><option value="839">工艺</option><option value="840">二胡                            </option><option value="841">吉他                            </option><option value="842">绘画</option><option value="843">摄影</option><option value="844">魔术                            </option><option value="846">帆船 </option><option value="847">跆拳道</option><option value="864">品势</option><option value="865">1</option></select>                </label>
+                <label style="margin-right:20px;">
+                    <span>类型：</span>
+                    <select name="type_id" ><option value="">请选择</option><option value="261">裁判员</option><option value="268">教练员</option><option value="314">摄影师</option><option value="321">摄像师</option><option value="328">保健调理师</option><option value="335">管理员</option></select>                </label>
+                <label style="margin-right:20px;">
+                    <span>资质等级：</span>
+                    <select name="identity" ><option value="">请选择</option><option value="262">国际级</option><option value="263">国家级</option><option value="264">一级</option><option value="265">二级</option><option value="266">三级</option><option value="267">实习裁判员</option><option value="269">国家级</option><option value="270">高级</option><option value="271">一级</option><option value="272">二级</option><option value="273">三级</option><option value="274">实习教练员</option><option value="275">社会体育指导员证</option><option value="276">国家级</option><option value="277">一级</option><option value="278">二级</option><option value="279">三级</option><option value="281">运动员等级证</option><option value="282">国际级运动健将</option><option value="283">运动健将</option><option value="284">一级</option><option value="285">二级</option><option value="286">三级</option><option value="287">段位证</option><option value="288">九段</option><option value="289">八段</option><option value="290">七段</option><option value="291">六段</option><option value="292">五段</option><option value="293">四段</option><option value="294">三段</option><option value="295">二段</option><option value="296">一段</option><option value="297">GF龙组别会员</option><option value="298">九龙</option><option value="299">八龙</option><option value="300">七龙</option><option value="301">六龙</option><option value="302">五龙</option><option value="303">四龙</option><option value="304">三龙</option><option value="305">二龙</option><option value="306">一龙</option><option value="308">正高级教师</option><option value="309">高级教师</option><option value="310">一级教师</option><option value="311">二级教师</option><option value="312">三级教师</option><option value="313">实习教师</option><option value="315">高级摄影技师</option><option value="316">摄影技师</option><option value="317">高级摄影师</option><option value="318">中级摄影师</option><option value="319">初级摄影师</option><option value="320">实习摄影师</option><option value="322">高级电视摄像师（一级）</option><option value="323">电视摄像师（二级）</option><option value="324">高级电视摄像员（三级）</option><option value="325">中级电视摄像员（四级）</option><option value="326">初级电视摄像员（五级）</option><option value="327">实习摄像师</option><option value="329">高级养生保健技师</option><option value="330">养身保健技师</option><option value="331">高级养身保健师</option><option value="332">中级养身保健师</option><option value="333">初级养身保健师</option><option value="334">实习养生保健师</option><option value="383">资质类型</option><option value="964">教练员证</option></select>                </label>
+                <label style="margin-right:20px;">
+                    <span>服务者等级：</span>
+                    <select name="type_code" ><option value="">请选择</option><option value="43">实习裁判员</option><option value="44">铜牌裁判员</option><option value="45">银牌裁判员</option><option value="46">金牌裁判员</option><option value="47">实习教练员</option><option value="48">铜牌教练员</option><option value="49">银牌教练员</option><option value="50">金牌教练员</option><option value="51">实习摄影师</option><option value="52">铜牌摄影师</option><option value="53">银牌摄影师</option><option value="54">金牌摄影师</option><option value="55">实习摄像师</option><option value="56">铜牌摄像师</option><option value="57">银牌摄像师</option><option value="58">金牌摄像师</option><option value="59">实习保健调理师</option><option value="60">铜牌保健调理师</option><option value="61">银牌保健调理师</option><option value="62">金牌保健调理师</option><option value="63">社区单位管理员</option></select>                </label>
+                <label style="margin-right:20px;">
+                    <span>续签状态：</span>
+                    <select name="renew_state">
+                        <option value="">请选择</option>
+                                                 <option value="371">待续签</option>
+                                                 <option value="372">审核通过</option>
+                                                 <option value="373">审核未通过</option>
+                                            </select>
+                </label>
+                <label style="margin-right:20px;">
+                    <input name="sky" class="sky" type="radio" value="30" checked="checked"><span>30天</span> 
+                    <input name="sky" class="sky" type="radio" value="15" ><span>15天</span> 
+                    <input name="sky" class="sky" type="radio" value="1" ><span>1天</span> 
+                </label>
+                <button class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                        <th class="check"><input id="j-checkall" class="input-check" type="checkbox"></th>
+                        <th style="text-align:center;">序号</th>
+                        <th>GF帐号</th>
+                        <th>姓名</th>
+                        <th>姓别</th>
+                        <th>项目</th>
+                        <th>服务者类型</th>
+                        <th>服务者资质</th>
+                        <th>资质有效期</th>
+                        <th>服务者等级</th>
+                        <th>服务者有效期</th>
+                        <th>剩余天数</th>
+                        <th>状态</th>
+                        <th>续签状态</th>
+                        <th>续签缴费</th>
+                        <th>Renew State Time</th>
+                        <th>操作</th>
+                       
+                    </tr>
+                </thead>
+                <tbody id="table_html">
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2057"></td>
+                        <td style="text-align:center;"><span class="num num-1">1</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2057">287856</a></td>
+                        <td>梁宸曦</td>
+                        <td>女</td>
+                        <td>跆拳道</td>
+                        <td>单位管理员</td>
+                        <td></td>
+                        <td>长期</td>
+                        <td>无</td>
+                        <td>2022年01月12日</td>
+                        <td>
+                            -764天                        </td>
+                        <td>正常</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2057"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2057" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2056"></td>
+                        <td style="text-align:center;"><span class="num num-1">2</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2056">990969</a></td>
+                        <td>就是咔</td>
+                        <td>女</td>
+                        <td></td>
+                        <td>摄影师</td>
+                        <td>初级摄影师</td>
+                        <td>长期</td>
+                        <td>铜牌</td>
+                        <td>2021年12月30日</td>
+                        <td>
+                            -777天                        </td>
+                        <td>正常</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2056"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2056" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2055"></td>
+                        <td style="text-align:center;"><span class="num num-1">3</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2055">287856</a></td>
+                        <td>梁宸曦</td>
+                        <td>女</td>
+                        <td>跆拳道</td>
+                        <td>裁判员</td>
+                        <td>国际级</td>
+                        <td>长期</td>
+                        <td>金牌</td>
+                        <td>2022年01月12日</td>
+                        <td>
+                            -764天                        </td>
+                        <td>正常</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2055"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2055" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2054"></td>
+                        <td style="text-align:center;"><span class="num num-1">4</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2054">287856</a></td>
+                        <td>梁宸曦</td>
+                        <td>女</td>
+                        <td>跆拳道</td>
+                        <td>教练员</td>
+                        <td>国际级</td>
+                        <td>长期</td>
+                        <td>金牌</td>
+                        <td>2022年01月12日</td>
+                        <td>
+                            -764天                        </td>
+                        <td>正常</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2054"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2054" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2053"></td>
+                        <td style="text-align:center;"><span class="num num-1">5</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2053">287856</a></td>
+                        <td>梁宸曦</td>
+                        <td>女</td>
+                        <td>太极</td>
+                        <td>单位管理员</td>
+                        <td></td>
+                        <td>长期</td>
+                        <td>无</td>
+                        <td>2021年12月05日</td>
+                        <td>
+                            -802天                        </td>
+                        <td>冻结30天</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2053"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2053" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2052"></td>
+                        <td style="text-align:center;"><span class="num num-1">6</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2052">287856</a></td>
+                        <td>梁宸曦</td>
+                        <td>女</td>
+                        <td>太极</td>
+                        <td>教练员</td>
+                        <td>国际级</td>
+                        <td>长期</td>
+                        <td>金牌</td>
+                        <td>2021年12月05日</td>
+                        <td>
+                            -802天                        </td>
+                        <td>正常</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2052"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2052" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2051"></td>
+                        <td style="text-align:center;"><span class="num num-1">7</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2051">287856</a></td>
+                        <td>梁宸曦</td>
+                        <td>女</td>
+                        <td>太极</td>
+                        <td>裁判员</td>
+                        <td>国际级</td>
+                        <td>长期</td>
+                        <td>金牌</td>
+                        <td>2021年12月04日</td>
+                        <td>
+                            -803天                        </td>
+                        <td>正常</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2051"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2051" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2047"></td>
+                        <td style="text-align:center;"><span class="num num-1">8</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2047">494949</a></td>
+                        <td>动动欣</td>
+                        <td>女</td>
+                        <td>太极</td>
+                        <td>教练员</td>
+                        <td>国际级</td>
+                        <td>长期</td>
+                        <td>金牌</td>
+                        <td>2021年06月30日</td>
+                        <td>
+                            -960天                        </td>
+                        <td>冻结7天</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2047"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2047" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2044"></td>
+                        <td style="text-align:center;"><span class="num num-1">9</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2044">536533</a></td>
+                        <td>陈其雨</td>
+                        <td>男</td>
+                        <td>武术套路</td>
+                        <td>教练员</td>
+                        <td>国际级</td>
+                        <td>1970年01月01日</td>
+                        <td>金牌</td>
+                        <td>2021年06月17日</td>
+                        <td>
+                            -973天                        </td>
+                        <td>正常</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2044"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2044" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2036"></td>
+                        <td style="text-align:center;"><span class="num num-1">10</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2036">494949</a></td>
+                        <td>动动欣</td>
+                        <td>女</td>
+                        <td>武术套路</td>
+                        <td>教练员</td>
+                        <td>国际级</td>
+                        <td>长期</td>
+                        <td>金牌</td>
+                        <td>2021年06月22日</td>
+                        <td>
+                            -968天                        </td>
+                        <td>正常</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2036"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2036" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2035"></td>
+                        <td style="text-align:center;"><span class="num num-1">11</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2035">494949</a></td>
+                        <td>动动欣</td>
+                        <td>女</td>
+                        <td>武术套路</td>
+                        <td>单位管理员</td>
+                        <td></td>
+                        <td>长期</td>
+                        <td>无</td>
+                        <td>2021年06月22日</td>
+                        <td>
+                            -968天                        </td>
+                        <td>正常</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2035"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2035" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2034"></td>
+                        <td style="text-align:center;"><span class="num num-1">12</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2034">494949</a></td>
+                        <td>动动欣</td>
+                        <td>女</td>
+                        <td>武术套路</td>
+                        <td>裁判员</td>
+                        <td>国际级</td>
+                        <td>长期</td>
+                        <td>金牌</td>
+                        <td>2021年06月05日</td>
+                        <td>
+                            -985天                        </td>
+                        <td>正常</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2034"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2034" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2029"></td>
+                        <td style="text-align:center;"><span class="num num-1">13</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2029">494949</a></td>
+                        <td>动动欣</td>
+                        <td>女</td>
+                        <td>跆拳道</td>
+                        <td>教练员</td>
+                        <td>国际级</td>
+                        <td>长期</td>
+                        <td>金牌</td>
+                        <td>2021年06月04日</td>
+                        <td>
+                            -986天                        </td>
+                        <td>冻结30天</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2029"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2029" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2027"></td>
+                        <td style="text-align:center;"><span class="num num-1">14</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2027">494949</a></td>
+                        <td>动动欣</td>
+                        <td>女</td>
+                        <td>跆拳道</td>
+                        <td>单位管理员</td>
+                        <td></td>
+                        <td>长期</td>
+                        <td>无</td>
+                        <td>2021年06月08日</td>
+                        <td>
+                            -982天                        </td>
+                        <td>正常</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2027"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2027" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2025"></td>
+                        <td style="text-align:center;"><span class="num num-1">15</span></td>
+                        <td><a href="/qmdd2018/index.php?r=clubQualificationPerson/update&amp;id=2025">491136</a></td>
+                        <td>程丽君</td>
+                        <td>女</td>
+                        <td>网球</td>
+                        <td>教练员</td>
+                        <td>一级</td>
+                        <td>长期</td>
+                        <td>银牌</td>
+                        <td>2021年06月17日</td>
+                        <td>
+                            -973天                        </td>
+                        <td>正常</td>
+                        <td></td>
+                        <td>未支付</td>
+                        <td></td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/update&id=2025"  title="详情">详情</a>                            <a class="btn" href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&id=2025" title="通知">发通知</a>
+                        </td>
+                    </tr>
+                                </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c" id="page_html" ><ul id="yw0" class="yiiPager"><li class="first hidden"><a href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew">首页</a></li>
+<li class="previous hidden"><a href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew">上一页</a></li>
+<li class="page selected"><a href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew">1</a></li>
+<li class="page"><a href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&amp;page=2">2</a></li>
+<li class="page"><a href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&amp;page=3">3</a></li>
+<li class="page"><a href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&amp;page=4">4</a></li>
+<li class="page"><a href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&amp;page=5">5</a></li>
+<li class="next"><a href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&amp;page=2">下一页</a></li>
+<li class="last"><a href="/qmdd2018/index.php?r=clubQualificationPerson/index_renew&amp;page=46">末页</a></li></ul><div class="info">共689条内容，当前第1/46页,<span>显示行:</span>
+        <select name="PageSize" onchange="javascript:changPage()" id="PageSize"><option selected="selected" value="15">15</option><option  value="20">20</option><option  value="30">30</option><option  value="50">50</option><option  value="100">100</option></select></span></div><script> function changPage(){ var s2 = "/qmdd2018/index.php?r=public/setPageSize"; 
+    var options=$('#PageSize option:selected').val(); //获取选中的项
+    $.ajax({
+        type: 'post', url: s2,
+        data: { pageSize: options, },
+        dataType: 'json',
+        success: function(data) {
+             document.getElementById('tbody1').innerHTML =data['html'];
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest);
+        }
+    });
+  }
+ </script></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+var deleteUrl = '/qmdd2018/index.php?r=clubQualificationPerson/delete&id=ID';
+</script>
+<script> var mfields=["<input class=\"input-check\" type=\"checkbox\" value=\"{{CHtml::encode($v->id)}}\">","<span class=\"num num-1\">{{$index}}<\/span>","{{CHtml::link($v->qualification_gfaccount, array('update', 'id'=>$v->id))}}","{{$v->qualification_name}}","{{$v->gf_user_1->real_sex_name}}","{{$v->qualification_project_name}}","{{$v->qualification_type}}","{{$v->qualification_title}}","{ if(empty($v->end_date)){{'长期'}}else{{date('Y年m月d日',strtotime($v->end_date))}}}","{{$v->qualification_level_name}}","{ if(!empty($v->expiry_date_end)){date('Y年m月d日',strtotime($v->expiry_date_end))}}","{ $date=floor((strtotime($v->expiry_date_end)-time())\/86400);{$date.'天'}}","{{$v->acc_status->F_NAME}}","{{$v->renew_check_state_name}}","{{$v->renew_is_pay_name}}","{{$v->renew_state_time}}","{{show_command('详情',$this->createUrl('update', array('id'=>$v->id)))}}<a class=\"btn\" href=\"{{$this->createUrl('', array('id'=>$v->id))}}\" title=\"通知\">发通知<\/a>                        "]</script>
+</body>
+</html>

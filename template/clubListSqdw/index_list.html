@@ -1,0 +1,98 @@
+<div class="box">
+    <div class="box-title c">
+        <h1>当前界面：社区单位》单位认证管理 》单位认证申请</h1>
+                <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+    </div><!--box-title end-->
+    <div class="box-content">
+    	<div class="box-header" style="">
+            <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>添加</a>            <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>删除</a>        </div><!--box-header end-->
+        <div class="box-search" >
+            <form action="/qmdd2018/index.php?r=clubListSqdw/index_list&state=372&edit_state=721" method="get">
+                <input type="hidden" name="r" value="clubListSqdw/index_list">
+                <input type="hidden" name="state" value="372">
+                <input type="hidden" name="edit_state" value="721">
+                <input id="date" type="hidden" name="date" value="">
+                <label style="margin-right:10px;">
+                    <span>申请日期：</span>
+                    <input style="width:120px;" class="input-text" type="text" id="start_date" name="start_date" value="">
+                    <span>-</span>
+                    <input style="width:120px;" class="input-text" type="text" id="end_date" name="end_date" value="">
+                </label>
+                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="请输入单位名称">
+                </label>
+
+                <button id="click_submit" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                                                    <th class="check">
+                                <input id="j-checkall" class="input-check" type="checkbox">
+                            </th>
+                            <th>序号</th>
+                            <th>单位管理账号</th>
+                            <th>申请单位/申请人</th>
+                            <th>入驻类型</th>
+                            <th>服务平台名称</th>
+                            <th>入驻项目</th>
+                            <th>联系电话</th>
+                            <th>状态</th>
+                            <th>申请时间</th>
+                            <th>操作</th>
+                                            </tr>
+                </thead>
+                <tbody>
+                                                        </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+var deleteUrl = '/qmdd2018/index.php?r=clubListSqdw/delete&id=ID';
+var cancelUrl = '/qmdd2018/index.php?r=clubListSqdw/cancel&id=ID&new=edit_state&del=&yes=%E5%8F%96%E6%B6%88%E6%88%90%E5%8A%9F&no=%E5%8F%96%E6%B6%88%E5%A4%B1%E8%B4%A5';
+</script>
+<script>
+    $(function(){
+        var $start_time=$('#start_date');
+        var $end_time=$('#end_date');
+        $start_time.on('click', function(){
+            var end_input=$dp.$('end_date')
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd',alwaysUseStartDate:false,onpicked:function(){end_input.click();},maxDate:'#F{$dp.$D(\'end_date\')}'});
+        });
+        $end_time.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D 00:00:00',dateFmt:'yyyy-MM-dd',alwaysUseStartDate:false,minDate:'#F{$dp.$D(\'start_date\')}'});
+        });
+    });
+
+    function on_exam(){
+        $('#date').val(1);
+        $('.box-search select').html('<option value>请选择</option>');
+        $('.box-search .input-text').val('');
+        document.getElementById('click_submit').click();
+    }
+
+            $(".box-header>.btn:eq(0)").on("click",function(){
+            $.dialog.data('club_id', 0);
+            $.dialog.open('/qmdd2018/index.php?r=select/clubEditlist&club_type=8&state=372',{
+                id:'danwei',
+                lock:true,
+                opacity:0.3,
+                title:'资料待完善的单位',
+                width:'500px',
+                height:'60%',
+                close: function () {
+                    if($.dialog.data('club_id')>0){
+                        window.location.href="/qmdd2018/index.php?r=clubListSqdw/update_data&id="+$.dialog.data('club_id')+'&s=1';
+                    }
+                }
+            });
+            return false;
+        })
+    </script>

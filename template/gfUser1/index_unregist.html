@@ -1,0 +1,160 @@
+
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+
+
+
+
+
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=gfUser1/index_unregist&passed=136';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+
+<div class="box">
+    <div class="box-title c">
+        <h1>
+            <span>
+                当前界面：会员》实名管理》未实名账号列表            </span>
+        </h1>
+        <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+    </div><!--box-title end-->
+    <div class="box-content">
+        <!-- <div class="box-detail-tab" style="margin-top:10px;">
+            <ul class="c">
+                <li class="<?//=Yii::app()->request->getParam('passed')==136?'current':'';?>" style="margin-right: 10px;"><a href="">未实名列表</a></li>
+                <li class="<?//=Yii::app()->request->getParam('passed')==373?'current':'';?>"><a href="">实名审核未通过</a></li>
+            </ul>
+        </div>box-detail-tab end -->
+        <div class="box-header">
+                        <a style="display:inline-block;" id="j-delete" class="btn" href="javascript:;" onclick="we.operate(we.checkval('.check-item input:checked'), deleteUrl, '是否确认注销？');" ><i class="fa fa-trash-o"></i>账号注销</a>
+        </div><!--box-header end-->
+        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=gfUser1/index_unregist&passed=136" method="get">
+                <input type="hidden" name="r" value="gfUser1/index_unregist">
+                <input type="hidden" name="passed" value="136">
+                <label style="margin-right:10px;">
+                    <span>注册时间：</span>
+                    <input style="width:100px;" class="input-text" type="text" id="time_start" name="time_start" value="2024-02-09">
+                    <span>-</span>
+                    <input style="width:100px;" class="input-text" type="text" id="time_end" name="time_end" value="2024-02-09">
+                </label>
+                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="请输入账号/昵称">
+                </label>
+                <button id="submit_button" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                        <th class="check"><input id="j-checkall" class="input-check" type="checkbox"></th>
+                        <th width="3%">序号</th>
+                        <th width="10.7%">GF账号</th>
+                        <th width="10.7%">昵称</th>
+                                                    <th width="10.7%">绑定手机号</th>
+                            <th width="10.7%">实名状态</th>
+                            <th width="10.7%">注册方式</th>
+                            <th width="10.7%">注册时间</th>
+                            <th width="10.7%">有效期限</th>
+                            <th width="10.7%">账号状态</th>
+                                                <th>操作</th>
+                    </tr>
+                </thead>
+                <tbody>
+                                    </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=gfUser1/cancel&id=ID&al=%E6%B3%A8%E9%94%80%E6%88%90%E5%8A%9F';
+
+    $(function(){
+        var $time_start=$('#time_start');
+        var $time_end=$('#time_end');
+        $time_start.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+        });
+        $time_end.on('click', function(){
+            WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+        });
+    });
+
+    var ids=[];
+    // 每页全选
+    $('#j-checkall').on('click', function(){
+        $temp1 = $('.check-item .input-check');
+        $temp2 = $('.box-table .list tbody tr');
+        $this = $(this);
+        if($this.is(':checked')){
+            $temp1.each(function(){
+                ids.push($(this).val());
+                this.checked = true;
+            });
+            $temp2.addClass('selected');
+            ids=uniqueArray(ids);
+        }else{
+            $temp1.each(function(){
+                this.checked = false;
+                removeByValue(ids,$(this).val());
+            });
+            $temp2.removeClass('selected');
+        }
+    });
+    // 单选
+    $('.check-item .input-check').on('click', function() {
+        $this = $(this);
+        if ($this.is(':checked')) {
+            $this.parent().parent().addClass('selected');
+            ids.push($this.val());
+        } else {
+            $this.parent().parent().removeClass('selected');
+            removeByValue(ids,$this.val());
+        }
+    });
+    //移除数组中的固定元素
+    function removeByValue(arr, val) {
+        for(var i=0; i<arr.length; i++) {
+            if(arr[i] == val) {
+                arr.splice(i, 1);
+                break;
+            }
+        }
+    }
+    //删除数组重复元素
+    function uniqueArray(arr){
+        var tmp = new Array();
+        for(var i in arr){
+            if(tmp.indexOf(arr[i])==-1){
+                tmp.push(arr[i]);
+            }
+        }
+        return tmp;
+    }
+</script></body>
+</html>

@@ -1,0 +1,79 @@
+<div class="box">
+    <div class="box-title c">
+        <h1> <span>当前界面：首页》管理机构》添加机构</span> </h1>
+        <span style="float:right;padding-right:15px;"> <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a> </span>
+    </div>
+    <!--box-title end-->
+    <div class="box-content">
+        <div class="box-header">
+            <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>添加</a>            <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>删除</a>
+        </div>
+
+
+        <div class="box-table">
+            <table class="list" style="text-align:left;">
+                <thead>
+                    <tr>
+                        <th width="20" class="check"><input id="j-checkall" class="input-check" type="checkbox"></th>
+                        <th width="49">序号</th>
+                        <th width="137">单位管理账号</th>
+                        <th width="140">申请单位名称</th>
+                        <th width="129">机构类型</th>
+                        <th width="81">联系人</th>
+                        <th width="103">联系电话</th>
+                        <th width="103">开通项目</th>
+                        <th width="103">项目名称</th>
+
+                        <th width="172">申请日期</th>
+                        <th width="172">状态</th>
+                        <th width="146">操作</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                                    </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c">
+                    </div>
+    </div>
+    <!--box-content end-->
+</div>
+<!--box end-->
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=clubListGljg/delete&id=ID';
+    //时分秒：
+    $(function() {
+        var $start_time = $('#start_date');
+        var $end_time = $('#end_date');
+        $start_time.on('click', function() {
+            var end_input = $dp.$('end_date')
+            WdatePicker({
+                startDate: '%y-%M-%D',
+                dateFmt: 'yyyy-MM-dd',
+                alwaysUseStartDate: false,
+                onpicked: function() {
+                    end_input.click();
+                },
+                maxDate: '#F{$dp.$D(\'end_date\')}'
+            });
+        });
+        $end_time.on('click', function() {
+            WdatePicker({
+                startDate: '%y-%M-%D',
+                dateFmt: 'yyyy-MM-dd',
+                alwaysUseStartDate: false,
+                minDate: '#F{$dp.$D(\'start_date\')}'
+            });
+        });
+    });
+
+
+
+    function on_exam() {
+        $('#to_day').val(1);
+        $('.box-search select').html('<option value>请选择</option>');
+        $('.box-search .input-text').val('');
+        document.getElementById('click_submit').click();
+    }
+</script>

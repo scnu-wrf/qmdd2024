@@ -1,0 +1,146 @@
+
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/public.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/font.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.fallr/jquery.fallr.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.datetimepicker.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.uploadifive/uploadifive.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/artDialog/skins/default.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.contextMenu.css" />
+<script type="text/javascript" src="/qmdd2018/assets/c6aea6c/jquery.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.fallr/jquery.fallr.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.parse.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.uploadifive/jquery.uploadifive.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/artDialog/jquery.artDialog.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/artDialog/plugins/iframeTools.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.ui.position.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.contextMenu.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/md5.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/Base64.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/base64_1.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/public.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/spark-md5.js"></script>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=adverName/index';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+<div class="box">
+    <div class="box-title c"><h1><i class="fa fa-table"></i>编辑广告位置</h1><span class="back"><a class="btn" href="javascript:;" onclick="we.back();"><i class="fa fa-reply"></i>返回</a></span></div><!--box-title end-->
+    <div class="box-detail">
+    <form id="active-form" action="/qmdd2018/index.php?r=adverName/update&amp;id=1" method="post">        <table>
+            <tr>
+                <td width="15%"><label for="AdverName_adv_name">名称</label></td>
+                <td width="35%">
+                    <input class="input-text" name="AdverName[adv_name]" id="AdverName_adv_name" type="text" value="全民动动首页" />                    <div class="errorMessage" id="AdverName_adv_name_em_" style="display:none"></div>                </td>
+                <td width="15%"><label for="AdverName_adv_code">编码</label></td>
+                <td>
+                    <input class="input-text" style="width:100px;" name="AdverName[adv_code]" id="AdverName_adv_code" type="text" value="a" />                    <div class="errorMessage" id="AdverName_adv_code_em_" style="display:none"></div>                </td>
+            </tr>
+            <tr>
+                <td><label for="AdverName_how_long_dispay">切换时间</label></td>
+                <td>
+                    <input class="input-text" style="width:48px;" name="AdverName[how_long_dispay]" id="AdverName_how_long_dispay" type="text" value="5" />                    <span>秒</span>
+                    <div class="errorMessage" id="AdverName_how_long_dispay_em_" style="display:none"></div>                </td>
+                <td><label for="AdverName_dispay_time">显示时长</label></td>
+                <td>
+                    <input class="input-text" style="width:48px;" name="AdverName[dispay_time]" id="AdverName_dispay_time" type="text" value="3" />                    <span>秒</span>
+                    <div class="errorMessage" id="AdverName_dispay_time_em_" style="display:none"></div>                </td>
+            </tr>
+            <tr>
+                <td><label for="AdverName_pic_px">图片格式要求</label></td>
+                <td>
+                	<input class="input-text" style="width:100px;" name="AdverName[pic_px]" id="AdverName_pic_px" type="text" value="1080px*690px" />                    <span class="msg">如：1080px*720px</span>
+                    <div class="errorMessage" id="AdverName_pic_px_em_" style="display:none"></div>                </td>
+                <td><label for="AdverName_if_state">人工审核</label></td>
+                <td>
+                <input id="ytAdverName_if_state" type="hidden" value="" name="AdverName[if_state]" /><span id="AdverName_if_state"><span class="check"><input class="input-check" id="AdverName_if_state_0" value="792" type="radio" name="AdverName[if_state]" /><label for="AdverName_if_state_0">人工审核</label></span><span class="check"><input class="input-check" id="AdverName_if_state_1" value="793" checked="checked" type="radio" name="AdverName[if_state]" /><label for="AdverName_if_state_1">自动审核</label></span></span>                <div class="errorMessage" id="AdverName_if_state_em_" style="display:none"></div>                </td>
+            </tr>
+            <tr>
+                <td><label for="AdverName_dispay_num">最大数量</label></td>
+                <td colspan="3">
+                    <input class="input-text" style="width:48px;" name="AdverName[dispay_num]" id="AdverName_dispay_num" type="text" value="5" />                    <span class="msg">个，留空为不限制数量</span>
+                    <div class="errorMessage" id="AdverName_dispay_num_em_" style="display:none"></div>                </td>
+            </tr>
+            <!--<tr>
+                <td><php echo $form->labelEx($model, 'product_data_id'); ?></td>
+                <td colspan="3">
+                    <php echo $form->hiddenField($model, 'product_data_id', array('class' => 'input-text')); ?>
+                    <input id="product_select_btn" class="btn" type="button" value="选择">
+                    <br>
+                        <table class="showinfo">
+                            <tr>
+                                <th width="15%">商品货号</th>
+                                <td width="35%" id="product_code"><php if(!empty($model->mall_product_data)){ echo $model->mall_product_data->mall_products->code; }?></td>
+                                <th width="15%">商品名称</th>
+                                <td width="35%" id="product_name"><php if(!empty($model->mall_product_data)){ echo $model->mall_product_data->mall_products->name; }?></td>
+                            </tr>
+                            <tr>
+                                <th>商品属性</th>
+                                <td id="product_attr"><php if(!empty($model->mall_product_data)){ echo $model->mall_product_data->json_attr; }?></td>
+                                <th>价格</th>
+                                <td id="product_price"><php if(!empty($model->mall_product_data)){?>预估价格：<php echo $model->mall_product_data->price;?>，以当时价格为准<php }?></td>
+                            </tr>
+                        </table>
+                    <php echo $form->error($model, 'product_data_id', $htmlOptions = array()); ?>
+                </td>
+            </tr>-->
+        </table>
+        <div class="box-detail-submit">
+		<button id="baocun" onclick="submitType='baocun'" class="btn btn-blue" type="submit"> 保存</button>&nbsp;        <!--button onclick="submitType='baocun'" class="btn btn-blue" type="submit">保存</button-->
+        <button class="btn" type="button" onclick="we.back();">取消</button></div>
+        </form>    </div><!--box-detail end-->
+</div><!--box end-->
+<!--script>
+$(function(){
+    var $product_code = $('#product_code');
+    var $product_name = $('#product_name');
+    var $product_attr = $('#product_attr');
+    var $product_price = $('#product_price');
+    //var $product_data_id = $('#AdverName_product_data_id');
+    $('#product_select_btn').on('click', function(){
+        $.dialog.open('<php echo $this->createUrl("select/productData");?>',{
+            id:'shangpin',
+            lock:true,
+            opacity:0.3,
+            title:'选择具体内容',
+            width:'500px',
+            height:'60%',
+            close: function () {
+                if($.dialog.data('product_id')>0){
+                    $product_data_id.val($.dialog.data('product_id'));
+                    $product_code.html($.dialog.data('product_code'));
+                    $product_name.html($.dialog.data('product_name'));
+                    $product_attr.html($.dialog.data('product_attr'));
+                    $product_price.html('预估价格：'+$.dialog.data('product_price')+'，以当时价格为准');
+                }
+            }
+        });
+    });
+});
+</script--></body>
+</html>

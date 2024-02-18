@@ -1,0 +1,499 @@
+<div class="box">
+    <span style="float:right;padding-right:15px;">
+        <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+    </span>
+    <div class="box-title c">
+    <h1>当前界面：社区单位 》社区单位管理 》社区单位列表</h1></div><!--box-title end-->
+    <div class="box-content">
+    	<div class="box-header" style="display:none;">
+                    </div><!--box-header end-->
+        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=clubListSqdw/index_data&index=4" method="get">
+                <input type="hidden" name="r" value="clubListSqdw/index_data">
+                <input id="index" type="hidden" name="index" value="4">
+                <input type="hidden" name="state" id="state" value="">
+                <input type="hidden" name="edit_state" id="edit_state" value="">
+                                    <label style="margin-right:10px;">
+                        <span>认证时间：</span>
+                        <input style="width:100px;" class="input-text" type="text" id="start_date" name="start_date" value="2024-02-09">
+                        <span>-</span>
+                        <input style="width:100px;" class="input-text" type="text" id="end_date" name="end_date" value="2024-02-09">
+                    </label>
+                                            <label style="margin-right:20px;">
+                            <span>入驻类型：</span>
+                            <select name="individual_enterprise" ><option value="">请选择</option><option value="403">个人</option><option value="404">单位</option></select>                        </label>
+                                                    <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="请输入管理账号/服务平台名称">
+                </label>
+                <button id="click_submit" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                                                    <th>序号</th>
+                            <th>单位管理账号</th>
+                            <th>服务平台名称</th>
+                            <th>入驻类型</th>
+                            <th>单位所在地</th>
+                            <th>联系人</th>
+                            <th>联系电话</th>
+                            <th>状态</th>
+                            <th>项目数量</th>
+                            <th>认证时间</th>
+                            <th>操作</th>
+                                            </tr>
+                </thead>
+                <tbody>
+                                                        </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+var deleteUrl = '/qmdd2018/index.php?r=clubListSqdw/delete&id=ID';
+var cancelUrl = '/qmdd2018/index.php?r=clubListSqdw/cancel&id=ID&new=edit_state&del=&yes=%E5%8F%96%E6%B6%88%E6%88%90%E5%8A%9F&no=%E5%8F%96%E6%B6%88%E5%A4%B1%E8%B4%A5';
+var cancelUrl2 = '/qmdd2018/index.php?r=clubListSqdw/cancel&id=ID&new=edit_state&del=721&yes=%E6%92%A4%E9%94%80%E6%88%90%E5%8A%9F&no=%E6%92%A4%E9%94%80%E5%A4%B1%E8%B4%A5';
+</script>
+<script>
+$(function(){
+    var $start_time=$('#start_date');
+    var $end_time=$('#end_date');
+    $start_time.on('click', function(){
+        WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+    $end_time.on('click', function(){
+         WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+});
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#index').val(2);
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('click_submit').click();
+        }
+    }
+
+    function logout(id){
+        we.loading('show');
+        $.ajax({
+            type: 'post',
+            url: '/qmdd2018/index.php?r=clubList/updata_club',
+            data: {deal_id: id,user_state: 649,lock_reason: "系统注销"},
+            dataType: 'json',
+            success: function(data) {
+                console.log(data)
+                if(data.status==1){
+                    we.loading('hide');
+                    we.success(data.msg, data.redirect);
+                }else{
+                    we.loading('hide');
+                    we.msg('minus', data.msg);
+                }
+            }
+        });
+        return false;
+    }
+</script><div class="box">
+    <span style="float:right;padding-right:15px;">
+        <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+    </span>
+    <div class="box-title c">
+    <h1>当前界面：社区单位 》社区单位管理 》社区单位列表</h1></div><!--box-title end-->
+    <div class="box-content">
+    	<div class="box-header" style="display:none;">
+                    </div><!--box-header end-->
+        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=clubListSqdw/index_data&index=4" method="get">
+                <input type="hidden" name="r" value="clubListSqdw/index_data">
+                <input id="index" type="hidden" name="index" value="4">
+                <input type="hidden" name="state" id="state" value="">
+                <input type="hidden" name="edit_state" id="edit_state" value="">
+                                    <label style="margin-right:10px;">
+                        <span>认证时间：</span>
+                        <input style="width:100px;" class="input-text" type="text" id="start_date" name="start_date" value="2024-02-09">
+                        <span>-</span>
+                        <input style="width:100px;" class="input-text" type="text" id="end_date" name="end_date" value="2024-02-09">
+                    </label>
+                                            <label style="margin-right:20px;">
+                            <span>入驻类型：</span>
+                            <select name="individual_enterprise" ><option value="">请选择</option><option value="403">个人</option><option value="404">单位</option></select>                        </label>
+                                                    <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="请输入管理账号/服务平台名称">
+                </label>
+                <button id="click_submit" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                                                    <th>序号</th>
+                            <th>单位管理账号</th>
+                            <th>服务平台名称</th>
+                            <th>入驻类型</th>
+                            <th>单位所在地</th>
+                            <th>联系人</th>
+                            <th>联系电话</th>
+                            <th>状态</th>
+                            <th>项目数量</th>
+                            <th>认证时间</th>
+                            <th>操作</th>
+                                            </tr>
+                </thead>
+                <tbody>
+                                                        </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+var deleteUrl = '/qmdd2018/index.php?r=clubListSqdw/delete&id=ID';
+var cancelUrl = '/qmdd2018/index.php?r=clubListSqdw/cancel&id=ID&new=edit_state&del=&yes=%E5%8F%96%E6%B6%88%E6%88%90%E5%8A%9F&no=%E5%8F%96%E6%B6%88%E5%A4%B1%E8%B4%A5';
+var cancelUrl2 = '/qmdd2018/index.php?r=clubListSqdw/cancel&id=ID&new=edit_state&del=721&yes=%E6%92%A4%E9%94%80%E6%88%90%E5%8A%9F&no=%E6%92%A4%E9%94%80%E5%A4%B1%E8%B4%A5';
+</script>
+<script>
+$(function(){
+    var $start_time=$('#start_date');
+    var $end_time=$('#end_date');
+    $start_time.on('click', function(){
+        WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+    $end_time.on('click', function(){
+         WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+});
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#index').val(2);
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('click_submit').click();
+        }
+    }
+
+    function logout(id){
+        we.loading('show');
+        $.ajax({
+            type: 'post',
+            url: '/qmdd2018/index.php?r=clubList/updata_club',
+            data: {deal_id: id,user_state: 649,lock_reason: "系统注销"},
+            dataType: 'json',
+            success: function(data) {
+                console.log(data)
+                if(data.status==1){
+                    we.loading('hide');
+                    we.success(data.msg, data.redirect);
+                }else{
+                    we.loading('hide');
+                    we.msg('minus', data.msg);
+                }
+            }
+        });
+        return false;
+    }
+</script><div class="box">
+    <span style="float:right;padding-right:15px;">
+        <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+    </span>
+    <div class="box-title c">
+    <h1>当前界面：社区单位 》单位认证管理 》单位认证待审核</h1></div><!--box-title end-->
+    <div class="box-content">
+    	<div class="box-header" style="display:none;">
+                    </div><!--box-header end-->
+        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=clubListSqdw/index_data&index=5" method="get">
+                <input type="hidden" name="r" value="clubListSqdw/index_data">
+                <input id="index" type="hidden" name="index" value="5">
+                <input type="hidden" name="state" id="state" value="">
+                <input type="hidden" name="edit_state" id="edit_state" value="">
+                                    <label style="margin-right:10px;">
+                        <span>申请日期：</span>
+                        <input style="width:100px;" class="input-text" type="text" id="start_date" name="start_date" value="">
+                        <span>-</span>
+                        <input style="width:100px;" class="input-text" type="text" id="end_date" name="end_date" value="">
+                    </label>
+                                                    <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="请输入管理账号/服务平台名称">
+                </label>
+                <button id="click_submit" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                                                    <th>序号</th>
+                            <th>单位管理账号</th>
+                            <th>申请单位/申请人</th>
+                            <th>入驻类型</th>
+                            <th>服务平台名称</th>
+                            <th>入驻项目</th>
+                            <th>联系电话</th>
+                            <th>状态</th>
+                            <th>申请时间</th>
+                            <th>操作</th>
+                                            </tr>
+                </thead>
+                <tbody>
+                                                        </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+var deleteUrl = '/qmdd2018/index.php?r=clubListSqdw/delete&id=ID';
+var cancelUrl = '/qmdd2018/index.php?r=clubListSqdw/cancel&id=ID&new=edit_state&del=&yes=%E5%8F%96%E6%B6%88%E6%88%90%E5%8A%9F&no=%E5%8F%96%E6%B6%88%E5%A4%B1%E8%B4%A5';
+var cancelUrl2 = '/qmdd2018/index.php?r=clubListSqdw/cancel&id=ID&new=edit_state&del=721&yes=%E6%92%A4%E9%94%80%E6%88%90%E5%8A%9F&no=%E6%92%A4%E9%94%80%E5%A4%B1%E8%B4%A5';
+</script>
+<script>
+$(function(){
+    var $start_time=$('#start_date');
+    var $end_time=$('#end_date');
+    $start_time.on('click', function(){
+        WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+    $end_time.on('click', function(){
+         WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+});
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#index').val(2);
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('click_submit').click();
+        }
+    }
+
+    function logout(id){
+        we.loading('show');
+        $.ajax({
+            type: 'post',
+            url: '/qmdd2018/index.php?r=clubList/updata_club',
+            data: {deal_id: id,user_state: 649,lock_reason: "系统注销"},
+            dataType: 'json',
+            success: function(data) {
+                console.log(data)
+                if(data.status==1){
+                    we.loading('hide');
+                    we.success(data.msg, data.redirect);
+                }else{
+                    we.loading('hide');
+                    we.msg('minus', data.msg);
+                }
+            }
+        });
+        return false;
+    }
+</script><div class="box">
+    <span style="float:right;padding-right:15px;">
+        <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+    </span>
+    <div class="box-title c">
+    <h1>当前界面：社区单位》单位认证管理 》单位认证审核</h1></div><!--box-title end-->
+    <div class="box-content">
+    	<div class="box-header" style="">
+                        <span class="exam" onclick="on_exam();"><p>待审核：<span style="color:red;font-weight: bold;">0</span></p></span>
+                    </div><!--box-header end-->
+        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=clubListSqdw/index_data&index=1" method="get">
+                <input type="hidden" name="r" value="clubListSqdw/index_data">
+                <input id="index" type="hidden" name="index" value="1">
+                <input type="hidden" name="state" id="state" value="">
+                <input type="hidden" name="edit_state" id="edit_state" value="">
+                                    <label style="margin-right:10px;">
+                        <span>审核日期：</span>
+                        <input style="width:100px;" class="input-text" type="text" id="start_date" name="start_date" value="2024-02-09">
+                        <span>-</span>
+                        <input style="width:100px;" class="input-text" type="text" id="end_date" name="end_date" value="2024-02-09">
+                    </label>
+                    <label style="margin-right:20px;">
+                        <span>入驻类型：</span>
+                        <select name="individual_enterprise" ><option value="">请选择</option><option value="403">个人</option><option value="404">单位</option></select>                    </label>
+                                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="请输入管理账号/服务平台名称">
+                </label>
+                <button id="click_submit" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                                                    <th>序号</th>
+                            <th>单位管理账号</th>
+                            <th>申请单位/申请人</th>
+                            <th>入驻类型</th>
+                            <th>服务平台名称</th>
+                            <th>入驻项目</th>
+                            <th>单位所在地</th>
+                            <th>联系电话</th>
+                            <th>审核状态</th>
+                            <th>审核时间</th>
+                            <th>审核员</th>
+                            <th>操作</th>
+                                            </tr>
+                </thead>
+                <tbody>
+                                                        </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+var deleteUrl = '/qmdd2018/index.php?r=clubListSqdw/delete&id=ID';
+var cancelUrl = '/qmdd2018/index.php?r=clubListSqdw/cancel&id=ID&new=edit_state&del=&yes=%E5%8F%96%E6%B6%88%E6%88%90%E5%8A%9F&no=%E5%8F%96%E6%B6%88%E5%A4%B1%E8%B4%A5';
+var cancelUrl2 = '/qmdd2018/index.php?r=clubListSqdw/cancel&id=ID&new=edit_state&del=721&yes=%E6%92%A4%E9%94%80%E6%88%90%E5%8A%9F&no=%E6%92%A4%E9%94%80%E5%A4%B1%E8%B4%A5';
+</script>
+<script>
+$(function(){
+    var $start_time=$('#start_date');
+    var $end_time=$('#end_date');
+    $start_time.on('click', function(){
+        WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+    $end_time.on('click', function(){
+         WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+});
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#index').val(2);
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('click_submit').click();
+        }
+    }
+
+    function logout(id){
+        we.loading('show');
+        $.ajax({
+            type: 'post',
+            url: '/qmdd2018/index.php?r=clubList/updata_club',
+            data: {deal_id: id,user_state: 649,lock_reason: "系统注销"},
+            dataType: 'json',
+            success: function(data) {
+                console.log(data)
+                if(data.status==1){
+                    we.loading('hide');
+                    we.success(data.msg, data.redirect);
+                }else{
+                    we.loading('hide');
+                    we.msg('minus', data.msg);
+                }
+            }
+        });
+        return false;
+    }
+</script><div class="box">
+    <span style="float:right;padding-right:15px;">
+        <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+    </span>
+    <div class="box-title c">
+    <h1>当前界面：社区单位 》单位认证管理 》单位认证取消/审核未通过</h1></div><!--box-title end-->
+    <div class="box-content">
+    	<div class="box-header" style="display:none;">
+                    </div><!--box-header end-->
+        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=clubListSqdw/index_data&index=3" method="get">
+                <input type="hidden" name="r" value="clubListSqdw/index_data">
+                <input id="index" type="hidden" name="index" value="3">
+                <input type="hidden" name="state" id="state" value="">
+                <input type="hidden" name="edit_state" id="edit_state" value="">
+                                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="请输入管理账号/服务平台名称">
+                </label>
+                <button id="click_submit" class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                                                    <th>序号</th>
+                            <th>单位管理账号</th>
+                            <th>申请单位/申请人</th>
+                            <th>入驻类型</th>
+                            <th>服务平台名称</th>
+                            <th>入驻项目</th>
+                            <th>单位所在地</th>
+                            <th>联系电话</th>
+                            <th>状态</th>
+                            <th>操作</th>
+                                            </tr>
+                </thead>
+                <tbody>
+                                                        </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c"></div>
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+var deleteUrl = '/qmdd2018/index.php?r=clubListSqdw/delete&id=ID';
+var cancelUrl = '/qmdd2018/index.php?r=clubListSqdw/cancel&id=ID&new=edit_state&del=&yes=%E5%8F%96%E6%B6%88%E6%88%90%E5%8A%9F&no=%E5%8F%96%E6%B6%88%E5%A4%B1%E8%B4%A5';
+var cancelUrl2 = '/qmdd2018/index.php?r=clubListSqdw/cancel&id=ID&new=edit_state&del=721&yes=%E6%92%A4%E9%94%80%E6%88%90%E5%8A%9F&no=%E6%92%A4%E9%94%80%E5%A4%B1%E8%B4%A5';
+</script>
+<script>
+$(function(){
+    var $start_time=$('#start_date');
+    var $end_time=$('#end_date');
+    $start_time.on('click', function(){
+        WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+    $end_time.on('click', function(){
+         WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+});
+
+    function on_exam(){
+        var exam = $('.exam p span').text();
+        if(exam>0){ 
+            $('#index').val(2);
+            $('.box-search select').html('<option value>请选择</option>');
+            $('.box-search .input-text').val('');
+            document.getElementById('click_submit').click();
+        }
+    }
+
+    function logout(id){
+        we.loading('show');
+        $.ajax({
+            type: 'post',
+            url: '/qmdd2018/index.php?r=clubList/updata_club',
+            data: {deal_id: id,user_state: 649,lock_reason: "系统注销"},
+            dataType: 'json',
+            success: function(data) {
+                console.log(data)
+                if(data.status==1){
+                    we.loading('hide');
+                    we.success(data.msg, data.redirect);
+                }else{
+                    we.loading('hide');
+                    we.msg('minus', data.msg);
+                }
+            }
+        });
+        return false;
+    }
+</script>

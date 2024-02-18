@@ -1,0 +1,146 @@
+
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/sport2024/static/admin/css/public.css" />
+<link rel="stylesheet" type="text/css" href="/sport2024/static/admin/css/font.css" />
+<link rel="stylesheet" type="text/css" href="/sport2024/static/admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/sport2024/static/admin/js/jquery.fallr/jquery.fallr.css" />
+<link rel="stylesheet" type="text/css" href="/sport2024/static/admin/js/jquery.datetimepicker.css" />
+<link rel="stylesheet" type="text/css" href="/sport2024/static/admin/js/jquery.uploadifive/uploadifive.css" />
+<link rel="stylesheet" type="text/css" href="/sport2024/static/admin/js/artDialog/skins/default.css" />
+<link rel="stylesheet" type="text/css" href="/sport2024/static/admin/js/jquery.contextMenu/jquery.contextMenu.css" />
+<script type="text/javascript" src="/sport2024/assets/c6aea6c/jquery.min.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/jquery.fallr/jquery.fallr.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/ueditor/ueditor.parse.min.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/jquery.uploadifive/jquery.uploadifive.min.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/artDialog/jquery.artDialog.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/artDialog/plugins/iframeTools.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/jquery.contextMenu/jquery.ui.position.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/jquery.contextMenu/jquery.contextMenu.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/md5.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/Base64.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/base64_1.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/public.js"></script>
+<script type="text/javascript" src="/sport2024/static/admin/js/spark-md5.js"></script>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<script charset="gb2312" src="/sport2024/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/sport2024';
+var indexUrl = '/sport2024/index.php?r=clubStoreTrain/indexhd&index=2';
+var uppicUrl = '/sport2024/index.php?r=public/uppic';
+var upfileUrl = '/sport2024/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+<div class="box">
+    <div class="box-title c">
+        <h1>当前界面：培训/活动 》培训管理 》历史列表</h1>
+        <span class="back">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+    </div><!--box-title end-->
+    <div class="box-content">
+        <div class="box-search">
+            <form action="/sport2024/index.php?r=clubStoreTrain/indexhd&index=2" method="get">
+                <input type="hidden" name="r" value="clubStoreTrain/indexhd">
+                <input type="hidden" name="index" value="2">
+                <label style="margin-right:10px;">
+                    <span>培训日期：</span>
+                    <input style="width:100px;" class="input-text" type="text" id="start_date" name="start_date" value="2024-01-15">
+                    <span>-</span>
+                    <input style="width:100px;" class="input-text" type="text" id="end_date" name="end_date" value="2024-02-15">
+                </label>
+				<label style="margin-right:20px;">
+                    <span>类型：</span>
+                    <select name="train_type" onchange="changeData(this)"><option value="">请选择</option><option value="3">培训考核</option><option value="7">健身训练</option></select>                </label>
+				<label style="margin-right:20px;">
+                    <span>类别：</span>
+                    <select name="train_classify" id="train_classify" style="min-width:94px;"><option value="">请选择</option></select>                </label>
+				<label style="margin-right:20px;">
+                    <span>项目：</span>
+                    <select name="project_id" ><option value="">请选择</option><option value="188">太极</option><option value="235">跆拳道</option><option value="803">网球</option><option value="809">乒乓球</option><option value="650">篮球</option><option value="674">台球</option></select>                </label>
+                <label style="margin-right:10px;">
+                    <span>关键字：</span>
+                    <input style="width:200px;" class="input-text" type="text" name="keywords" value="" placeholder="请输入编号/标题" >
+                </label>
+                <button class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div><!--box-search end-->
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>培训编号</th>
+                        <th>培训标题</th>
+                        <th>类型</th>
+                        <th>类别</th>
+                        <th>项目</th>
+                        <th>培训内容</th>
+                        <th>费用（元）</th>
+                        <th>报名时间</th>
+                        <th>培训时间</th>
+                        <th>显示前端</th>
+                        <th>操作</th>
+                    </tr>
+                </thead><tbody id="table_html">ead>
+            </tbody></table>
+        </div><!--box-table end-->
+        
+        <div class="box-page c" id="page_html" ></div>
+        
+    </div><!--box-content end-->
+</div><!--box end-->
+<script>
+    var deleteUrl = '/sport2024/index.php?r=clubStoreTrain/delete&id=ID';
+    var cancelUrl = '/sport2024/index.php?r=clubStoreTrain/cancel&id=ID&new=if_train_live&del=648&yes=%E4%B8%8B%E7%BA%BF%E6%88%90%E5%8A%9F&no=%E4%B8%8B%E7%BA%BF%E5%A4%B1%E8%B4%A5';
+    var cancelUrl2 = '/sport2024/index.php?r=clubStoreTrain/cancel&id=ID&new=if_train_live&del=649&yes=%E4%B8%8A%E7%BA%BF%E6%88%90%E5%8A%9F&no=%E4%B8%8A%E7%BA%BF%E5%A4%B1%E8%B4%A5';
+    
+    var $start_time=$('#start_date');
+    var $end_time=$('#end_date');
+    $start_time.on('click', function(){
+        WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+    $end_time.on('click', function(){
+         WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+    
+    function changeData(obj) {
+        var show_id = $(obj).val();
+        var content='<option value="">请选择</option>';
+        $("#train_classify").html(content);
+        $.ajax({
+            type: 'post',
+            url: '/sport2024/index.php?r=clubStoreTrain/getListData',
+            data: {id: show_id},
+            dataType: 'json',
+            success: function(data) {
+                $.each(data,function(k,info){
+                    content+='<option value="'+info.id+'">'+info.classify+'</option>'
+                })
+                $("#train_classify").html(content);
+            }
+        });
+    }
+</script>
+
+<script> var mfields=["<span class=\"num num-1\">{{($pages->currentPage)*($pages->pageSize)+$index}<\/span>","{{$v->train_code}}","{{$v->train_title}}","{{$v->train_type1_id_name}}","{{'<span style=\"display:inline-block;max-width: 150px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;\">'.$lb.'<\/span>'}}","{{'<span style=\"display:inline-block;max-width: 150px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;\">'.$xm.'<\/span>'}}","{{'<span style=\"display:inline-block;max-width: 150px;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;\">'.$nr.'<\/span>'}}","{{number_format($min,2).'~'.number_format($max,2)}}","{{$v->train_buy_start.'<br>'.$v->train_buy_end}}","{{$v->train_start.'<br>'.$v->train_end}}","{ if(!is_null($v->online)){$v->online->F_NAME}}","{{show_command('详情',$this->createUrl('update', array('id'=>$v->id,'disabled'=>'disabled')))}}{ if($_REQUEST['index']==1){}{ if($v->if_train_live==649){}                                    <a class=\"btn\" href=\"javascript:;\" onclick=\"we.down('{{$v->id}}', cancelUrl);\" title=\"下线\">下线<\/a>{ }else{}                                    <a class=\"btn\" href=\"javascript:;\" onclick=\"we.online('{{$v->id}}', cancelUrl2);\" title=\"上线\">上线<\/a>{ }}{ }}                            <a class=\"btn\" href=\"{{$this->createUrl('clubTrainSign\/index_data', array('title'=>$v->id,''))}}\" title=\"报名\">报名<\/a>                        "]</script>
+</body>
+</html>

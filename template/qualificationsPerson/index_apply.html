@@ -1,0 +1,164 @@
+
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="zh-cn"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="zh-cn"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="zh-cn"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="zh-cn"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<meta charset="utf-8"><link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/public.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/font.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/css/style.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.fallr/jquery.fallr.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.datetimepicker.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.uploadifive/uploadifive.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/artDialog/skins/default.css" />
+<link rel="stylesheet" type="text/css" href="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.contextMenu.css" />
+<script type="text/javascript" src="/qmdd2018/assets/c6aea6c/jquery.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.nicescroll.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.fallr/jquery.fallr.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/lang/zh-cn/zh-cn.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/ueditor/ueditor.parse.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.datetimepicker.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.uploadifive/jquery.uploadifive.min.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/artDialog/jquery.artDialog.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/artDialog/plugins/iframeTools.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.ui.position.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/jquery.contextMenu/jquery.contextMenu.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/md5.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/Base64.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/base64_1.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/public.js"></script>
+<script type="text/javascript" src="/qmdd2018/static/admin/js/spark-md5.js"></script>
+<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<script charset="gb2312" src="/qmdd2018/static/admin/js/PCASClass.js"></script>
+<script>
+var baseUrl = '/qmdd2018';
+var indexUrl = '/qmdd2018/index.php?r=qualificationsPerson/index_apply';
+var uppicUrl = '/qmdd2018/index.php?r=public/uppic';
+var upfileUrl = '/qmdd2018/index.php?r=public/upfile';
+var submitType='tijiao'
+</script>
+</head>
+<body>
+<!-- <style>
+    .box-detail-tab li{
+        width:24.9173%;
+        border-right:solid 1px #d9d9d9;
+        line-height: 30px;
+        font-size:0.5rem;
+    }
+    .box-detail-tab{
+        margin:10px auto 0;
+    }
+    .box-title h4{
+        display: inline-block;
+        width: auto;
+        color: #444;
+        font-size:12px;
+        line-height: 30px;
+    }
+    .lode_po{
+        color:#333;
+    }
+</style> -->
+<div class="box">
+    <!-- <div class="box-detail-tab">
+        <ul class="c">
+            <li><a href="">单位项目待审核列表</a></li>
+            <li class="current" style="border-right:none;"><a href="">服务者待审核列表</a></li>
+        </ul>
+    </div>box-detail-tab end -->
+    <div class="box-title c">
+        <h1><span>当前界面：服务者 》服务者管理 》服务者入驻</span></h1>
+        <span style="float:right;padding-right:15px;">
+            <a class="btn" href="javascript:;" onclick="we.reload();"><i class="fa fa-refresh"></i>刷新</a>
+        </span>
+    </div><!--box-title end-->
+    <div class="box-content">
+        <div class="box-header">
+            <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>添加</a>            <a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>删除</a>        </div><!--box-header end-->
+        <div class="box-search">
+            <form action="/qmdd2018/index.php?r=qualificationsPerson/index_apply" method="get">
+                <input type="hidden" name="r" value="qualificationsPerson/index_apply">
+                <!-- <label style="margin-right:20px;">
+                    <span>性别：</span>
+                                    </label>
+				<label style="margin-right:20px;">
+                    <span>项目：</span>
+                                    </label>
+                <label for="">
+                    <span>类型：</span>
+                                    </label>
+                <label style="margin-right:20px;">
+                    <span>资质等级：</span>
+                                    </label> -->
+                <label style="margin-right:10px;">
+                    <span>日期：</span>
+                    <input style="width:120px;" class="input-text" type="text" id="start_date" name="start_date" value="">
+                    <span>-</span>
+                    <input style="width:120px;" class="input-text" type="text" id="end_date" name="end_date" value="">
+                </label>
+                <label style="margin-right:20px;">
+                    <span>关键字：</span>
+                    <input type="text" style="width:200px" class="input-text" name="keywords" value="" placeholder="请输入账号/姓名">
+                </label>
+                <button class="btn btn-blue" type="submit">查询</button>
+            </form>
+        </div>
+        <div class="box-table">
+            <table class="list">
+                <thead>
+                <tr>
+                    <th class="check"><input id="j-checkall" class="input-check" type="checkbox"></th>
+                    <th width="3%">序号</th>
+                    <th width="13.8%">账号姓名</th>
+                    <th width="13.8%">持有资质</th>
+                    <th width="13.8%">入驻项目</th>
+                    <th width="13.8%">入驻类型</th>
+                    <th width="13.8%">状态</th>
+                    <th width="13.8%">操作时间</th>
+                    <th width="13.8%">操作</th>
+                </tr>
+                </thead>
+                <tbody id="table_html">
+                                    <tr>
+                        <td class="check check-item"><input class="input-check" type="checkbox" value="2064"></td>
+                        <td><span class="num num-1">1</span></td>
+                        <td>227627/塔里木</td>
+                        <td>裁判员证/国家级</td>
+                        <td>网球</td>
+                        <td>裁判员</td>
+                        <td>已撤销</td>
+                        <td>2021-02-04 09:48:41</td>
+                        <td>
+                            <a class="btn" href="/qmdd2018/index.php?r=qualificationsPerson/update&id=2064"  title="编辑">编辑</a>                            <a class="btn" href="javascript:;" onclick="we.dele('2064', deleteUrl);" title="删除">删除</a>                        </td>
+                    </tr>
+                                </tbody>
+            </table>
+        </div><!--box-table end-->
+        <div class="box-page c" id="page_html" ></div>
+    </div><!--box-content end-->
+</div>
+<script>
+    var deleteUrl = '/qmdd2018/index.php?r=qualificationsPerson/delete&id=ID';
+    var $start_date=$('#start_date');
+    var $end_date=$('#end_date');
+    $start_date.on('click', function(){
+        WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+    $end_date.on('click', function(){
+        WdatePicker({startDate:'%y-%M-%D',dateFmt:'yyyy-MM-dd'});
+    });
+</script>
+<script> var mfields=["<input class=\"input-check\" type=\"checkbox\" value=\"{{CHtml::encode($v->id)}}\">","<span class=\"num num-1\">{{$index}}<\/span>","{{$v->qualification_gfaccount.'\/'.$v->qualification_name}}","{{$v->qualification_identity_type_name.'\/'.$v->qualification_title}}","{{$v->qualification_project_name}}","{{$v->qualification_type}}","{{$v->check_state_name}}","{ if($v->uDate!='0000-00-00 00:00:00'){$v->uDate}}","{{show_command('修改',$this->createUrl('update', array('id'=>$v->id)))}}{{show_command('删除','\\''.$v->id.'\\'')}}"]</script>
+</body>
+</html>
