@@ -141,5 +141,20 @@ class ClubListSqdw extends BaseModel {
     public function keySelect(){
         return array("audState='审核通过'",'id','club_name');
     }
+    //创建后端登录账号
+    private function createAdminUser(){
+        if(!isset($this->club_code)) return;
+        $club_code = $this->club_code;
+        //查重
+        $temp = QmddAdministrators::model()->find('club_code="'.$club_code.'"');
+        if(!empty($temp)) return;
+        $user = new QmddAdministrators;
+        $user->club_code=$club_code;
+        $user->admin_gfaccount=$club_code;
+        $user->club_name=$this->club_name;
+        $user->ec_salt = rand(1,9999);
+        $user->password = pass_md5($user->ec_salt,123456);
+        $user->save();
+    }
 
 }

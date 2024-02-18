@@ -15,6 +15,7 @@ class ClubListSqdwController extends BaseController{//与模建立联系
         show_status($model->save(),'保存成功',get_cookie('_currentUrl_'),'保存失败');  
      }
 
+
     public function actionIndexlist($keywords='') {    
         set_cookie('_currentUrl_', Yii::app()->request->url);
         $modelName = $this->model;
@@ -54,7 +55,7 @@ class ClubListSqdwController extends BaseController{//与模建立联系
             else $data['sign'] = 'update';
             $this->render('update', $data);
         } else {
-            if($index == 'index_pass') $model->audState = "审核通过";
+            if($index == 'index_pass'){ $model->audState = "审核通过";$model->createAdminUser();}
             else $model->audState = "待提交";
             $this->saveData($model,$_POST["$this->model"]);
         }

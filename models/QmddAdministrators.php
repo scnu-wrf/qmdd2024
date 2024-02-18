@@ -82,5 +82,6 @@ class QmddAdministrators extends BaseModel {
             $data->save();
         }
     }
+    
 
 }

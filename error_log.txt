@@ -579,3 +579,119 @@ level=2 and  ( areaName like '%合肥市%' )
 level=3 and parent_code=22760
 admin_gfaccount=13923705710
 
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_code like "Z%" and f_mtype in(1,2) order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_code like "B%" and f_mtype in(1,2) order by f_code
+audState='审核通过'
+audState='审核通过'
+audState='待审核'
+audState='待审核'
+audState='审核通过'
+audState='待审核'
+audState='审核通过'
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+fater_id=1403
+level=1
+club_id=2450
+f_id=187
+f_id=214
+f_id=215
+f_id=123
+fater_id=647
+f_id=123
+type=1124
+f_id=123
+project_type in(1)
+f_id in(453)
+f_id=126
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+((rec_code=28314) AND (rec_name="用户ovym6")) AND (rec_phone="13923705710")
+((rec_code=28314) AND (rec_name="用户ovym6")) AND (rec_phone="13923705710")
+(((add_code=28314) AND (add_name="用户ovym6")) AND (add_phone="13923705710")) AND (order_type=0 or order_type=3)
+(((add_code=28314) AND (add_name="用户ovym6")) AND (add_phone="13923705710")) AND (order_type=0 or order_type=3)
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_code like "B%" and f_mtype in(1,2) order by f_code
+audState='审核通过'
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_code like "B%" and f_mtype in(1,2) order by f_code
+audState='审核通过'
+1
+audState='待提交'
+table_name='ClubListSqdw' and code_year='2024' and code_month='02'
+f_code like "Z%" and f_mtype in(1,2) order by f_code
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+lang_type=0 and admin_gfaccount<>'0' 
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+f_code like "B%" and f_mtype in(1,2) order by f_code
+audState='审核通过'
+audState='待审核'
+audState='待审核'
+admin_gfaccount ='	SQ202402007' and club_code='	SQ202402007'
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+admin_gfaccount ='lang' and club_code='lang'
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_show=1 order by f_code
+f_code like "B%" and f_mtype in(1,2) order by f_code
+audState='审核通过'
+admin_gfaccount ='	SQ202402007' and club_code='	SQ202402007'
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_code like "B%" and f_mtype in(1,2) order by f_code
+audState='审核通过'
+admin_gfaccount ='	SQ202402006' and club_code='	SQ202402006'
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+admin_gfaccount ='	SQ202402006' and club_code='	SQ202402006'
+admin_gfaccount ='	SQ202402006' and club_code='	SQ202402006'
+admin_gfaccount ='	SQ202402006' and club_code='	SQ202402006'
+admin_gfaccount ='	SQ202402006' and club_code='	SQ202402006'
