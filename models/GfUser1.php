@@ -32,7 +32,7 @@ class GfUser1 extends BaseModel {
         );
     }
   public function picLabels() {
-     return 'TXADD,TXNAME,mood_bigpic_url,IDNAME,IDADD,id_card_pic,id_pic';
+     return 'TXNAME,mood_bigpic_url,IDNAME,IDADD,id_card_pic,id_pic';//TXADD,
      //return $s1;
     }
     public  function pathLabels(){
@@ -341,5 +341,220 @@ class GfUser1 extends BaseModel {
         }
         return $tadd;
 	}
+    //2024/1/19 wrf新增
+    /**
+     * 新增用户，附带进行初始化操作
+     * return GfUser1
+     */
+    public function createUserInit($post){
+        //检查手机号是否相同
+        $temp=$this->find('security_phone="'.$post['security_phone'].'"');
+        if(!empty($temp)){
+            show_status(0,'注册成功',get_cookie('_currentUrl_'),'该手机号已被注册');
+        }
+        $success='注册成功';
+        $this->save();//获取id
+        //初始化操作
+        $this->GF_ACCOUNT=$this->GF_ID;
+        $this->user_state_name='正常';//用户状态：正常，已注销
+        if($this->passed_name=='已认证'){
+            $success='实名注册成功';
+        }
+        //put_msg('$post =');
+        //put_msg($post);
+        //put_msg('$this->attributes=');
+        //put_msg($this->attributes);
+        show_status($this->save(),$success,get_cookie('_currentUrl_'),'注册失败');
+    }
+
+    //模型更新
+    public function modelUpdate($post){
+        modelGetPost($this,$post);//赋值
+        //新建模型
+        if(!$this->GF_ID){
+            $this->createUserInit($post);
+            return;
+        }
+        //已有模型更新
+        show_status($this->save(),'更新成功','','更新失败');
+    }
+
+    //获取openid
+    private function getAppSecret(){
+        return '8344fdbaf88ee114a31f57bc5e1f839c';
+    }
+    private function getAppId(){
+        return 'wx8d045a8ae8b1ca29';
+    }
+
+    public function getwxOpenid($code){
+        $appid=$this->getAppId();
+        $secret=$this->getAppSecret();
+        $url = 'https://api.weixin.qq.com/sns/jscode2session?appid='.$appid.'&secret='.$secret.'&js_code='.$code.'&grant_type=authorization_code';
+        $json_obj =  Request::do_curl_get_request($url);
+        return $json_obj["openid"];
+    }
+    public function getWxInfo(){//TXADD是头像地址
+        $data=baselib::model()->oneToArray($this,'GF_ID:id,GF_NAME:name,openid,security_phone:phone,REGTIME:register_time,gf_reg_address:address,sport_like,club_id,club,TXADD:head_pic,CREDIT:credit',array());
+        //$data['role']=$this->getRoles();
+        $data['realNameAuthen']=($this->passed==372);//是否完成实名认证
+        //角色-权限
+        $role=clubadmin::model()->find('admin_gfaccount='.$this->security_phone);
+        if(isset($role)) $data['role']=$role->admin_level;
+        //默认头像
+        if(empty($data['head_pic'])) $data['head_pic']='/uploads/userHeadPic/noHeadPic.png';
+        return $data;
+    }
+    //快速获取手机号，微信接口，调用要钱，少用
+    public function getwxPhoneNumber($code){
+        $appid=$this->getAppId();
+        $secret=$this->getAppSecret();
+        $token_url = 'https://api.weixin.qq.com/cgi-bin/token';
+        $param = [
+            'grant_type' => 'client_credential',
+            'appid' => $appid,
+            'secret' => $secret
+        ];
+        $token_obj =  Request::do_curl_get_request($token_url,$param);
+        $phone_url="https://api.weixin.qq.com/wxa/business/getuserphonenumber?access_token=".$token_obj['access_token'];
+        $param2 = [
+            'code' => $code,
+        ];
+        $phone_obj = Request::do_curl_post_request($phone_url,json_encode($param2));
+        return $phone_obj['phone_info'];
+    }
+    //从小程序创建用户,如果已经有相同手机号的账号，则绑定openid
+    public function newWxUser($openid,$phone_code){
+        $modelName=__CLASS__;
+        $user = new $modelName;
+        $user->openid=$openid;
+        $user->updatePhone($phone_code);
+        $temp = $this->find('security_phone='.$user->security_phone);
+        if(empty($temp)){//新账号
+            $user->REGTIME = date('Y-m-d H:i:s');
+            $user->GF_NAME='用户'.substr($openid,1,5);
+            $user->GF_ACCOUNT=$this->GF_ID;
+            $user->user_state='506';
+            $user->user_state_name='正常';
+            $user->logon_way_name="微信授权";
+            $user->logon_way=1439;
+            $user->save();
+            return $user;
+        }
+        else{
+            $temp->openid=$openid;
+            $temp->save();
+            return $temp;
+        }
+    }
+    //更新电话号码，地区码
+    private function updatePhone($phone_code){
+        $phone_info=$this->getwxPhoneNumber($phone_code);
+        $this->PHONE = $phone_info['phoneNumber'];
+        $this->security_phone=$this->PHONE;
+        $this->security_phone_country_code=$phone_info['countryCode'];
+    }
+    //更新基本信息
+    public function updateBaseInfo($data){
+        //$atts = "sport_like,address";
+        $this->sport_like=$data->sport_like;
+        //$this->gf_reg_address=$data->address;
+        $this->club_id=$data->club_id;
+        $this->GF_NAME=$data->name;
+        $this->club=$data->club;
+        return $this->save();
+    }
+    //提出身份申请 需要审核
+    /**
+     * 
+     */
+    public function claimRole($data){
+        $claim = new GfUserRole;
+        $claim->openid=$this->openid;
+        $claim->userId=$this->GF_ID;
+        $claim->phone=$this->security_phone;
+        $claim->roleCode=$data['type'];
+        $claim->roleName=$claim->getRoleName();
+        $claim->claim_time=date('Y-m-d H:i:s');
+        $claim->state=371;
+        //
+        if($claim->isRoleSta()){
+            $claim->staCode=$data['staCode'];
+            $claim->code=$data['code'];
+            $claim->name=$data['name'];
+        }
+        else if($claim->isRoleAct()){
+            //暂无属性
+        }
+        return $claim->save();
+    }
+    //实名认证 阿里云接口
+    //GfUser1/wxRealNameAuthen
+    public function readlNameAuthen($name,$idNo){
+        //if(!$this->openid) return;
+        $url = "https://idenauthen.market.alicloudapi.com/idenAuthentication";
+        $appcode = "6cc85ce8503b40af941ff0b4f0e6d853";
+        $headers = array();
+        array_push($headers, "Authorization:APPCODE " . $appcode);
+        //根据API的要求，定义相对应的Content-Type
+        array_push($headers, "Content-Type".":"."application/x-www-form-urlencoded; charset=UTF-8");
+        $param=array('name'=>$name,'idNo'=>$idNo);
+        $data=Request::do_curl_post_request($url,$param,$headers);
+        if($data['respCode']=="0000"){
+            $this->id_card_type=843;//身份证
+            $this->id_card_type_name="身份证";
+            $this->id_card=$data["idNo"];
+            $this->ZSXM=$data["name"];
+            if($data["sex"]=="M"){
+                $this->real_sex_name='男';
+                $this->real_sex=205;
+            }
+            else if($data["sex"]=="F"){
+                $this->real_sex_name='女';
+                $this->real_sex=207;
+            }
+            $this->realname_entertime=date('Y-m-d H:i:s');
+            $this->native=$data["province"].'-'.$data["city"].'-'.$data["county"];
+            $this->real_birthday=$data["birthday"];
+            $this->passed=372;
+            $this->passed_name='已认证';
+            $this->save();
+        }
+        return $data;
+    }
+    //获取角色场馆码|俱乐部码|场地码
+    public function getRoles(){
+        $roles = GfUSerRole::model()->findAll('userId="'.$this->GF_ID.'" and state=372');//获取已通过的身份
+        $codes=array();
+        foreach($roles as $key=>$role){
+            if($role->isRoleSta()){//场馆
+                if(!isset($codes[$role->roleCode])) $codes[$role->roleCode]=array();
+                $codes[$role->roleCode][]=array('code'=>$role->code,'name'=>$role->name,'roleName'=>$role->roleName);
+            }
+            else if($role->isRoleAct()){
+                $codes[$role->roleCode]=true;
+            }
+        }
+        return $codes;
+    }
+    //获取角色身份名
+    public function getRoleName(){
+        $roles = GfUSerRole::model()->findAll('userId="'.$this->GF_ID.'" and state=372');//获取已通过的身份,后端显示
+        $names='';
+        foreach($roles as $key=>$value){
+            $names.=($value->name?$value->name:$value->roleName).',';
+        }
+        $names=trim($names,',');
+        return $names;
+    }
+    //获取请假历史
+    public function getClaimHistory(){
+        if(!$this->GF_ID) return array();
+        $claimHisory = GfUSerRole::model()->findAll('userId='.$this->GF_ID);
+        $data1=toIoArray($claimHisory,'userId,state,roleCode,roleName,code,name,claim_time,judge_time');
+        foreach($data1 as $k=>$v) $data1[$k]['stateName']=GfUSerRole::model()->getStateName($v['state']);
+        return $data1;
+    }
+
 
 }

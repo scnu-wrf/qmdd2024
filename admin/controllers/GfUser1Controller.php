@@ -613,4 +613,183 @@ class GfUser1Controller extends BaseController {
         );
         send_msg(334,$admin_id,$lock->GF_ID,$data);
 	}
+    //选择账号 后端
+    public function actionSelectUser($keywords = '',$real_sex=0,$ms_start='',$ms_end='',$passed_name='',$code=0,$lang_type=0,$logon_way='') {
+        $data = array();
+        $model = GfUser1::model();
+        $criteria = new CDbCriteria;
+        if($keywords!='')
+            $criteria->addSearchCondition('security_phone',$keywords);
+        else $criteria->addCondition('security_phone <> ""');
+        if($passed_name!=''){
+            $criteria->addCondition('passed_name="'.$passed_name.'"');
+        }
+        if($logon_way!=''){
+            $criteria->addCondition('passed_name="'.$logon_way.'"');
+        }
+        parent::_list($model, $criteria, 'select', $data);
+    }
+
+    //小程序登录/注册 小程序接口
+    public function actionwxLogin($code,$phone_code=""){
+        $openid=GfUser1::model()->getwxOpenid($code);
+        //
+        $user=GfUser1::model()->find('openid="'.$openid.'"');
+        //没有注册就注册一下
+        if(empty($user)&&$phone_code){
+            $user = GfUser1::model()->newWxUser($openid,$phone_code);
+        }
+        $res=$user->getWxInfo();
+        if(empty($res)) $res=array();
+        $code = empty($res['id'])?201:200;
+        JsonSuccess($res,$code);
+    }
+    //更新基本信息 小程序接口
+    public function actionwxUpdateBaseInfo($data){
+        $data = json_decode($data);
+        $openid = $data->openid;
+        $user=GfUser1::model()->find('openid="'.$openid.'"');
+        if(!$user){
+            JsonSuccess('用户不存在','500');return;
+        }
+        $user->updateBaseInfo($data)?JsonSuccess($user->getWxInfo()):JsonSuccess('保存失败','501');
+    }
+    //提交角色申请
+    public function actionwxClaimRole($data){
+        $data = json_decode($data,true);
+        $openid = $data['openid'];
+        $user=GfUser1::model()->find('openid="'.$openid.'"');
+        if(!$user){
+            JsonSuccess('用户不存在','500');return;
+        }
+        //检查是否重复
+        $check = GfUserRole::model()->checkDump($user->GF_ID,$data['type'],$data['code']);
+        if(!empty($check)){
+            $code="201";
+            switch($check->state){
+                case 371:$code='201';break;//等待审核中
+                case 372:$code='202';break;//审核通过
+                default:$code="201";
+            }
+            JsonSuccess('已有记录',$code);
+            return;
+        }
+        $user->claimRole($data)?JsonSuccess('提交成功'):JsonSuccess('保存失败','501');
+    }
+    //角色申请页面初始化 小程序接口
+    //1.身份类型
+    //2.可选的场馆与俱乐部
+    public function actionwxClaimRoleInit(){
+        //1
+        $roles = GfUSerRole::model()->getRoles();
+        //2 todo 等场馆，场地与俱乐部的模型
+        $sta=GfUSerRole::model()->getMultiselection();
+        $res = array();
+        $res['roles']=$roles;
+        $res['sta']=$sta;
+        JsonSuccess($res);
+    }
+    //阿里云实名认证 小程序接口
+    public function actionwxRealNameAuthen($name,$idNo,$openid){
+        $user=GfUser1::model()->find('openid="'.$openid.'"');
+        if(!$user){
+            JsonSuccess('用户不存在','500');return;
+        }
+        $data=$user->readlNameAuthen($name,$idNo);
+        if($data['respCode']!="0000"){//匹配失败
+            $msg=$data["respMessage"];
+            JsonSuccess($msg,'201');return;
+        }
+        //绑定信息
+        JsonSuccess();
+    }
+    //获取场馆信息 小程序接口
+    public function actionGetStadiumList(){
+        JsonSuccess(GfUSerRole::model()->stadiumList());
+    }
+    public function actionUploadHeadPic(){
+        $data = array();
+        $file1=$_FILES['file'];
+        $openid=$_POST['openid'];//更改图片名字为openid
+        if(empty($file1)||$file1['error']==4) {JsonFail('上传失败，稍后再试');return;}
+        if($file1['error']==5) {JsonFail('上传失败，上传文件大小为0');return;}
+        if($file1['error']==1) {JsonFail('上传文件大小超出范围');return;}
+        //修改php.ini中的upload_max_filesize来增大范围
+        $attach = CUploadedFile::getInstanceByName('file');
+        $pathDetail = '/uploads/userHeadPic/';//服务器储存图片的相对路径
+        $savepath = ROOT_PATH . $pathDetail;//服务器路径
+        $sitepath = SITE_PATH . $pathDetail;//小程序数据库路径
+        $prefix='';
+        $options = array(
+            'http' => array(
+                'method' => 'POST',
+                'header' => 'content-type:application/octet-stream',
+                'content' => file_get_contents($attach->tempName),
+            ),
+        );
+        $file = stream_context_create($options);
+        $fileName=$openid.date('Y-m-d-H-i-s'). '.'.$attach->extensionName;
+        if($attach->saveAs($savepath.$fileName))
+        {
+            $model=GfUser1::model()->find('openid="'.$openid.'"');
+            $model->TXADD = $sitepath.$fileName;
+            $model->save();
+            JsonSuccess($model->TXADD);return;
+        } 
+        JsonFail('保存失败');
+    }
+    /**
+     * 新增角色页面 后端
+     */
+    public function actionupdateRole($id){
+        $data=array();
+        $user = GfUser1::model()->find('GF_ID='.$id);
+        $role = new GfUserRole;
+        if(!Yii::app()->request->isPostRequest){
+            $staList = testStadium::model()->findAll();//场馆信息
+            $venList = testVenue::model()->findAll();//场地信息
+            $clubList =testUnion::model()->findAll();//俱乐部信息
+            $data['staList']=$staList;
+            $data['user']=$user;
+            $data['venList']=$venList;
+            $data['clubList']=$clubList;
+            $data['role']=$role;
+            $this->render('update_role',$data);
+        }
+        else{
+            $post =$_POST['GfUserRole'];
+            $roleCode = $post['roleCode'];
+            $code = $post['code'];
+            $roles = GfUserRole::model()->getRoles();
+            $temp=GfUserRole::model()->checkValid($roleCode,$code);
+            if(empty($temp)){
+                show_status(0,'',get_cookie('_currentUrl_'),'标识码为'.$code.'的'.$roles[$roleCode].'不存在');
+                return;
+            }
+            $msg = array(
+                'staCode'=>'',
+                'type'=>$roleCode,
+                'code'=>$code,
+                'name'=>$temp->name,
+            );
+            //查重
+            //检查是否重复
+            $check = GfUserRole::model()->find('userId='.$user->GF_ID.' and code="'.$code.'"');
+            if(!empty($check)){
+                if($check->state==371||$check->state==372)
+                    show_status(0,'添加成功',get_cookie('_currentUrl_'),'已有相同申请，请检查审核列表或审核记录');
+                return;
+            }
+            show_status($user->claimRole($msg),'添加成功',get_cookie('_currentUrl_'),'添加失败');
+        }
+    }
+    //获取用户的角色申请历史 小程序接口
+    public function actionGetClaimHistory($openid){
+        $user = GfUser1::model()->find('openid="'.$openid.'"');
+        if(!$user){
+            //出现这种情况代表非法访问接口
+            JsonFail('用户不存在');return;
+        }
+        JsonSuccess($user->getClaimHistory());
+    }
 }

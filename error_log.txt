@@ -456,3 +456,67 @@ id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
 level=2 and  ( areaName like '%合肥市%' ) 
 level=3 and parent_code=22760
 
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+security_phone=13923705710
+admin_gfaccount=13923705710
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+((rec_code=28314) AND (rec_name="用户ovym6")) AND (rec_phone="13923705710")
+((rec_code=28314) AND (rec_name="用户ovym6")) AND (rec_phone="13923705710")
+(((add_code=28314) AND (add_name="用户ovym6")) AND (add_phone="13923705710")) AND (order_type=0 or order_type=3)
+(((add_code=28314) AND (add_name="用户ovym6")) AND (add_phone="13923705710")) AND (order_type=0 or order_type=3)
+
+
+
+
+
+
+
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+admin_gfaccount=13923705710
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+id IN (:ycp0, :ycp1, :ycp2, :ycp3, :ycp4, :ycp5)
+level=2 and  ( areaName like '%合肥市%' ) 
+level=3 and parent_code=22760
+openid="oovym6wDTTKmkMNeTZKDXJtovv9s"
+
+admin_gfaccount=13923705710

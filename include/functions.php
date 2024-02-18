@@ -1754,3 +1754,21 @@ function httpssportnet(){
 function birthday($birthday){
   return Basefun::model()->getbirthday($birthday);
 }
+//输出200状态 copy by wrf
+function JsonSuccess($data=array(),$ecode='200'){
+    $rs = array('data'=>$data,'time'=>time(),'code'=>$ecode,'request'=>$_REQUEST);
+    echo CJSON::encode($rs);
+}
+
+//输出500状态 copy by wrf
+function JsonFail($data='访问失败'){
+    if(!is_array($data)) { $data=array($data);}
+    JsonSuccess($data,'500');
+}
+
+function modelGetPost(&$model,$post){
+    foreach ($post as $key => $value) {
+        $model->{$key} = $value;
+    }
+    return true;
+}
