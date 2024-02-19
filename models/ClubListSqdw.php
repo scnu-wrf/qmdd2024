@@ -158,6 +158,7 @@ class ClubListSqdw extends BaseModel {
         $user->partnership_type=624;
         $user->partnership_name='项目公司';
         $user->lang_type=0;
+        $user->email=$this->email;
         $user->save();
         put_msg($user->club_name);
     }

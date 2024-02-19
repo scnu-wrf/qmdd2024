@@ -12,6 +12,7 @@
 <html>
 <head>
 	<link href="admin/views/Clubadmin/layui/css/layui.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -33,11 +34,21 @@
 						<td width="90%">
 							<?php echo $form->textField($model, 'admin_gfaccount', array('class' => 'input-text','readonly'=>'ture','style'=>'width:200px;')); ?>
 							<?php if(isset($isNew)){ ?>
-							<input id="club_select_btn" class="btn" type="button" value="选择">
+							<input id="club_select_btn" class="btn" type="button" onclick="read_person()" value="选择">
 							<?php }; ?>
 							<?php echo $form->error($model, 'admin_gfaccount', $htmlOptions = array()); ?>
 						</td>
 					</tr>
+					<?php if($model->club_name){ ?>
+					<tr>
+						<td ><?php echo $form->labelEx($model, 'club_name'); ?></td>
+						<td >
+							<?php echo $form->textField($model, 'club_name', array('class' => 'input-text','readonly'=>'ture','style'=>'width:200px;')); ?>
+							<?php echo $form->error($model, 'club_name', $htmlOptions = array()); ?>
+						</td>
+					</tr>
+					<?php } ?>
+					<?php if($model->admin_gfnick){ ?>
 					<tr>
 						<td ><?php echo $form->labelEx($model, 'admin_gfnick'); ?></td>
 						<td >
@@ -46,11 +57,13 @@
 						</td>
 					</tr>
 					<tr>
+					<?php } ?>
+					<!-- <tr>
 						<td><?php echo $form->labelEx($model, 'password'); ?></td>
 						<td id='funpsd'>
 							<?php $password = empty($model->password) ? '123456' : $model->password; ?>
 							<input class="input-text" type="password" style="width:200px;" name="Clubadmin[password]" id="Clubadmin_password" value="<?php echo $password; ?>" autocomplete="off">
-							<span class="msg">注：默认登录密码为123456，添加成功后请尽快前往更新登录密码</span>
+							<span class="msg">注：默认登录密码为123456</span>
 						</td>
 					</tr>
 					<tr>
@@ -59,9 +72,9 @@
 							<?php $pay_pass = empty($model->pay_pass) ? '123456' : $model->pay_pass; ?>
 							<?php //echo $form->textField($model,'pay_pass',array('class'=>'input-text','type'=>'password','style'=>'width:200px;')); ?>
 							<input class="input-text" type="password" style="width:200px;" name="Clubadmin[pay_pass]" id="Clubadmin_pay_pass" value="<?php echo $pay_pass; ?>" autocomplete="off">
-							<span class="msg">注：默认支付密码为123456，添加成功后请尽快前往更新支付密码</span>
+							<span class="msg">注：默认支付密码为123456</span>
 						</td>
-					</tr>
+					</tr> -->
 					<!-- <tr> 
 						<td><?php echo $form->labelEx($model, 'project_list'); ?></td>
 						<td>
@@ -107,17 +120,30 @@
     							<option value="<?php echo $model->admin_level;?>">请选择</option>
     							<?php foreach($roles['first'] as $k=>$v){ ?>
     								<optgroup label="<?php echo $v;?>">
-    									<?php foreach($roles['second'][$k] as $k2=>$v2){ ?>
-      									<option value="<?php echo $v2->f_id;?>">
+    									<?php foreach($roles['second'][$k] as $k2=>$v2){ 
+    										if($v2->f_id==$model->admin_level){
+    									?>
+    									<option value="<?php echo $v2->f_id;?>" selected>
       									<?php echo $v.'-'.$v2->f_rname;?>
       									</option>
+      									<?php
+    										}
+    										else{
+    									?>
+    									<option value="<?php echo $v2->f_id;?>">
+      									<?php echo $v.'-'.$v2->f_rname;?>
+      									</option>
+    									<?php
+    										};
+    									?>
+
+
       								<?php } ?>
     							</optgroup>
     							<?php } ?>
   								</select>
 							</div>
 						</td>
-						
 					</tr>
 					<!-- <tr>
 						<td><?php echo $form->labelEx($model, 'admin_level'); ?></td>
@@ -166,18 +192,20 @@
 	var f_id="<?php echo $model->admin_level;?>";
 	//选择框事件
 	layui.use(function(){
-  var form = layui.form;
-  var layer = layui.layer;
-  // select 事件
-  form.on('select(demo-select-filter)', function(data){
+    var form = layui.form;
+    var layer = layui.layer;
+    // select 事件
+    form.on('select(demo-select-filter)', function(data){
      f_id=data.value;
+     console.log('f_id=',f_id);
     //layer.msg(this.innerHTML + ' 的 value: '+ data.value); // this 为当前选中 <option> 元素对象
-  });
+    });
 });
 function update(){
+		let url = '';
         $.ajax({
             type: 'post',
-            url: '<?php echo $this->createUrl('update',array('id'=>$model->id));?>&f_id='+f_id+'&admin_gfaccount='+'<?php echo $model->admin_gfaccount; ?>'+'&admin_gfnick='+'<?php echo $model->admin_gfnick; ?>'+'&password='+'<?php echo $model->password; ?>'+'&pay_pass='+'<?php echo $model->pay_pass; ?>',
+            url: '<?php echo $this->createUrl('update',array('id'=>$model->id,'admin_gfaccount'=>$model->admin_gfaccount));?>&f_id='+f_id,
             data:{},
             contentType: 'application/json',
             dataType: 'json',
@@ -209,6 +237,7 @@ function update(){
 				$('#Clubadmin_club_id').val($.dialog.data('club_id'));
 				$('#Clubadmin_admin_gfaccount').val($.dialog.data('club_code'));
 				$('#Clubadmin_admin_gfnick').val($.dialog.data('club_title'));
+
 				}
 			}
 		});
@@ -216,7 +245,7 @@ function update(){
 
 	function read_person(){
 			$.dialog.data('admin_gfid', 0);
-			$.dialog.open('<?php echo $this->createUrl("userlist/SelectUser",$da);?>&lang_type=1',{
+			$.dialog.open('<?php echo $this->createUrl("gfuser1/SelectUser",$da);?>&lang_type=1',{
 				id:'fuwuzhe',lock:true,opacity:0.3,width:'500px',height:'60%',
 				title:'选择会员',
 				close: function () {
@@ -225,6 +254,7 @@ function update(){
 					//$('#Clubadmin_admin_gfaccount').val($.dialog.data('GF_ACCOUNT')); 手机号代替gf账号
 					$('#Clubadmin_admin_gfaccount').val($.dialog.data('security_phone'));
 					$('#Clubadmin_admin_gfnick').val($.dialog.data('zsxm'));
+					admin_gfaccount=$.dialog.data('security_phone');
 				}
 			}
 		});    

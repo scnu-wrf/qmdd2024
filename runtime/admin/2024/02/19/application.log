@@ -1,0 +1,35 @@
+2024/02/19 09:39:07 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
+Stack trace:
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(122): Menu->get_role_menu()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(134): IndexController->get_signin()
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
+#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
+#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): IndexController->runActionWithFilters()
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): IndexController->run()
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
+REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456
+2024/02/19 09:43:12 [error] [php] Undefined index: password (E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php:75)
+Stack trace:
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): ClubadminController->runAction()
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): ClubadminController->runActionWithFilters()
+#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): ClubadminController->run()
+#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
+REQUEST_URI=/sport2024/index.php?r=clubadmin/update&id=1083&f_id=288&admin_gfaccount=SQ202402012&admin_gfnick=
+2024/02/19 09:43:26 [error] [php] Undefined index: password (E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php:75)
+Stack trace:
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): ClubadminController->runAction()
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): ClubadminController->runActionWithFilters()
+#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): ClubadminController->run()
+#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
+REQUEST_URI=/sport2024/index.php?r=clubadmin/update&id=1083&f_id=288&admin_gfaccount=SQ202402012&admin_gfnick=

@@ -1665,5 +1665,7 @@ class SelectController extends BaseController {
         $criteria->join = 'join gf_customer_type_set';
         parent::_list($model, $criteria, 'club_problem_type', $data,100);
     }
+    //选择后端账号
+    
 
 }

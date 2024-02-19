@@ -1,0 +1,188 @@
+
+<div ><table width="100%" ><tr ><td width="50%"><font style="width:100px;font-size:24px;">
+<a class="nav-a" style="color: #84563e">民族列表</a></font></td><td width="50%" align="right">
+<span><a style="display:none;" id="j-delete" class="btn" href="javascript:;" onclick="we.dele(we.checkval('.check-item input:checked'), deleteUrl);"><i class="fa fa-trash-o"></i>批刪除</a>
+<a class="btn" href="/sport2024/index.php?r=nation/create"><i class="fa fa-plus"></i>添加</a>
+<a class="btn" href="/sport2024/index.php?r=nation/index"><i class="fa fa-refresh"></i>刷新</a>
+</span></td></tr></table>
+</div><!--box-title end--><div class="box-content">
+<div >
+
+<form action="/sport2024/index.php?r=nation/index" method="get"><p>
+<input type="hidden" name="r" value="nation/index">
+<label style="margin-right:10px;">
+<span>关键字：</span>
+<input style="width:100px;height=25px;" class="input-text" name="keywords" value="">
+ </label>
+<button class="btn btn-brown" style="color: #fff;
+   border-color: #84563e; background-color: #84563e;" type="submit">查询</button><input type="hidden" name="submitType" id="submitType" value="3">
+</p></form>
+</div><!--box-search end-->
+<div class="box-table">
+<table class="list" >
+<tr class="table-title"><th class="check">
+<input id="j-checkall" class="input-check" type="checkbox"></th>
+<th  align="center" >编号</th><th  align="center" >民族</th><th  align="center" >国家简称</th>
+<th>操作</th>
+</tr><tbody id="tbody1"><tr>
+<td class="check check-item"><input class="input-check" type="checkbox" value="1"></td>
+<td >CHN01</td><td >汉族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=1"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('1'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td><script> var deleteUrl ="/sport2024/index.php?r=nation/delete&id=ID";</script></tr> <tr style="background: #eee">
+<td class="check check-item"><input class="input-check" type="checkbox" value="3"></td>
+<td >CHN03</td><td >僳僳族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=3"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('3'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td></tr><tr>
+<td class="check check-item"><input class="input-check" type="checkbox" value="4"></td>
+<td >CHN04</td><td >达斡尔族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=4"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('4'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td></tr> <tr style="background: #eee">
+<td class="check check-item"><input class="input-check" type="checkbox" value="5"></td>
+<td >CHN05</td><td >塔吉克族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=5"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('5'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td></tr><tr>
+<td class="check check-item"><input class="input-check" type="checkbox" value="6"></td>
+<td >CHN06</td><td >塔塔尔族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=6"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('6'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td></tr> <tr style="background: #eee">
+<td class="check check-item"><input class="input-check" type="checkbox" value="7"></td>
+<td >CHN07</td><td >蒙古族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=7"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('7'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td></tr><tr>
+<td class="check check-item"><input class="input-check" type="checkbox" value="8"></td>
+<td >CHN08</td><td >朝鲜族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=8"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('8'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td></tr> <tr style="background: #eee">
+<td class="check check-item"><input class="input-check" type="checkbox" value="9"></td>
+<td >CHN09</td><td >佤族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=9"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('9'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td></tr><tr>
+<td class="check check-item"><input class="input-check" type="checkbox" value="10"></td>
+<td >CHN10</td><td >仫佬族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=10"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('10'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td></tr> <tr style="background: #eee">
+<td class="check check-item"><input class="input-check" type="checkbox" value="11"></td>
+<td >CHN11</td><td >怒族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=11"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('11'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td></tr><tr>
+<td class="check check-item"><input class="input-check" type="checkbox" value="12"></td>
+<td >CHN12</td><td >独龙族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=12"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('12'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td></tr> <tr style="background: #eee">
+<td class="check check-item"><input class="input-check" type="checkbox" value="13"></td>
+<td >CHN13</td><td >回族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=13"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('13'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td></tr><tr>
+<td class="check check-item"><input class="input-check" type="checkbox" value="14"></td>
+<td >CHN14</td><td >满族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=14"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('14'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td></tr> <tr style="background: #eee">
+<td class="check check-item"><input class="input-check" type="checkbox" value="15"></td>
+<td >CHN15</td><td >畲族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=15"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('15'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td></tr><tr>
+<td class="check check-item"><input class="input-check" type="checkbox" value="16"></td>
+<td >CHN16</td><td >羌族</td><td >CHN</td>
+<td>
+
+<a class="btn" href="/sport2024/index.php?r=nation/update&id=16"
+ title="编辑"><i class="fa fa-edit"></i></a>
+<a class="btn" href="javascript:;" onclick="we.dele('16'
+, deleteUrl);" title="删除"><i class="fa fa-trash-o"></i></a></td></tr><tbody></table>
+</div><!--box-table end--><div class="box-page c" id="page1"><ul id="yw0" class="yiiPager"><li class="first hidden"><a href="/sport2024/index.php?r=nation/index">首页</a></li>
+<li class="previous hidden"><a href="/sport2024/index.php?r=nation/index">上一页</a></li>
+<li class="page selected"><a href="/sport2024/index.php?r=nation/index">1</a></li>
+<li class="page"><a href="/sport2024/index.php?r=nation/index&amp;page=2">2</a></li>
+<li class="page"><a href="/sport2024/index.php?r=nation/index&amp;page=3">3</a></li>
+<li class="page"><a href="/sport2024/index.php?r=nation/index&amp;page=4">4</a></li>
+<li class="next"><a href="/sport2024/index.php?r=nation/index&amp;page=2">下一页</a></li>
+<li class="last"><a href="/sport2024/index.php?r=nation/index&amp;page=4">末页</a></li></ul><div class="info">共56条内容，当前第1/4页,<span>显示行:</span>
+        <select name="PageSize" onchange="javascript:changPage()" id="PageSize"><option selected="selected" value="15">15</option><option  value="20">20</option><option  value="30">30</option><option  value="50">50</option><option  value="100">100</option></select></span></div><script> function changPage(){ var s2 = "/sport2024/index.php?r=public/setPageSize"; 
+    var options=$('#PageSize option:selected').val(); //获取选中的项
+    $.ajax({
+        type: 'post', url: s2,
+        data: { pageSize: options, },
+        dataType: 'json',
+        success: function(data) {
+ console.log(data);
+             document.getElementById('tbody1').innerHTML =data['html'];
+//            console.log(data);
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest);
+        }
+    });
+  }
+ </script></div><script>
+    function changPage(Psize,purl,pid,pname,pcmd){ 
+    $.ajax({
+        type: 'post', url: purl,
+        data: { pageSize: Psize, keyid:pid,keyname:pname,keycmd: pcmd},
+        dataType: 'json',
+        success: function(data) {
+           console.log(data);
+          document.getElementById('tbody1').innerHTML =data['html'];
+        },
+        error: function(XMLHttpRequest, textStatus, errorThrown) {
+            console.log(XMLHttpRequest);
+        }
+    });
+  }
+//  changPage(15,'/sport2024/index.php?r=nation/indexData','id','code,nation,country','编辑:update,删除');
+ </script></div>

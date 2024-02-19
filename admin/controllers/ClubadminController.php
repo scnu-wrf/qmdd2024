@@ -18,26 +18,29 @@ class ClubadminController extends BaseController {
         if ($club_id<0) $club_id=get_session('club_id'); 
         $w1='lang_type='.$lang_type.(($lang_type=='0') ? '' : " and club_id=".$club_id); 
         $w1.=" and admin_gfaccount<>'0' ";
-        $criteria->condition=get_like($w1,'admin_gfaccount,admin_gfnick',$keywords,'');//get_where
+        $criteria->condition=get_like($w1,'admin_gfaccount,admin_gfnick,club_name',$keywords,'');//get_where
         $criteria->order = 'id DESC';
         parent::_list($model, $criteria);
     }
-
+    //弃用
     public function actionCreate() {
         $modelName = $this->model;
-        $model = new $modelName('create');
-
+        $model = new Clubadmin;
+        $model->password='123456';
+        $model->pay_pass='123456';
         if (!Yii::app()->request->isPostRequest) {
             $roles = role::model()->getParentAndChildren();
             $data = array();
             $data['roles']=$roles;
             $data['isNew']=true;
+
             $data['model'] = $model;
             $this->render('update', $data);
         }else{
             $post=array(
                 'admin_gfaccount'=>$_REQUEST['admin_gfaccount'],
                 'admin_gfnick'=>$_REQUEST['admin_gfnick'],
+                'club_name'=>$_REQUEST['club_name'],
                 'pay_pass'=>$_REQUEST['pay_pass'],
                 'password'=>$_REQUEST['password'],
             );
@@ -58,29 +61,25 @@ class ClubadminController extends BaseController {
             $data['model'] = $model;
             $data['modelName']=$modelName;
             //$data['model']->admin_level=explode(',',$data['model']->admin_level);
-			//$data['project_list'] = ClubadminProject::model()->findAll('qmdd_admin_id='.$model->id);
+            //$data['project_list'] = ClubadminProject::model()->findAll('qmdd_admin_id='.$model->id);
             $this->render('update', $data);
         } else {
             //
             $post=array(
                 'admin_gfaccount'=>$_REQUEST['admin_gfaccount'],
-                'admin_gfnick'=>$_REQUEST['admin_gfnick'],
-                'pay_pass'=>$_REQUEST['pay_pass'],
-                'password'=>$_REQUEST['password'],
             );
             if(isset($_REQUEST['f_id'])){
                 $post['admin_level'] = $_REQUEST['f_id'];
             }
-		    $this->saveData($model,$post,$_REQUEST['password']);
+            $this->saveData($model,$post);
         }
     }
 	
 	function saveData($model,$post,$password='') {
         //查重
-        //put_msg('查重开始');
         if (empty($model->id)){
             $modelName = $this->model;
-            $tmp1=$modelName::model()->find('club_id='.$post['club_id']." and admin_gfaccount='".$post['admin_gfaccount']."'");
+            $tmp1=$modelName::model()->find('admin_level='.$post['admin_level']." and admin_gfaccount='".$post['admin_gfaccount']."'");
             if (!empty($tmp1)){
                 //报错
                 show_status(0,'','','已有账号为:'.$post['admin_gfaccount'].'的授权用户,请修改已有角色的权限,无法重复添加');
@@ -93,13 +92,13 @@ class ClubadminController extends BaseController {
         $model->attributes =$post;
         //$model->admin_level=gf_implode(',',$post['admin_level']);
         //put_msg('赋值结束');
-        if($post['password']!=$password){
-            $model->ec_salt = rand(1,9999);
-            $model->club_code = empty($model->club_code) ? get_session('club_code') : $model->club_code;
-            $acc = ($model->club_code==$model->admin_gfaccount) ? $model->club_code : $model->club_code.'#'.$model->admin_gfaccount;
-            $p = md5(trim($acc).$model->password);
-            $model->password = pass_md5($model->ec_salt,$p);
-        }
+        // if($post['password']!=$password){
+        //     $model->ec_salt = rand(1,9999);
+        //     $model->club_code = empty($model->club_code) ? get_session('club_code') : $model->club_code;
+        //     $acc = ($model->club_code==$model->admin_gfaccount) ? $model->club_code : $model->club_code.'#'.$model->admin_gfaccount;
+        //     $p = md5(trim($acc).$model->password);
+        //     $model->password = pass_md5($model->ec_salt,$p);
+        // }
         $Role = new Role;
         //put_msg('rolename赋值开始');
         $model->role_name=$Role->RoleName($model->admin_level);

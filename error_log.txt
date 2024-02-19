@@ -75,3 +75,216 @@ audState='待审核'
 club_code="SQ202402012"
 知更鸟小姐后援团
 audState='待审核'
+audState='待审核'
+club_code="SQ202402007"
+12312
+audState='待审核'
+club_code="SQ202402009"
+test1111
+audState='待审核'
+club_code="SQ202402012"
+知更鸟小姐后援团
+audState='待审核'
+f_code like "Z%" and f_mtype in(1,2) order by f_code
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+club_code <> ""
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+ f_type=1 and club_id=2450 
+club_id=2450
+(club_id=2450 or  f_id in (198)) and not isnull(f_rcode)
+lang_type=1 and club_id=2450 and admin_gfaccount<>'0' 
+
+{"order":"f_rcode","condition":"substr(f_rcode,3,1)<>' ' and substr(f_rcode,4,1)=' ' and f_tcode<>'T' "}
+f_level=2 and member_attribute like '%404%' order by f_ctcode 
+lang_type=0 and admin_gfaccount<>'0' 
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+security_phone <> ""
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+security_phone <> ""
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+club_code <> ""
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+security_phone <> ""
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+security_phone <> ""
+{"admin_gfaccount":" ","admin_gfnick":"","pay_pass":"","password":"","admin_level":"287"}
+admin_level=287 and admin_gfaccount=' '
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+security_phone <> ""
+{"admin_gfaccount":" ","admin_gfnick":"","pay_pass":"123456","password":"123456","admin_level":"287"}
+admin_level=287 and admin_gfaccount=' '
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+security_phone <> ""
+admin_level=288 and admin_gfaccount=' '
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+security_phone <> ""
+security_phone <> ""
+admin_level=198 and admin_gfaccount=' '
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+security_phone <> ""
+security_phone LIKE :ycp0
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+security_phone <> ""
+admin_level=260 and admin_gfaccount='13976364146'
+admin_level=260 and admin_gfaccount='13976364146'
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+security_phone <> ""
+admin_level=288 and admin_gfaccount='13788530987'
+f_id in (288)
+f_rcode="B"
+admin_level=288 and admin_gfaccount='13788530987'
+f_id in (288)
+f_rcode="B"
+admin_level=288 and admin_gfaccount='13788530987'
+f_id in (288)
+f_rcode="B"
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+security_phone <> ""
+admin_level=288 and admin_gfaccount='18289639280'
+f_id in (288)
+f_rcode="B"
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_code like "B%" and f_mtype in(1,2) order by f_code
+audState='审核通过'
+audState='待审核'
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+admin_gfaccount ='918974' and club_code='2018000094'
+f_id in (240)
+f_show=1 order by f_code
+f_code like "A%" and f_mtype in(1,2) order by f_code
+f_code like "Z%" and f_mtype in(1,2) order by f_code
+lang_type=0 and admin_gfaccount<>'0' 
+lang_type=0 and admin_gfaccount<>'0' 
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+lang_type=0 and admin_gfaccount<>'0' 
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+f_id in (260)
+f_rcode="A"
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+f_id in (198)
+f_rcode="A"
+lang_type=0 and admin_gfaccount<>'0' 
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+lang_type=0 and admin_gfaccount<>'0' 
+
+substr(f_rcode,3,1)>' ' and club_id=0 and substr(f_rcode,4,1)=' ' order by f_rcode
+lang_type=0 and admin_gfaccount<>'0' 
+ f_type=1 and club_id=2450 
+club_id=2450
+(club_id=2450 or  f_id in (198)) and not isnull(f_rcode)
+lang_type=0 and admin_gfaccount<>'0' 
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+lang_type=0 and admin_gfaccount<>'0' 
+ f_type=1 and club_id=2450 
+club_id=2450
+(club_id=2450 or  f_id in (198)) and not isnull(f_rcode)
+lang_type=0 and admin_gfaccount<>'0' 
+lang_type=0 and admin_gfaccount<>'0'  and  ( admin_gfaccount like '%SQ202402012%' or admin_gfnick like '%SQ202402012%' ) 
+lang_type=0 and admin_gfaccount<>'0'  and  ( admin_gfaccount like '%知更鸟%' or admin_gfnick like '%知更鸟%' ) 
+lang_type=0 and admin_gfaccount<>'0' 
+lang_type=0 and admin_gfaccount<>'0'  and  ( admin_gfaccount like '%知更鸟%' or admin_gfnick like '%知更鸟%' or club_name like '%知更鸟%' ) 
+lang_type=0 and admin_gfaccount<>'0'  and  ( admin_gfaccount like '%知更鸟%' or admin_gfnick like '%知更鸟%' or club_name like '%知更鸟%' ) 
+lang_type=0 and admin_gfaccount<>'0' 
+ f_type=1 and club_id=2450 
+club_id=2450
+(club_id=2450 or  f_id in (198)) and not isnull(f_rcode)
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+ f_type=1 and club_id=2450 
+club_id=2450
+(club_id=2450 or  f_id in (198)) and not isnull(f_rcode)
+lang_type=1 and club_id=2450 and admin_gfaccount<>'0' 
+ f_type=1 and club_id=2450 
+club_id=2450
+(club_id=2450 or  f_id in (198)) and not isnull(f_rcode)
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+ f_type=1 and club_id=2450 
+club_id=2450
+(club_id=2450 or  f_id in (198)) and not isnull(f_rcode)
+lang_type=1 and club_id=2450 and admin_gfaccount<>'0' 
+
+{"order":"f_rcode","condition":"substr(f_rcode,3,1)<>' ' and substr(f_rcode,4,1)=' ' and f_tcode<>'T' "}
+f_level=2 and member_attribute like '%404%' order by f_ctcode 
+
+{"order":"f_code","condition":" f_type=''"}
+f_name<>' '
+{"order":"f_btype,f_bcode,f_code","condition":" f_mtype<4"}
+{"order":"f_code","condition":"1=1"}
+lang_type=0 and admin_gfaccount<>'0' 
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+lang_type=0 and admin_gfaccount<>'0' 
+ f_type=1 and club_id=2450 
+substr(f_rcode,4,1)=' '
+lang_type=0 and admin_gfaccount<>'0' 
+1
+1=1 
+fater_id=1018
+1=1  AND pay_client=1031
+1
+1=1  AND pay_client=1031
+1
+fater_id=370
+
+f_id=196
+1

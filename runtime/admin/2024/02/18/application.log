@@ -1,98 +1,146 @@
-2024/02/18 20:54:15 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Truncated incorrect DOUBLE value: ''. The SQL statement executed was: INSERT INTO `qmdd_administrators` (`club_id`, `club_code`, `club_name`, `lang_type`, `admin_gfid`, `admin_gfaccount`, `admin_gfnick`, `password`, `ec_salt`, `pay_pass`, `pay_salt`, `phone`, `email`, `if_del`, `last_ip`, `is_on_line`, `admin_remark`, `sys_user`, `admin_level`, `admin_level_type`, `role_name`, `if_auto_access`, `max_access`, `if_auto_greet`, `to_greet`, `customer_service`, `partnership_type`, `partnership_name`, `last_login`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25, :yp26, :yp27, :yp28). Bound with :yp0=3073, :yp1='SQ202402012', :yp2='知更鸟小姐后援团', :yp3='', :yp4=0, :yp5='SQ202402012', :yp6='', :yp7='0d3f27b33053f7d481858207e8267136', :yp8='4058', :yp9='', :yp10='6782', :yp11='', :yp12='', :yp13=510, :yp14='0.0.0.0', :yp15=948, :yp16='', :yp17=2, :yp18='', :yp19='', :yp20='', :yp21=648, :yp22=0, :yp23=648, :yp24='', :yp25=0, :yp26=624, :yp27='项目公司', :yp28='2024-02-18 20:54:15'.
-2024/02/18 20:54:15 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[22007]: Invalid datetime format: 1292 Truncated incorrect DOUBLE value: ''' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\CDbCommand.php:358
+2024/02/18 22:00:42 [error] [php] Creating default object from empty value (E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php:95)
+Stack trace:
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): ClubadminController->runAction()
+#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): ClubadminController->runActionWithFilters()
+#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): ClubadminController->run()
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
+REQUEST_URI=/sport2024/index.php?r=clubadmin/update&id=&f_id=198&admin_gfaccount=%20&admin_gfnick=&password=123456&pay_pass=123456
+2024/02/18 22:01:22 [error] [php] Undefined index: pay_pass (E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php:71)
+Stack trace:
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): ClubadminController->runAction()
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): ClubadminController->runActionWithFilters()
+#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): ClubadminController->run()
+#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
+REQUEST_URI=/sport2024/index.php?r=clubadmin/update&id=&f_id=288&admin_gfaccount=13923705710&admin_gfnick=&password=undefined&pay_passundefined
+2024/02/18 22:03:13 [error] [php] Undefined index: password (E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php:75)
+Stack trace:
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): ClubadminController->runAction()
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): ClubadminController->runActionWithFilters()
+#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): ClubadminController->run()
+#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
+REQUEST_URI=/sport2024/index.php?r=clubadmin/update&id=&f_id=260&admin_gfaccount=13976364146&admin_gfnick=%E6%9D%8E%E6%98%A5%E9%9F%B5
+2024/02/18 22:04:26 [error] [php] Creating default object from empty value (E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php:93)
+Stack trace:
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): ClubadminController->runAction()
+#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): ClubadminController->runActionWithFilters()
+#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): ClubadminController->run()
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
+REQUEST_URI=/sport2024/index.php?r=clubadmin/update&id=&f_id=260&admin_gfaccount=13976364146&admin_gfnick=%E6%9D%8E%E6%98%A5%E9%9F%B5
+2024/02/18 22:04:50 [error] [php] Creating default object from empty value (E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php:91)
+Stack trace:
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CInlineAction->runWithParamsInternal()
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): ClubadminController->runAction()
+#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): ClubadminController->runActionWithFilters()
+#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): ClubadminController->run()
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
+REQUEST_URI=/sport2024/index.php?r=clubadmin/update&id=&f_id=260&admin_gfaccount=13976364146&admin_gfnick=%E6%9D%8E%E6%98%A5%E9%9F%B5
+2024/02/18 22:05:41 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0-0-' for key 'club_id'. The SQL statement executed was: INSERT INTO `qmdd_administrators` (`club_id`, `club_code`, `club_name`, `lang_type`, `admin_gfid`, `admin_gfaccount`, `admin_gfnick`, `password`, `ec_salt`, `pay_pass`, `pay_salt`, `phone`, `email`, `if_del`, `last_ip`, `is_on_line`, `admin_remark`, `sys_user`, `admin_level`, `admin_level_type`, `role_name`, `if_auto_access`, `max_access`, `if_auto_greet`, `to_greet`, `customer_service`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25). Bound with :yp0=0, :yp1='0', :yp2='', :yp3='', :yp4=0, :yp5='13788530987', :yp6='塔里木', :yp7='', :yp8='', :yp9='', :yp10='6782', :yp11='', :yp12='', :yp13=510, :yp14='0.0.0.0', :yp15=948, :yp16='', :yp17=2, :yp18='288', :yp19='', :yp20='俱乐部- 客服,', :yp21=648, :yp22=0, :yp23=648, :yp24='', :yp25=0.
+2024/02/18 22:05:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0-0-' for key 'club_id'' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\CDbCommand.php:358
 Stack trace:
 #0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(1084): CDbCommand->execute()
 #1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(812): CActiveRecord->insert(NULL)
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\ClubListSqdw.php(161): CActiveRecord->save()
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubListSqdwController.php(99): ClubListSqdw->createAdminUser()
-#4 [internal function]: ClubListSqdwController->actionUpdatecheck('3073')
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ClubListSqdwController), Array)
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ClubListSqdwController), Object(ReflectionMethod), Array)
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php(108): CActiveRecord->save()
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php(73): ClubadminController->saveData(NULL, Array)
+#4 [internal function]: ClubadminController->actionUpdate('')
+#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ClubadminController), Array)
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ClubadminController), Object(ReflectionMethod), Array)
 #7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
 #8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
 #9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('Updatecheck')
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('clubListSqdw/Up...')
+#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('update')
+#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('clubadmin/updat...')
 #12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
 #13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
 #14 {main}
-REQUEST_URI=/sport2024/index.php?r=clubListSqdw/Updatecheck&id=3073
-HTTP_REFERER=http://127.0.0.1/sport2024/index.php?r=clubListSqdw/Updatecheck&id=3073
+REQUEST_URI=/sport2024/index.php?r=clubadmin/update&id=&f_id=288&admin_gfaccount=13788530987&admin_gfnick=%E5%A1%94%E9%87%8C%E6%9C%A8
+HTTP_REFERER=http://127.0.0.1/sport2024/index.php?r=clubadmin/create&lang_type=0
 ---
-2024/02/18 20:57:46 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[22007]: Invalid datetime format: 1292 Truncated incorrect DOUBLE value: ''. The SQL statement executed was: INSERT INTO `qmdd_administrators` (`club_id`, `club_code`, `club_name`, `lang_type`, `admin_gfid`, `admin_gfaccount`, `admin_gfnick`, `password`, `ec_salt`, `pay_pass`, `pay_salt`, `phone`, `email`, `if_del`, `last_ip`, `is_on_line`, `admin_remark`, `sys_user`, `admin_level`, `admin_level_type`, `role_name`, `if_auto_access`, `max_access`, `if_auto_greet`, `to_greet`, `customer_service`, `partnership_type`, `partnership_name`, `last_login`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25, :yp26, :yp27, :yp28). Bound with :yp0=3073, :yp1='SQ202402012', :yp2='知更鸟小姐后援团', :yp3='0', :yp4=0, :yp5='SQ202402012', :yp6='', :yp7='6d79db4947d8561ec72902f02e8b8323', :yp8='5928', :yp9='', :yp10='6782', :yp11='', :yp12='', :yp13=510, :yp14='0.0.0.0', :yp15=948, :yp16='', :yp17=2, :yp18='', :yp19='', :yp20='', :yp21=648, :yp22=0, :yp23=648, :yp24='', :yp25=0, :yp26=624, :yp27='项目公司', :yp28='2024-02-18 20:57:46'.
-2024/02/18 20:57:46 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[22007]: Invalid datetime format: 1292 Truncated incorrect DOUBLE value: ''' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\CDbCommand.php:358
+2024/02/18 22:06:41 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0-0-' for key 'club_id'. The SQL statement executed was: INSERT INTO `qmdd_administrators` (`club_id`, `club_code`, `club_name`, `lang_type`, `admin_gfid`, `admin_gfaccount`, `admin_gfnick`, `password`, `ec_salt`, `pay_pass`, `pay_salt`, `phone`, `email`, `if_del`, `last_ip`, `is_on_line`, `admin_remark`, `sys_user`, `admin_level`, `admin_level_type`, `role_name`, `if_auto_access`, `max_access`, `if_auto_greet`, `to_greet`, `customer_service`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25). Bound with :yp0=0, :yp1='0', :yp2='', :yp3='', :yp4=0, :yp5='13788530987', :yp6='塔里木', :yp7='', :yp8='', :yp9='', :yp10='6782', :yp11='', :yp12='', :yp13=510, :yp14='0.0.0.0', :yp15=948, :yp16='', :yp17=2, :yp18='288', :yp19='', :yp20='俱乐部- 客服,', :yp21=648, :yp22=0, :yp23=648, :yp24='', :yp25=0.
+2024/02/18 22:06:41 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0-0-' for key 'club_id'' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\CDbCommand.php:358
 Stack trace:
 #0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(1084): CDbCommand->execute()
 #1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(812): CActiveRecord->insert(NULL)
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\ClubListSqdw.php(163): CActiveRecord->save()
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubListSqdwController.php(99): ClubListSqdw->createAdminUser()
-#4 [internal function]: ClubListSqdwController->actionUpdatecheck('3073')
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ClubListSqdwController), Array)
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ClubListSqdwController), Object(ReflectionMethod), Array)
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php(109): CActiveRecord->save()
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php(74): ClubadminController->saveData(NULL, Array)
+#4 [internal function]: ClubadminController->actionUpdate('')
+#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ClubadminController), Array)
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ClubadminController), Object(ReflectionMethod), Array)
 #7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
 #8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
 #9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('Updatecheck')
-#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('clubListSqdw/Up...')
+#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('update')
+#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('clubadmin/updat...')
 #12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
 #13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
 #14 {main}
-REQUEST_URI=/sport2024/index.php?r=clubListSqdw/Updatecheck&id=3073
-HTTP_REFERER=http://127.0.0.1/sport2024/index.php?r=clubListSqdw/Updatecheck&id=3073
+REQUEST_URI=/sport2024/index.php?r=clubadmin/update&id=&f_id=288&admin_gfaccount=13788530987&admin_gfnick=%E5%A1%94%E9%87%8C%E6%9C%A8
+HTTP_REFERER=http://127.0.0.1/sport2024/index.php?r=clubadmin/create&lang_type=0
 ---
-2024/02/18 21:03:31 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
+2024/02/18 22:10:40 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0-0-' for key 'club_id'. The SQL statement executed was: INSERT INTO `qmdd_administrators` (`club_id`, `club_code`, `club_name`, `lang_type`, `admin_gfid`, `admin_gfaccount`, `admin_gfnick`, `password`, `ec_salt`, `pay_pass`, `pay_salt`, `phone`, `email`, `if_del`, `last_ip`, `is_on_line`, `admin_remark`, `sys_user`, `admin_level`, `admin_level_type`, `role_name`, `if_auto_access`, `max_access`, `if_auto_greet`, `to_greet`, `customer_service`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25). Bound with :yp0=0, :yp1='0', :yp2='', :yp3='', :yp4=0, :yp5='13788530987', :yp6='塔里木', :yp7='', :yp8='', :yp9='', :yp10='6782', :yp11='', :yp12='', :yp13=510, :yp14='0.0.0.0', :yp15=948, :yp16='', :yp17=2, :yp18='288', :yp19='', :yp20='俱乐部- 客服,', :yp21=648, :yp22=0, :yp23=648, :yp24='', :yp25=0.
+2024/02/18 22:10:40 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0-0-' for key 'club_id'' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\CDbCommand.php:358
 Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(122): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(134): IndexController->get_signin()
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): IndexController->runActionWithFilters()
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): IndexController->run()
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
-REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456
-2024/02/18 21:04:35 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(1084): CDbCommand->execute()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(812): CActiveRecord->insert(NULL)
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php(110): CActiveRecord->save()
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php(75): ClubadminController->saveData(NULL, Array)
+#4 [internal function]: ClubadminController->actionUpdate('')
+#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ClubadminController), Array)
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ClubadminController), Object(ReflectionMethod), Array)
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('update')
+#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('clubadmin/updat...')
+#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
+#14 {main}
+REQUEST_URI=/sport2024/index.php?r=clubadmin/update&id=&f_id=288&admin_gfaccount=13788530987&admin_gfnick=%E5%A1%94%E9%87%8C%E6%9C%A8
+HTTP_REFERER=http://127.0.0.1/sport2024/index.php?r=clubadmin/create&lang_type=0
+---
+2024/02/18 22:11:21 [error] [system.db.CDbCommand] CDbCommand::execute() failed: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0-0-' for key 'club_id'. The SQL statement executed was: INSERT INTO `qmdd_administrators` (`club_id`, `club_code`, `club_name`, `lang_type`, `admin_gfid`, `admin_gfaccount`, `admin_gfnick`, `password`, `ec_salt`, `pay_pass`, `pay_salt`, `phone`, `email`, `if_del`, `last_ip`, `is_on_line`, `admin_remark`, `sys_user`, `admin_level`, `admin_level_type`, `role_name`, `if_auto_access`, `max_access`, `if_auto_greet`, `to_greet`, `customer_service`) VALUES (:yp0, :yp1, :yp2, :yp3, :yp4, :yp5, :yp6, :yp7, :yp8, :yp9, :yp10, :yp11, :yp12, :yp13, :yp14, :yp15, :yp16, :yp17, :yp18, :yp19, :yp20, :yp21, :yp22, :yp23, :yp24, :yp25). Bound with :yp0=0, :yp1='0', :yp2='', :yp3='', :yp4=0, :yp5='18289639280', :yp6='叶兹利', :yp7='', :yp8='', :yp9='', :yp10='6782', :yp11='', :yp12='', :yp13=510, :yp14='0.0.0.0', :yp15=948, :yp16='', :yp17=2, :yp18='288', :yp19='', :yp20='俱乐部- 客服,', :yp21=648, :yp22=0, :yp23=648, :yp24='', :yp25=0.
+2024/02/18 22:11:21 [error] [exception.CDbException] exception 'CDbException' with message 'CDbCommand 无法执行 SQL 语句: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0-0-' for key 'club_id'' in E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\CDbCommand.php:358
 Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(122): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(134): IndexController->get_signin()
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): IndexController->runActionWithFilters()
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): IndexController->run()
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
-REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=2018000094%23918974&PASSWORD=123456
-2024/02/18 21:05:17 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(122): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(134): IndexController->get_signin()
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): IndexController->runActionWithFilters()
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): IndexController->run()
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
-REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=SQ202402012&PASSWORD=123456
-2024/02/18 21:10:07 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
-Stack trace:
-#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(122): Menu->get_role_menu()
-#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(134): IndexController->get_signin()
-#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(49): IndexController->actionCheckuser()
-#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams()
-#4 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): IndexController->runAction()
-#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): IndexController->runActionWithFilters()
-#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): IndexController->run()
-#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController()
-#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
-#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CWebApplication->run()
-REQUEST_URI=/sport2024/index.php?r=index/checkUser&TUNAME=SQ202402009&PASSWORD=123456
-2024/02/18 21:10:17 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
+#0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(1084): CDbCommand->execute()
+#1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\db\ar\CActiveRecord.php(812): CActiveRecord->insert(NULL)
+#2 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php(110): CActiveRecord->save()
+#3 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\ClubadminController.php(75): ClubadminController->saveData(NULL, Array)
+#4 [internal function]: ClubadminController->actionUpdate('')
+#5 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CAction.php(109): ReflectionMethod->invokeArgs(Object(ClubadminController), Array)
+#6 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\actions\CInlineAction.php(47): CAction->runWithParamsInternal(Object(ClubadminController), Object(ReflectionMethod), Array)
+#7 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
+#8 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(286): CController->runAction(Object(CInlineAction))
+#9 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#10 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(282): CController->run('update')
+#11 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\web\CWebApplication.php(141): CWebApplication->runController('clubadmin/updat...')
+#12 E:\WORK\scnu\hsyii\wamp64\www\sport2024\framework\base\CApplication.php(185): CWebApplication->processRequest()
+#13 E:\WORK\scnu\hsyii\wamp64\www\sport2024\index.php(34): CApplication->run()
+#14 {main}
+REQUEST_URI=/sport2024/index.php?r=clubadmin/update&id=&f_id=288&admin_gfaccount=18289639280&admin_gfnick=%E5%8F%B6%E5%85%B9%E5%88%A9
+HTTP_REFERER=http://127.0.0.1/sport2024/index.php?r=clubadmin/create&lang_type=0
+---
+2024/02/18 22:16:23 [error] [php] Undefined variable: menustr_ss (E:\WORK\scnu\hsyii\wamp64\www\sport2024\models\Menu.php:158)
 Stack trace:
 #0 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(122): Menu->get_role_menu()
 #1 E:\WORK\scnu\hsyii\wamp64\www\sport2024\admin\controllers\IndexController.php(134): IndexController->get_signin()

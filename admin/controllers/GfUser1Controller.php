@@ -629,7 +629,15 @@ class GfUser1Controller extends BaseController {
         }
         parent::_list($model, $criteria, 'select', $data);
     }
-
+    public function actionSelectAdminUser($keywords = '') {
+        $data = array();
+        $model = QmddAdministrators::model();
+        $criteria = new CDbCriteria;
+        if($keywords!='')
+            $criteria->addSearchCondition('club_code',$keywords);
+        else $criteria->addCondition('club_code <> ""');
+        parent::_list($model, $criteria, 'select', $data);
+    }
     //小程序登录/注册 小程序接口
     public function actionwxLogin($code,$phone_code=""){
         $openid=GfUser1::model()->getwxOpenid($code);
@@ -792,4 +800,5 @@ class GfUser1Controller extends BaseController {
         }
         JsonSuccess($user->getClaimHistory());
     }
+
 }
